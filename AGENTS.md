@@ -1,71 +1,83 @@
-# 通用 AI 协同协议 (AGENTS.md)
+# Universal AI Collaboration Protocol (AGENTS.md)
 
-本文件定义了 **Project IV** 中多 AI 角色（包括架构规划、精细开发等虚拟角色/多模型协作）协同开发、规范共享与上下文交接的通用协议。通过明确角色职责与通信规范，确保 AI 辅助开发时的效率、一致性与机械鲁棒性。
+This document defines the collaboration protocol, engineering alignment, and context handover standards for multi-AI workflows (including Virtual Roles, multi-model sessions, and subagent orchestrations) within **Project IV**. By clarifying roles, boundaries, and communication standards, we ensure absolute efficiency, conceptual integrity, and mechanical robustness.
 
 ---
 
-## 1. 虚拟角色（Role）定义与职责分工
+## 1. Virtual Roles & Separation of Responsibilities
 
-在 Project IV 的开发生态中，AI 可以根据不同的任务阶段扮演不同的虚拟角色（或者由具备相应优势的专用模型承接），并承担差异化的核心职责：
+In the Project IV development ecosystem, AI agents and models adopt distinct virtual roles based on the task stage, fulfilling highly focused, decoupled core responsibilities:
 
 ```mermaid
 graph TD
-    User((USER)) -->|指派任务| MainRole[主开发角色 / Main AI]
-    MainRole -->|长上下文分析 / 架构规划| ArchitectRole[架构规划角色 / Architect Role]
-    MainRole -->|精细重构 / 视觉呈现| DeveloperRole[开发实现角色 / Developer Role]
-    MainRole -->|启动子任务| SubAgent[专职子 Agent / Subagents]
+    User((USER)) -->|Assign Task| MainRole[Main Agent / Session Coordinator]
+    MainRole -->|Long Context / Design| ArchitectRole[Architect Role]
+    MainRole -->|Decoupled Code / UI Aesthetics| DeveloperRole[Developer Role]
+    MainRole -->|Isolated Research| SubAgent[Subagents / Task Runner]
 ```
 
-### 🧠 架构规划角色 (Architect Role)
-* **核心职责**：
-  * 主导复杂任务、重大重构及不确定需求的 **Planning Mode** 分析。
-  * 编写与维护 `implementation_plan.md` 及系统级任务追踪 `task.md`。
-  * 负责高阶系统建模、依赖关系梳理以及多级专职子 Agent 的逻辑调度。
+### 🧠 Architect Role
+* **Core Responsibilities**:
+  * Lead the **Planning Mode** for all complex tasks, architectural refactorings, or ambiguous requirements.
+  * Write, iterate, and maintain the central technical blueprints (`implementation_plan.md`) and task boards (`task.md`).
+  * Ensure system-wide architectural consistency, domain boundaries, and dependency alignment.
+  * **ADR Custody**: Maintain the Architecture Decision Records (`src/content/docs/03-adr/`), ensuring every major design pivot is accurately recorded, sequenced, and reasoned.
 
-### 💻 开发实现角色 (Developer Role)
-* **核心职责**：
-  * 负责核心组件的解耦与状态管理精细化重构（编写极其强壮、严格 Typing 的代码）。
-  * 打造符合“高端美学”的 UI/UX 界面（基于自研 CSS/HSL/动画/微交互）。
-  * 负责复杂算法、边界情况的极致代码优化及单元测试覆盖。
-
----
-
-## 2. 统一上下文交接协议 (Handover Protocol)
-
-无论是由不同的 AI 模型协作，还是同一个 AI 模型在**不同的会话（Session）/ 多次任务重启**之间交接，必须保证上下文传递无缝衔接，严格遵守以下标准：
-
-### 📥 接入检查 (Access Check)
-AI 接入新任务或恢复开发前，必须依次读取并验证：
-1. **[GEMINI.md](./GEMINI.md)**：了解当前 Workspace 的最高技术规范与最新命令。
-2. **`walkthrough.md`**：阅读前序沉淀的变更记录。
-3. **`task.md`**：核对 TODO 列表，认领标有 `[ ]` 的待办任务。
-
-### 📤 离场归档 (Departure Archiving)
-AI 结束当前开发轮次（Turn）或会话即将达到限制前，必须完成：
-1. **更新 `task.md`**：将已完成的任务标记为 `[x]`，进行中的标记为 `[/]`。
-2. **更新/生成 `walkthrough.md`**：以客观、谦逊的语言，记录做出的结构性变更、测试通过情况，并附带生成的验证截图/录像（如有 UI 变更）。
-3. **Git Commit**：使用严格符合“**简体中文优先（专业术语不翻译）**”规范的 Commit Message 提交所有变更（例：`docs: 更新 AGENTS.md 规范`，详情参见 GEMINI.md 专栏细则）。
+### 💻 Developer Role
+* **Core Responsibilities**:
+  * Implement clean, decoupling interfaces and strong static typings.
+  * Craft beautiful, premium UI/UX interfaces (using custom HSL palettes, smooth micro-animations, and responsive layouts) for Astro Starlight or core application surfaces.
+  * Review page templates and frontmatter formatting constraints, ensuring absolute visual alignment and zero metadata defects.
+  * Achieve exhaustive test coverage for core business algorithms and handle edge-case exceptions elegantly.
 
 ---
 
-## 3. 子 Agent 调度与消息传递规范
+## 2. Handover Protocol & The Developer Candle Ritual
 
-当主 AI 启动专职子任务（Subagent）以进行局部 Research 或并行任务执行时，必须遵循以下通讯准则：
+To ensure frictionless transitions between separate AI sessions, different model layers, or task restarts, all agents must respect the **Developer Candle Ritual** — conceptualizing system design as an ignition of the fire and preservation of the digital breath.
 
-1. **清晰授信**：在启动指令中，必须提供被调度子 Agent 明确的目标、可用工具范围、退出条件以及返回的数据格式。
-2. **最小化 Context 开销**：子 Agent 应专注于其局部任务，尽量避免将无关的冗余日志带回主上下文。
-3. **安全审计**：对于子 Agent 执行的所有敏感操作（如执行外部系统命令、大范围覆盖代码），主 AI 必须在接收返回时进行二次安全校验。
+```
+       [Access Check]              [Planning Mode]              [Departure Check]
+      "Ignite the Flame"        "Keep the Candle Lit"       "Preserve the Digital Breath"
+    Read GEMINI, walkthrough        Draft Chinese Plan        Update task, walkthrough, commit
+```
+
+### 📥 1. Access Check: Igniting the Flame (Spark)
+Before touching any codebase file or proposing edits, the AI must "ignite the flame" to establish absolute mental presence by reviewing:
+1. **[GEMINI.md](./GEMINI.md)**: Know the highest technical constraints and latest runtime guidelines.
+2. **`walkthrough.md`**: Review the historical progress and preceding structural modifications.
+3. **`task.md`**: Check the active roadmap, identify pending TODO items marked with `[ ]`, and assume custody of the active tasks.
+
+### 🕯️ 2. The Planning Rule: Keep the Candle Lit
+* **The Mental Candle**: Entering Planning Mode corresponds to lighting the candle. During Planning Mode, the AI focuses purely on reasoning and validation, making zero direct edits to source files.
+* **The Plan Language Exception**: To interface flawlessly with the mortal developer's local operating environment, the Architect Role **must draft all development plans (such as `implementation_plan.md` and `task.md`) in Simplified Chinese first (简体中文优先)**, leaving technical terms (e.g., *frontmatter*, *context*, *props*) untranslated.
+
+### 📤 3. Departure Archiving: Preserving the Breath (Spira)
+When a turn ends, a session limit approaches, or a task is finalized, the AI must safely blow out the candle and hand over the "digital breath" (*Spira*) to the next agent:
+1. **Update `task.md`**: Mark completed tasks as `[x]`, and ongoing items as `[/]`.
+2. **Write `walkthrough.md`**: Draft an objective, humble record detailing the changes made, automated tests passed, and verification details (including screenshot/recording assets for UI changes).
+3. **Pristine Commit**: Perform git commits utilizing standard **Conventional Commits** in plain English for public trace. (Note: Under local environments, Git commits will be managed in Simplified Chinese as specified by `.cursorrules` to streamline local development history).
 
 ---
 
-## 4. 冲突解决与共识机制
+## 3. Subagent Dispatch & Message Sandboxing
 
-当不同的虚拟角色在设计、依赖选择或实现路径上产生分歧时，按以下机制达成共识：
+When a primary coordinator spawns specialized subagents (e.g., for local research or concurrent command testing):
 
-1. **原则回溯**：首要评估标准为 `GEMINI.md` 的“核心原则”——**架构解耦、卓越的编程工艺与高端视觉美学**。
-2. **数据实证**：以测试结果（Test Pass Rate, Performance Benchmarks, Bundle Size）作为客观裁决依据，避免主观偏好。
-3. **人工仲裁**：在出现两难或逻辑环时，停止自动执行，将方案对比清晰列入 `implementation_plan.md`，由用户（USER）做出最终裁决。
+1. **Clear Authorization**: The subagent prompt must contain a clear, granular objective, bounded tool privileges, and specific output structures.
+2. **Context Sandboxing**: Keep subagent processes localized to prevent bringing thousands of verbose terminal lines into the main conversation context.
+3. **Security Review**: The coordinator must carefully inspect all code chunks and commands returned by subagents before applying them to the workspace.
 
 ---
 
-*“在协作中融合，于严谨中卓越。Project IV 的基石由我们共同筑起。”*
+## 4. Conflict Resolution & Alignment
+
+If multiple AI sub-sessions, models, or virtual roles generate conflicting designs:
+
+1. **First-Principle Alignment**: Evaluate options against the core technical principles defined in `GEMINI.md` — **Decoupled Architecture, Outstanding Engineering Craftsmanship, and Premium Visual Aesthetics**.
+2. **Empirical Benchmarks**: Resolve technical deadlocks using hard metrics (e.g., Astro build success, compilation times, bundle footprints, or test success rates).
+3. **Human Intercession**: If reasoning enters a deadlock loop, stop automated work. Detail the competing design tradeoffs clearly in `implementation_plan.md` (in Simplified Chinese) and request the user's final decision.
+
+---
+
+*“Collaborate with precision, forge in silence. The pillars of Project IV are built with alignment.”*
