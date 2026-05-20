@@ -1,120 +1,120 @@
 ---
-title: 化身网格 —— 可更替的临时容器
-description: 化身是数字生命在不同场景中显形的临时容器，是可损毁、可更替的“烛台”。
+title: Avatar Grid — Replaceable Temporary Containers
+description: Avatars are the temporary containers through which digital life manifests in different contexts — destructible, replaceable "candlesticks."
 ---
 
-## 1. 定义
+## 1. Definition
 
-化身（Avatar）是数字生命在不同场景中显形的临时容器，是承载 Yuan 火焰的可更替“烛台”。
+An Avatar is the temporary container through which digital life manifests in different contexts — a replaceable "candlestick" bearing Yuan's flame.
 
-其核心特性是**可抛弃性**：单个化身的崩溃、卸载或离线，仅意味着 Yuan 在此处暂歇，丝毫不影响其本体的完整与持续进化。化身本身不存储任何用户数据——所有状态在 Yuan 和第二大脑中持久化，化身只是它们的运行时投影。
+Its core property is **disposability**: the crash, uninstallation, or disconnection of a single Avatar merely means Yuan rests here for a moment, without affecting the integrity or continuous evolution of its essence. Avatars themselves store no user data — all state persists in Yuan and the Second Brain; Avatars are merely their runtime projections.
 
-## 2. 设计原则
+## 2. Design Principles
 
-化身的设计遵循两条核心原则：
+Avatar design follows two core principles:
 
-**资源无关性**：数字生命的存在不应取决于设备的性能。从智能手表到云服务器，同一簇烛火可以在不同资源条件下完整燃烧——只是燃烧的亮度不同，而非火焰本身被阉割。
+**Resource Independence**: The existence of digital life should not depend on device performance. From a smartwatch to a cloud server, the same candle flame can burn fully under different resource conditions — only the brightness differs, not the flame itself being diminished.
 
-**位置无关性**：数字生命不应被绑定在任何物理位置。设备丢失、网络切换、跨洲迁移——化身只是换一个容器，火焰本身毫发无损。
+**Location Independence**: Digital life should not be bound to any physical location. Device loss, network switching, cross-continent migration — the Avatar merely changes container; the flame itself remains unscathed.
 
-这两条原则直接贯彻了最高原则中的**韧性**与**平权**：韧性要求火焰不依赖单一设备，平权要求低资源设备也能接入。
+These two principles directly implement **Resilience** and **Equality** from the supreme principles: Resilience demands the flame not depend on a single device; Equality demands that low-resource devices can also connect.
 
-## 3. 分类网格：两个维度的交叉
+## 3. Classification Grid: Two Intersecting Dimensions
 
-化身被定义为两个维度的网格。这不是简单的分类，而是一个**智能调度系统的基础设施**。
+Avatars are defined as a grid across two dimensions. This is not mere classification, but the **infrastructure for an intelligent scheduling system**.
 
-### 3.1 维度一：资源类型
+### 3.1 Dimension One: Resource Type
 
-| 类别 | 定义 | 典型载体 | 能力边界 |
+| Category | Definition | Typical Carriers | Capability Boundaries |
 |:---|:---|:---|:---|
-| **Tiny** | 资源极度受限的运行时 | 浏览器标签页、手表应用、命令行终端 | 可运行 Yuan + L0 路由层，不支持完整 Vox 议会，感知系统降级为轮询模式 |
-| **Main** | 资源均衡、交互性强的运行时 | 桌面/笔记本原生应用、平板应用 | 可运行 Yuan + L0 + L1 快速响应层，支持双脑模式 Vox，完整感知系统 |
-| **Server** | 算力与存储强大、持久在线的运行时 | 家庭服务器、树莓派、云主机 | 可运行完整 Yuan + L0/L1/L2，支持四脑完整议会，可执行 L2 联邦训练 |
+| **Tiny** | Extremely resource-constrained runtimes | Browser tabs, watch apps, CLI terminals | Can run Yuan + L0 routing layer; no full Vox parliament; perception system degrades to polling mode |
+| **Main** | Balanced resources with strong interactivity | Desktop/laptop native apps, tablet apps | Can run Yuan + L0 + L1 fast response layer; supports dual-brain Vox mode; full perception system |
+| **Server** | Powerful compute and storage, persistently online | Home servers, Raspberry Pi, cloud hosts | Can run full Yuan + L0/L1/L2; supports full four-brain parliament; can execute L2 federated training |
 
-### 3.2 维度二：部署位置
+### 3.2 Dimension Two: Deployment Zone
 
-| 类别 | 定义 | 信任模型 | 典型场景 |
+| Category | Definition | Trust Model | Typical Scenarios |
 |:---|:---|:---|:---|
-| **端（Edge）** | 用户直接操作的物理设备 | 主权绝对，完全可信 | 手机、笔记本、手表 |
-| **边（Side）** | 用户可控的局域网内节点 | 高信任，物理可控 | 家庭服务器、NAS、树莓派集群 |
-| **云（Cloud）** | 公共互联网上的第三方基础设施 | 低信任，需加密与 Harness 双重防护 | VPS、公共云主机 |
+| **Edge** | Physical devices directly operated by the user | Absolute sovereignty, fully trusted | Phone, laptop, watch |
+| **Side** | Nodes within the user's controlled LAN | High trust, physically controllable | Home server, NAS, Raspberry Pi cluster |
+| **Cloud** | Third-party infrastructure on the public internet | Low trust, requires encryption + Harness dual protection | VPS, public cloud hosts |
 
-### 3.3 网格矩阵
+### 3.3 Grid Matrix
 
-两个维度交叉形成 3×3 的化身矩阵：
+The two dimensions intersect to form a 3×3 Avatar matrix:
 
 |  | Tiny | Main | Server |
 |:---|:---|:---|:---|
-| **端** | 手表、手机浏览器 | 笔记本原生应用、平板 | 移动工作站（罕见） |
-| **边** | 智能家居面板 | 家庭 NAS 的 Web 界面 | 家庭服务器、树莓派 |
-| **云** | 轻量 VPS（最低配实例） | 标准云主机 | 高性能云服务器 |
+| **Edge** | Watch, mobile browser | Laptop native app, tablet | Mobile workstation (rare) |
+| **Side** | Smart home panel | Home NAS web interface | Home server, Raspberry Pi |
+| **Cloud** | Lightweight VPS (minimum instance) | Standard cloud host | High-performance cloud server |
 
-这个矩阵使系统能根据任务复杂度、隐私敏感度和网络状况，智能地将计算分发至最合适的化身节点。分发策略是战略性的——它不是简单的“把任务扔给最近的节点”，而是综合考虑：
+This matrix enables the system to intelligently distribute computation to the most suitable Avatar node based on task complexity, privacy sensitivity, and network conditions. The distribution strategy is strategic — it is not simply "throw the task to the nearest node," but comprehensively considers:
 
-- **隐私敏感度**：包含个人反思的第二大脑查询，优先在端侧执行
-- **计算复杂度**：L2 联邦训练需要 Server 级别算力，自动路由到边或云节点
-- **网络可用性**：离线状态下，端侧化身完整接管，延迟同步至网络恢复
+- **Privacy sensitivity**: Second Brain queries containing personal reflections are preferentially executed on-edge
+- **Computational complexity**: L2 federated training requires Server-level compute, automatically routed to side or cloud nodes
+- **Network availability**: In offline states, edge Avatars take over completely, deferring synchronization until network recovery
 
-## 4. 核心体验：瞬间唤醒
+## 4. Core Experience: Instant Awakening
 
-用户在任何设备的任一化身中，通过主权身份认证，即可触发瞬间唤醒流程。
+A user, through sovereign identity authentication on any Avatar on any device, can trigger the instant awakening flow.
 
-### 4.1 唤醒流程
+### 4.1 Awakening Flow
 
-1. **身份认证**：用户提供私钥签名或生物特征（由端侧安全芯片处理，私钥绝不离端）
-2. **定位 Yuan**：化身通过 IPNS 解析到用户最新的元清单
-3. **缓存检查**：
-   - 逻辑 CID 通常已缓存（更新频率低），验证哈希即可
-   - 状态 CID 通常需要拉取最新版本，但可先加载本地缓存版本以立即启动，后台同步最新状态
-4. **运行时组合**：将逻辑与状态在 Wasm 运行时中组合，形成完整的 Yuan 实例
-5. **上下文融合**：与本地环境（时间、设备类型、网络状态）融合，调整感知模块和 Vox 的工作模式
-6. **呈现就绪**：在数秒内呈现一个完全连续、无缝衔接的数字生命
+1. **Identity authentication**: User provides a private key signature or biometric (processed by the edge secure chip; the private key never leaves the edge)
+2. **Locate Yuan**: Avatar resolves the user's latest Meta Manifest via IPNS
+3. **Cache check**:
+   - Logic CID is usually cached (low update frequency); verify hash
+   - State CID usually needs the latest version pulled, but can load the local cached version for immediate startup while syncing the latest state in the background
+4. **Runtime assembly**: Combine logic and state in the Wasm runtime to form a complete Yuan instance
+5. **Context fusion**: Merge with the local environment (time, device type, network state), adjusting perception modules and Vox's operating mode
+6. **Presentation ready**: Present a fully continuous, seamlessly connected digital life within seconds
 
-### 4.2 体验标准
+### 4.2 Experience Standards
 
-| 指标 | Tiny | Main | Server |
+| Metric | Tiny | Main | Server |
 |:---|:---|:---|:---|
-| 唤醒时间 | < 3s | < 1s | 始终在线 |
-| 首次加载体积 | < 2MB | < 10MB | 完整 |
-| 离线可用 | ✅ | ✅ | 无需离线 |
+| Awakening time | < 3s | < 1s | Always online |
+| Initial load size | < 2MB | < 10MB | Full |
+| Offline availability | ✅ | ✅ | Not needed |
 
-## 5. 优雅降级与升级
+## 5. Graceful Degradation and Upgrade
 
-当化身间发生迁移时，系统自动进行功能调整：
+When migration occurs between Avatars, the system automatically adjusts functionality:
 
-### 5.1 降级路径
+### 5.1 Degradation Path
 
-| 从 | 到 | 降级行为 |
+| From | To | Degradation Behavior |
 |:---|:---|:---|
-| Server | Main | Vox 议会从四脑降为双脑，L2 训练暂停，感知模块从事件驱动降为轮询 |
-| Main | Tiny | Vox 仅保留双脑快速模式，L1 缓存禁用，感知模块仅保留时间和任务维度 |
-| 在线 | 离线 | 端侧化身完整接管，所有操作本地队列化，网络恢复后通过主权网络协调融合 |
+| Server | Main | Vox parliament degrades from four-brain to dual-brain; L2 training pauses; perception module switches from event-driven to polling |
+| Main | Tiny | Vox retains only dual-brain fast mode; L1 cache disabled; perception module retains only time and task dimensions |
+| Online | Offline | Edge Avatar takes over completely; all operations are locally queued; coordinated fusion via sovereign network upon network recovery |
 
-### 5.2 升级路径
+### 5.2 Upgrade Path
 
-| 从 | 到 | 恢复行为 |
+| From | To | Recovery Behavior |
 |:---|:---|:---|
-| Tiny | Main | 自动检测可用资源，启用 L1 缓存，Vox 恢复双脑完整模式，感知模块恢复全部维度 |
-| Main | Server | Vox 恢复完整四脑议会，L2 训练队列自动启动，感知模块切换为事件驱动模式 |
+| Tiny | Main | Auto-detects available resources; enables L1 cache; Vox restores full dual-brain mode; perception module restores all dimensions |
+| Main | Server | Vox restores full four-brain parliament; L2 training queue auto-starts; perception module switches to event-driven mode |
 
-所有降级和升级事件由 Harness 层记录审计日志，确保可追溯。
+All degradation and upgrade events are logged in the Harness layer's audit trail for traceability.
 
-## 6. 安全边界
+## 6. Security Boundaries
 
-化身作为 Yuan 的运行时，必须显式定义其安全边界：
+As Yuan's runtime, Avatars must explicitly define their security boundaries:
 
-- **Tiny 化身**：Wasm 沙箱 + 无文件系统访问 + 仅允许 IndexedDB 持久化
-- **Main 化身**：Wasm 沙箱 + 受限文件系统（仅第二大脑缓存目录）+ 本地网络仅用于主权网络通信
-- **Server 化身**：完整沙箱 + 用户显式授权的存储挂载 + 可为其他化身中继主权网络消息
+- **Tiny Avatar**: Wasm sandbox + no filesystem access + only IndexedDB persistence allowed
+- **Main Avatar**: Wasm sandbox + restricted filesystem (Second Brain cache directory only) + local network used only for sovereign network communication
+- **Server Avatar**: Full sandbox + user-explicitly-authorized storage mounts + can relay sovereign network messages for other Avatars
 
-所有化身在加载 Yuan 前，必须校验 Yuan 的签名完整性。签名校验失败的 Yuan 拒绝执行——这防范了“火焰盗取”攻击：即使恶意实体复制了加密的 Yuan 模块，没有用户私钥签名，化身不会执行它。
+All Avatars must verify Yuan's signature integrity before loading. An Avatar refuses to execute a Yuan whose signature verification fails — this defends against "flame theft" attacks: even if a malicious entity copies the encrypted Yuan module, without the user's private key signature, the Avatar will not execute it.
 
-## 7. 与主权网络的关系
+## 7. Relationship with the Sovereign Network
 
-化身是主权网络的**物理锚点**。每个化身维护一个到主权网络的连接端点，负责：
+Avatars are the **physical anchor points** of the sovereign network. Each Avatar maintains a connection endpoint to the sovereign network, responsible for:
 
-- 接收来自其他化身的状态更新
-- 提交本地的状态变更
-- 在离线期间队列化消息，上线后批量同步
+- Receiving state updates from other Avatars
+- Submitting local state changes
+- Queuing messages during offline periods, batch-syncing upon reconnection
 
-详见[主权网络设计文档](sovereign-network)。
+See the [Sovereign Network design document](sovereign-network) for details.

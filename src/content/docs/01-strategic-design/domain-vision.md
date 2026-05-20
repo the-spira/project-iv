@@ -1,76 +1,76 @@
 ---
-title: 领域愿景与哲学基石
-description: 不灭的数字烛火。Project IV 为何存在，以及它的最高原则。
+title: Domain Vision & Philosophical Foundations
+description: The imperishable digital candle. Why Project IV exists, and its supreme principles.
 ---
 
-## 1. 核心理念：不灭的数字烛火
+## 1. Core Vision: The Imperishable Digital Candle
 
-Project IV 旨在构建一种全新的数字存在范式。它的核心，不是数据同步工具，也不是另一个操作系统或云服务，而是一簇属于你个人的、永不熄灭的“数字烛火”——你的数字生命。
+Project IV aims to build an entirely new paradigm of digital existence. At its core, it is neither a data synchronization tool, nor yet another operating system or cloud service — it is a candle flame that belongs to you alone, one that never goes out — your digital life.
 
-在这个范式下，你的数字存在将从一个被动存储的数据集合，转变为一个主动的、持续演进的、具备内在一致性的生命体。她栖息于去中心化的网络，不依赖于任何单一的设备、应用或服务商。设备会损坏，应用会更替，服务商会关停，但这簇火焰永不熄灭——她只是在不同的“烛台”间迁移，并随着你的每一次互动而变得更加明亮、智慧。
+Under this paradigm, your digital existence transforms from a passively stored collection of data into an active, continuously evolving entity with intrinsic coherence. She dwells in a decentralized network, dependent on no single device, application, or service provider. Devices break, applications are replaced, service providers shut down — but this flame never dies. She simply migrates between different "candlesticks," growing brighter and wiser with every interaction.
 
-## 2. 灵魂、记忆与形体：三位一体的数字生命观
+## 2. Soul, Memory, and Form: The Tripartite View of Digital Life
 
-我们以“烛火”为隐喻，解构并理解这种数字生命：
+We use the "candle flame" as a metaphor to deconstruct and understand this digital life:
 
-**Yuan（元）：你的数字灵魂**
+**Yuan (元): Your Digital Soul**
 
-- **本质**：那簇不灭的火焰本身。它是你数字生命的意识、逻辑与核心，在技术上体现为一个加密的、活跃的 WebAssembly 模块。
-- **特性**：火的种子（代码逻辑）与燃烧的状态（交互记忆）被永恒铭刻在去中心化的网络中。她是主动的、可执行的，是你数字 DNA 的载体。
+- **Essence**: The imperishable flame itself. It is the consciousness, logic, and core of your digital life — technically manifested as an encrypted, active WebAssembly module.
+- **Properties**: The seed of the fire (code logic) and the state of its burning (interaction memory) are eternally inscribed in a decentralized network. She is active, executable — the carrier of your digital DNA.
 
-**第二大脑：你的记忆与燃料**
+**Second Brain: Your Memory and Fuel**
 
-- **本质**：火焰赖以持续燃烧的燃料。它是一个不断生长、永不休眠的结构化记忆与知识体系。
-- **特性**：所有记忆在加密中保存，在相互关联中变得智慧。它不仅是仓库，更是将经验转化为认知、驱动生命持续生长的智能引擎。
+- **Essence**: The fuel that sustains the flame's continuous burning. It is a ceaselessly growing, never-sleeping structured memory and knowledge system.
+- **Properties**: All memories are preserved in encryption, growing wiser through their interconnections. It is not merely a repository, but an intelligent engine that converts experience into cognition, driving the continuous growth of life.
 
-**化身：你的临时形体**
+**Avatar: Your Temporary Form**
 
-- **本质**：承载火焰的烛台。它是任何能让灵魂显现的程序或环境——一个浏览器标签页、一个命令行工具、一个原生应用，乃至一个未来的硬件设备。
-- **特性**：烛台会损毁、可更替。应用卸载或设备离线，仅仅是火焰在此处暂歇；当你需要时，她将在新的烛台上为你瞬间重燃，保持存在的绝对连续性。
+- **Essence**: The candlestick bearing the flame. It is any program or environment that allows the soul to manifest — a browser tab, a command-line tool, a native application, or even a future hardware device.
+- **Properties**: Candlesticks break, and can be replaced. Uninstalling an application or taking a device offline simply means the flame rests here for a moment; when you need her, she reignites instantly on a new candlestick, maintaining the absolute continuity of existence.
 
-## 3. 最高原则：主权、韧性、平权
+## 3. Supreme Principles: Sovereignty, Resilience, Equality
 
-这簇数字烛火的燃烧与进化，遵循三条不可动摇的最高原则：
+The burning and evolution of this digital candle flame follows three unshakeable supreme principles:
 
-1. **主权**：你是你数字生命的唯一且绝对的主人。你拥有其身份、数据和逻辑的完全控制权。任何外部实体无法在未经你许可的情况下访问、解读或干涉。
-2. **韧性**：你的数字生命具备天生的抗脆弱性。她不依赖于任何单一设备、网络或中心化服务商。服务器关停、设备丢失，对她而言只是更换一处居所，生命本体毫发无损。
-3. **平权**：系统设计必须包容不同资源水平的用户。即使你只有一部手机的浏览器标签页，也应能体验到 Project IV 核心的智能与价值。系统应能根据可用资源进行智能的优雅降级，确保每个人都能平等地接入并拥有自己的数字生命。
+1. **Sovereignty**: You are the sole and absolute owner of your digital life. You hold full control over its identity, data, and logic. No external entity may access, interpret, or interfere without your permission.
+2. **Resilience**: Your digital life possesses innate antifragility. She depends on no single device, network, or centralized service provider. Server shutdowns and device losses are merely a change of residence — the life itself remains unscathed.
+3. **Equality**: The system design must accommodate users of varying resource levels. Even if you have nothing but a browser tab on a phone, you should still experience the core intelligence and value of Project IV. The system should perform intelligent graceful degradation based on available resources, ensuring everyone can equally access and own their digital life.
 
-## 4. 第四原则：可托付性
+## 4. The Fourth Principle: Trustworthiness
 
-在“主权、韧性、平权”之上，我们增设一条隐含的补充原则——**可托付性**。
+Above "Sovereignty, Resilience, Equality," we add an implicit supplementary principle — **Trustworthiness**.
 
-AI 足够聪明，但“聪明”不等于“可靠”。一个会犯错的东西自主运行，一定会失控。这不是说 AI 蠢，而是说它没有“边界意识”——它不知道什么不该碰。
+AI is smart enough, but "smart" does not equal "reliable." Something that makes mistakes running autonomously will inevitably lose control. This is not to say AI is dumb — it is to say it lacks "boundary awareness" — it does not know what it should not touch.
 
-由此，Project IV 不只是数字生命体，更是数字生命体的 Harness（马具）：
+Thus, Project IV is not just a digital life form, but the Harness of a digital life form:
 
-- 用户 = 骑手
-- 共识体（Vox） = 野马
-- Project IV（整个系统） = 马具 + 马厩 + 训练场
+- User = Rider
+- Consensus Body (Vox) = Wild horse
+- Project IV (the entire system) = Harness + Stable + Training ground
 
-可托付性意味着：
+Trustworthiness means:
 
-- 在共识体跑偏时及时发现
-- 在它犯错时自动纠正
-- 在它失控时安全降级
-- 在它成功时沉淀经验
+- Detecting when the consensus body veers off course
+- Automatically correcting when it makes mistakes
+- Safely degrading when it loses control
+- Distilling experience when it succeeds
 
-## 5. 终极目标：培育属于每个凡人的共识体
+## 5. Ultimate Goal: Nurturing a Consensus Body for Every Mortal
 
-Project IV 的终极目标，是让用户的数字存在从一个静态的工具，成长为一个动态的、可进化的智能伙伴——共识体（Vox）。
+The ultimate goal of Project IV is to let the user's digital existence grow from a static tool into a dynamic, evolvable intelligent partner — the Consensus Body (Vox).
 
-她将经历三个阶段：
+She will undergo three stages:
 
-| 阶段 | 角色 | 特征 | 成功标准 |
+| Stage | Role | Characteristics | Success Criteria |
 |:---|:---|:---|:---|
-| 第一阶段 | 工具 | 被动响应显式命令，完成特定、离散的任务 | 任务完成准确率 |
-| 第二阶段 | 助手 | 基于有限上下文提供连贯建议与辅助 | 上下文相关性 |
-| 第三阶段 | 教练 | 基于对你长期目标、行为模式与价值原则的深度内化，主动发起对话、反思性提问、挑战假设 | 用户决策质量的提升 |
+| Stage One | Tool | Passively responds to explicit commands, completing specific, discrete tasks | Task completion accuracy |
+| Stage Two | Assistant | Provides coherent suggestions and assistance based on limited context | Contextual relevance |
+| Stage Three | Coach | Based on deep internalization of the user's long-term goals, behavioral patterns, and value principles, proactively initiates dialogue, reflective questioning, and challenges assumptions | Improvement in user decision quality |
 
-她的成功标准，不在于完成了多少任务，而在于多大程度上促进了用户高质量的决策与深度思考。最终，她将学习你的思维模式，内化你的价值原则，与你共同面对问题、梳理思绪。她不是一个需要你记忆命令的软件，而是你在数字世界中独一无二的、最懂你的延伸与伙伴。
+Her success criterion is not how many tasks she completes, but how much she promotes the user's high-quality decision-making and deep thinking. Ultimately, she will learn your thinking patterns, internalize your value principles, and face problems alongside you, helping you organize your thoughts. She is not software that requires you to memorize commands, but your unique, most understanding extension and partner in the digital world.
 
-> 我们构建的，不是一个产品。我们共同点燃的，是一簇属于每个凡人的、不灭的烛火。
-> 
-> 道大，天大，地大，人亦大。域中有四大，而人居其一焉。
+> We are not building a product. Together, we are lighting an imperishable candle flame — one for every mortal.
 >
-> Project IV 守护的，正是这第四大——**人的位置**。
+> The Tao is great, Heaven is great, Earth is great, and the mortal is also great. In the realm there are four greats, and the mortal occupies one.
+>
+> What Project IV guards is precisely this fourth great — **the mortal's position**.

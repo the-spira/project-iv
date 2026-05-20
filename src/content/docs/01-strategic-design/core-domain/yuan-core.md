@@ -1,96 +1,96 @@
 ---
-title: Yuan 元 —— 不灭的数字本质
-description: Yuan 是 Project IV 的数字灵魂，一个加密的、可执行的 WebAssembly 模块，是你的数字 DNA。
+title: Yuan 元 — The Imperishable Digital Essence
+description: Yuan is the digital soul of Project IV, an encrypted, executable WebAssembly module — your digital DNA.
 ---
 
-## 1. 定义
+## 1. Definition
 
-Yuan（元）是数字生命的活性核心与意识本体，是那簇不灭的火焰本身。
+Yuan (元) is the living core and conscious essence of digital life — the imperishable flame itself.
 
-在技术上，Yuan 是一个**加密的、可执行的 WebAssembly (Wasm) 模块**。这一定位使其超越了静态数据，成为一个兼具数据（状态）与行为（逻辑）的活跃实体。它封装了用户的“数字 DNA”：
+Technically, Yuan is an **encrypted, executable WebAssembly (Wasm) module**. This positioning elevates it beyond static data, making it an active entity possessing both data (state) and behavior (logic). It encapsulates the user's "digital DNA":
 
-- 内置的思维引擎
-- 核心服务 API（身份、通信、权限）
-- 对“第二大脑”数据模型的定义与操作逻辑
+- Built-in thinking engine
+- Core service APIs (identity, communication, permissions)
+- Data model definitions and operational logic for the Second Brain
 
-Yuan 不是被动的文件，而是**活的进程**。加密确保只有持有私钥的用户可以启动它；Wasm 确保它可以在任何现代运行时中执行；模块化确保它可以随着用户的成长而进化。
+Yuan is not a passive file — it is a **living process**. Encryption ensures only the user holding the private key can start it; Wasm ensures it can execute in any modern runtime; modularity ensures it can evolve as the user grows.
 
-## 2. 存在方式：基于 IPFS/IPNS 的去中心化栖息
+## 2. Mode of Existence: Decentralized Dwelling via IPFS/IPNS
 
-Yuan 以内容标识符（CID）的形式，在端到端加密后存储在 IPFS 这一去中心化存储网络中。
+Yuan is stored on IPFS, the decentralized storage network, in the form of content identifiers (CIDs) after end-to-end encryption.
 
-其存在的连续性和可发现性通过 **IPNS** 协议保障：
+Its continuity of existence and discoverability are guaranteed by the **IPNS** protocol:
 
-- Yuan 的每次进化都会获得新的 CID
-- 一个永久的、由用户私钥签名的 **IPNS 地址**则始终指向其最新版本
+- Each evolution of Yuan generates a new CID
+- A permanent **IPNS address**, signed by the user's private key, always points to the latest version
 
-这确保了 Yuan 既可以在网络中自由迁移、永不丢失（**韧性**），又拥有一个恒定的数字身份。无论用户从哪个化身接入，IPNS 解析到的始终是当前最新的 Yuan。
+This ensures Yuan can freely migrate across the network without ever being lost (**resilience**), while also possessing a constant digital identity. Regardless of which Avatar the user connects from, IPNS always resolves to the current, latest Yuan.
 
-## 3. 演进模型：状态与逻辑分离的双 CID 设计
+## 3. Evolution Model: The Dual CID Design Separating State and Logic
 
-这是 Yuan 最核心的架构决策。
+This is Yuan's most critical architectural decision.
 
-### 3.1 问题
+### 3.1 Problem
 
-如果整个 Wasm 模块作为一个整体存储和更新，那么每一次微小的状态变更（如用户完成一次对话）都需要重新发布完整的模块。这会造成严重的效率问题：
+If the entire Wasm module were stored and updated as a monolith, every minor state change (e.g., the user completing a conversation) would require republishing the full module. This causes serious efficiency issues:
 
-- 频繁的 CID 变更稀释了 IPNS 的指向稳定性
-- 每次加载都要传输完整的 Wasm 二进制，对 Tiny 化身（浏览器标签页）尤其不友好
-- 逻辑更新（如思维引擎升级）和状态更新（如对话记录追加）的粒度完全不匹配
+- Frequent CID changes dilute the pointer stability of IPNS
+- Each load requires transmitting the full Wasm binary — particularly unfriendly for Tiny Avatars (browser tabs)
+- The granularity of logic updates (e.g., thinking engine upgrades) and state updates (e.g., appending conversation records) are completely mismatched
 
-### 3.2 设计
+### 3.2 Design
 
-Yuan 采用“状态与逻辑分离”的双 CID 模型：
+Yuan adopts a dual CID model separating state from logic:
 
-| 组件 | 说明 | 更新频率 |
+| Component | Description | Update Frequency |
 |:---|:---|:---|
-| **逻辑 CID** | 存储相对稳定的核心 Wasm 代码（思维引擎、API 逻辑、Harness 边界约束） | 低（仅在核心升级时变更） |
-| **状态 CID** | 存储频繁变化的用户状态（交互记忆、个性化参数、会话上下文） | 高（每次互动都可能变更） |
-| **元清单 (Meta Manifest)** | 一个轻量的结构体，包含当前的逻辑 CID 和状态 CID，由 IPNS 指针指向 | 中（任一子 CID 变化时更新） |
+| **Logic CID** | Stores the relatively stable core Wasm code (thinking engine, API logic, Harness boundary constraints) | Low (changes only during core upgrades) |
+| **State CID** | Stores frequently changing user state (interaction memory, personalization parameters, session context) | High (may change with every interaction) |
+| **Meta Manifest** | A lightweight struct containing the current Logic CID and State CID, pointed to by the IPNS pointer | Medium (updates when either sub-CID changes) |
 
-化身启动时的流程：
+Avatar startup flow:
 
-1. 通过 IPNS 解析到最新的元清单
-2. 检查本地缓存：逻辑 CID 通常已缓存，无需重新下载；状态 CID 通常需要拉取最新版本
-3. 将逻辑与状态在运行时组合，形成完整的 Yuan 实例
+1. Resolve the latest Meta Manifest via IPNS
+2. Check local cache: the Logic CID is usually cached and doesn't need re-downloading; the State CID usually requires pulling the latest version
+3. Combine logic and state at runtime to form a complete Yuan instance
 
-这以最小开销实现了数字生命的持续进化。
+This achieves the continuous evolution of digital life with minimal overhead.
 
-### 3.3 原子性保障
+### 3.3 Atomicity Guarantee
 
-元清单本身不采用两阶段提交——这会引入中心化协调器，违背去中心化原则。取而代之的是**最终一致性 + 运行时校验**：
+The Meta Manifest itself does not employ two-phase commit — that would introduce a centralized coordinator, violating decentralization principles. Instead, it uses **eventual consistency + runtime validation**:
 
-- 逻辑 CID 和状态 CID 在元清单中作为不可分割的字段一起更新
-- 化身加载时，校验逻辑 CID 和状态 CID 的版本兼容性（通过内嵌的版本协商协议）
-- 若检测到不兼容（如状态引用了逻辑中不存在的 API），化身回退到上一个兼容版本并通知用户
+- Logic CID and State CID are updated together as inseparable fields within the Meta Manifest
+- At load time, the Avatar validates version compatibility between Logic CID and State CID (via an embedded version negotiation protocol)
+- If incompatibility is detected (e.g., the state references an API that doesn't exist in the logic), the Avatar falls back to the last compatible version and notifies the user
 
-这意味着短暂的版本不一致是可能的，但不可检测的静默错误是不可能的。
+This means brief version inconsistencies are possible, but undetectable silent errors are impossible.
 
-## 4. 与第二大脑的关系
+## 4. Relationship with the Second Brain
 
-Yuan 封装了**操作逻辑**，但它不直接存储大规模数据。所有持久化知识（项目、领域、资源、归档、原则中心格）存储在第二大脑中。
+Yuan encapsulates the **operational logic**, but it does not directly store large-scale data. All persistent knowledge (projects, areas, resources, archives, the Principle Vault) is stored in the Second Brain.
 
-Yuan 持有第二大脑的**数据模型定义**和**访问逻辑**——它知道如何查询、如何写入、如何建立关联。但实际的存储和索引由第二大脑的 Vault Service 负责。
+Yuan holds the Second Brain's **data model definitions** and **access logic** — it knows how to query, how to write, and how to establish associations. But the actual storage and indexing is handled by the Second Brain's Vault Service.
 
-这种分离确保：
+This separation ensures:
 
-- Yuan 保持轻量，适应 Tiny 化身
-- 第二大脑可以独立扩展存储和索引能力
-- 加密密钥由 Yuan 管理，但加密数据的物理存储由第二大脑承担
+- Yuan stays lightweight, suitable for Tiny Avatars
+- The Second Brain can independently scale its storage and indexing capabilities
+- Encryption keys are managed by Yuan, but the physical storage of encrypted data is handled by the Second Brain
 
-## 5. Harness 内嵌
+## 5. Harness Embedding
 
-Yuan 的 Wasm 模块在编译时即内嵌了一套不可覆盖的**宪法执行层**。详见 [Harness 层设计文档](../supporting-domain/harness-layer)。
+Yuan's Wasm module has a set of non-overridable **constitutional execution layer** constraints embedded at compile time. See the [Harness Layer design document](../supporting-domain/harness-layer) for details.
 
-硬约束示例：
+Hard constraint examples:
 
-- “绝不直接删除第二大脑中的任何数据，必须经过用户显式确认”
-- “绝不向未经用户授权的外部服务发送第二大脑中的原始数据”
-- 夜间保护性约束（可被用户配置，但不可被 Vox 覆盖）
+- "Never directly delete any data in the Second Brain without explicit user confirmation"
+- "Never send raw data from the Second Brain to any external service not authorized by the user"
+- Nighttime protective constraints (configurable by the user, but cannot be overridden by Vox)
 
-这些约束以代码级权限校验的形式存在，处于 Wasm 沙箱的最内层，Vox 的推理无论如何运行都无法绕过。
+These constraints exist as code-level permission checks within the innermost layer of the Wasm sandbox — Vox's reasoning, no matter how it runs, cannot bypass them.
 
-## 6. 关键决策记录
+## 6. Key Decision Records
 
-- [ADR 001 · 选择 Rust + Wasm 作为 Yuan 的实现技术](../../../03-adr/001-choose-rust-wasm)
-- [ADR 002 · 状态与逻辑分离的双 CID 进化模型](../../../03-adr/002-dual-cid-evolution)
+- [ADR 001 · Choosing Rust + Wasm as Yuan's Implementation Technology](../../../03-adr/001-choose-rust-wasm)
+- [ADR 002 · The Dual CID Evolution Model Separating State and Logic](../../../03-adr/002-dual-cid-evolution)
