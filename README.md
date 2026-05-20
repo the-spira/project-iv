@@ -1,6 +1,6 @@
 # Project IV · The Unextinguished Digital Candle
 
-[![Deploy Astro site to Pages](https://github.com/the-spira/project-iv/actions/workflows/astro.yml/badge.svg)](https://github.com/the-spira/project-iv/actions/workflows/astro.yml)
+[![Deploy Site to Pages](https://github.com/the-spira/project-iv/actions/workflows/astro.yml/badge.svg)](https://github.com/the-spira/project-iv/actions/workflows/astro.yml)
 
 🌐 **Looking for Chinese version?** Read the [中文版说明书](./README.zh-CN.md) (Simplified Chinese).
 
