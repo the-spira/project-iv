@@ -1,156 +1,156 @@
 ---
-title: 道器生态 —— 可扩展的技能生态
-description: 道器是运行在 Project IV 之上的功能模块，是数字生命学习新技能、扩展能力的唯一途径。
+title: DaoKit Ecosystem —— Extensible Skill Ecosystem
+description: DaoKits are functional modules running on top of Project IV, the only way for digital life to learn new skills and extend capabilities.
 ---
 
-## 1. 定义
+## 1. Definition
 
-道器（Dao-Kit）是运行在 Project IV 之上的应用程序或功能模块，是数字生命学习新技能、扩展能力的唯一途径。
+Dao-Kit is an application or functional module running on top of Project IV, the only way for digital life to learn new skills and extend capabilities.
 
-它与传统 App 的本质区别在于权限模型：
+The essential difference from traditional apps lies in the permission model:
 
-- **传统 App**：安装即授权——用户为了使用功能，不得不同意一揽子权限请求。权限是进入的代价
-- **道器**：发现即授权——用户在安装前看到的是权限申请页，而非安装按钮。权限是用户主动授予的、可逐项撤销的信任
+- **Traditional App**: Install = Authorize — To use features, users must agree to bundled permission requests. Permissions are the price of entry.
+- **DaoKit**: Discover = Authorize — Before installation, users see a permission request page instead of an install button. Permissions are trust actively granted by users and can be revoked item by item.
 
-一个道器可以是：
+A DaoKit can be:
 
-- 一个完整的应用（如日记道器、知识库道器）
-- 一个轻量的中间件（如隐私过滤器、内容安全校验器）
-- 一个外交使馆（连接外部服务的桥接器）
+- A complete application (e.g., diary DaoKit, knowledge base DaoKit)
+- A lightweight middleware (e.g., privacy filter, content safety validator)
+- A diplomatic embassy (bridge connecting external services)
 
-道器本身不存储用户数据。所有数据写入第二大脑，由用户持有密钥。道器只在被激活时获得临时的、最小必要的读写权限。
+DaoKits themselves do not store user data. All data is written to the Second Brain, with keys held by the user. DaoKits only receive temporary, minimally necessary read/write permissions when activated.
 
-## 2. 生态战略：降低门槛与激发网络效应
+## 2. Ecosystem Strategy: Lowering Barriers and Igniting Network Effects
 
-道器生态发展的核心是创造一个正向增强回路：
+The core of DaoKit ecosystem development is creating a positive reinforcement loop:
 
-> 好用的道器吸引用户 → 用户基础吸引开发者 → 开发者创造更多好用的道器
+> Useful DaoKits attract users → User base attracts developers → Developers create more useful DaoKits
 
-这个飞轮的冷启动，依赖两大支柱。
+The cold start of this flywheel depends on two pillars.
 
-### 2.1 极致的开发者友好
+### 2.1 Extreme Developer-Friendliness
 
-降低创造门槛是第一要务。一个开发者应该能在几分钟内开始写第一个道器，而不是先花几天读文档。
+Lowering creation barriers is the top priority. A developer should be able to start writing their first DaoKit in minutes, not spend days reading documentation first.
 
-具体措施：
+Specific measures:
 
-- **SDK 优先设计**：提供 `create-dao-kit` 脚手架，一键生成项目模板，包含开发服务器、测试沙箱和打包工具
-- **声明式开发**：道器的核心逻辑通过标准接口与 Yuan 通信，开发者无需理解 IPFS、IPNS、Wasm 的内部细节
-- **本地预览**：开发者在自己的化身中预览和调试道器，无需上传到任何中心化平台
-- **文档即教程**：官方文档的第一个页面就是“构建你的第一个道器”，从零到上线，全程可跟随
+- **SDK-First Design**: Provide `create-dao-kit` scaffolding to generate project templates with one click, including development server, test sandbox, and packaging tools
+- **Declarative Development**: Core logic communicates with Yuan through standard interfaces; developers don't need to understand internal details of IPFS, IPNS, or Wasm
+- **Local Preview**: Developers preview and debug DaoKits in their own avatars, no need to upload to any centralized platform
+- **Documentation as Tutorial**: The first page of official documentation is "Build Your First DaoKit," a complete, followable guide from zero to deployment
 
-### 2.2 坚固的用户主权保障
+### 2.2 Strong User Sovereignty Protection
 
-生态繁荣不能以牺牲核心理念为代价。每增加一个道器，用户的数字生命不应变得更脆弱。
+Ecosystem prosperity cannot come at the expense of core philosophy. With each new DaoKit added, the user's digital life should not become more vulnerable.
 
-- **权限最小化**：道器只能访问其声明且用户批准的数据范围，无法越界
-- **可撤销性**：用户可随时撤销任一道器的任意权限，撤销立即生效
-- **无后门**：所有道器代码可审计，所有数据流可追踪
-- **沙箱隔离**：道器在独立的 Wasm 沙箱中运行，即使恶意道器也无法访问其他道器的内存空间
+- **Permission Minimization**: DaoKits can only access the data scope they declare and users approve, no crossing boundaries
+- **Revocability**: Users can revoke any permission from any DaoKit at any time, revocation takes effect immediately
+- **No Backdoors**: All DaoKit code is auditable, all data flows are traceable
+- **Sandbox Isolation**: DaoKits run in independent Wasm sandboxes; even malicious DaoKits cannot access memory spaces of other DaoKits
 
-## 3. 开发者体验：Rust for Core, TypeScript for UI
+## 3. Developer Experience: Rust for Core, TypeScript for UI
 
-为平衡性能、安全与开发效率，确立官方支持的两条黄金开发路径。
+To balance performance, security, and development efficiency, two officially supported golden development paths are established.
 
-### 3.1 核道器（Rust）
+### 3.1 Core DaoKits (Rust)
 
-适用于需要与 Yuan 核心深度交互、处理敏感数据或要求极致性能的底层道器。
+For low-level DaoKits that need deep interaction with Yuan core, handle sensitive data, or require extreme performance.
 
-- **典型场景**：加密工具、本地 AI 推理引擎、第二大脑索引器
-- **技术优势**：Rust 的安全特性（所有权系统、无 GC）与 Wasm 沙箱天然互补；编译到 Wasm 的工具体系成熟；与 Yuan 本身的实现语言一致，可复用核心类型定义
-- **开发者画像**：系统编程经验者，或愿意为性能和安全投入学习成本的开发者
+- **Typical Scenarios**: Encryption tools, local AI inference engines, Second Brain indexers
+- **Technical Advantages**: Rust's safety features (ownership system, no GC) naturally complement Wasm sandbox; mature toolchain for compiling to Wasm; consistent with Yuan's implementation language, enabling reuse of core type definitions
+- **Developer Profile**: Systems programmers or developers willing to invest learning costs for performance and security
 
-### 3.2 器道器（TypeScript / dao.js SDK）
+### 3.2 Interface DaoKits (TypeScript / dao.js SDK)
 
-构建用户交互界面的绝对主流路径。
+The absolute mainstream path for building user interfaces.
 
-- **典型场景**：日记界面、Pin 看板、原则中心格编辑器、可视化道器
-- **技术优势**：基于 Web 标准，任何前端开发者凭现有技能即可快速上手；`dao.js` SDK 封装了与 Yuan 通信、权限申请、第二大脑读写等底层能力，开发者只需关注 UI 和交互逻辑
-- **开发者画像**：前端开发者、全栈开发者、独立开发者
+- **Typical Scenarios**: Diary interfaces, Pin boards, principle vault editors, visualization DaoKits
+- **Technical Advantages**: Web standard based, any frontend developer can quickly get started with existing skills; `dao.js` SDK encapsulates low-level capabilities like Yuan communication, permission requests, and Second Brain read/write — developers only need to focus on UI and interaction logic
+- **Developer Profile**: Frontend developers, full-stack developers, independent developers
 
-### 3.3 协议层面的开放性
+### 3.3 Protocol-Level Openness
 
-系统通过标准的 Wasm ABI 保持协议层面的开放性。任何编译到 Wasm 的语言（Go、Zig、Swift 等）都可以作为社区支持的开发路径。官方不设语言限制，仅要求道器通过 Harness 层的安全检查和安全扫描。
+The system maintains protocol-level openness through standard Wasm ABI. Any language that compiles to Wasm (Go, Zig, Swift, etc.) can serve as a community-supported development path. The official stance sets no language restrictions, only requiring DaoKits to pass Harness layer security checks and security scans.
 
-## 4. 安全与分发：道器清单规范与去中心化集市
+## 4. Security and Distribution: DaoKit Manifest Specification and Decentralized Marketplace
 
-### 4.1 道器清单规范
+### 4.1 DaoKit Manifest Specification
 
-每个道器必须包含一个结构化的清单文件。它不是“隐私政策”那种谁都不读的文本墙，而是机器可解析、用户可理解的权限声明：
+Each DaoKit must contain a structured manifest file. It is not a wall of text like a "privacy policy" that no one reads, but a machine-parseable, user-understandable permission declaration:
 
-- **元数据**：名称、版本、描述、作者 DID
-- **组件 CID**：道器代码在 IPFS 上的地址
-- **权限声明**：清晰、逐一列出需要访问的数据范围（如“读取‘项目’分类”、“写入每日日志”），以及需要调用的能力（如“L3 外部知识调用”、“主权网络通信”）
-- **Harness 兼容性**：声明道器是否包含中间件模式、是否经过 Harness 安全扫描
-- **依赖声明**：如果道器依赖其他道器，需在清单中列出
+- **Metadata**: Name, version, description, author DID
+- **Component CID**: IPFS address of DaoKit code
+- **Permission Declaration**: Clear, itemized list of data scopes to access (e.g., "read 'Projects' category", "write daily logs") and capabilities to invoke (e.g., "L3 external knowledge calls", "sovereign network communication")
+- **Harness Compatibility**: Declare whether the DaoKit includes middleware mode and has passed Harness security scanning
+- **Dependency Declaration**: If the DaoKit depends on other DaoKits, list them in the manifest
 
-### 4.2 发现即授权
+### 4.2 Discover = Authorize
 
-用户在“道器集市”中发现道器时，看到的不是直接安装按钮，而是其清单的权限申请页。
+When users discover DaoKits in the "DaoKit Marketplace," they see not a direct install button, but the permission request page from its manifest.
 
-用户的批准，即完成了一次去中心化的、知情前提下的授权安装。这是一个仪式性的交互——不是“下一步→下一步→完成”的麻木点击，而是用户停下来，看见这个道器想触碰自己数字生命的哪一部分，然后主动说“可以”。
+User approval completes a decentralized, informed authorization installation. This is a ritualistic interaction — not mindless clicks through "Next → Next → Finish," but a moment where users pause, see which parts of their digital life this DaoKit wants to touch, and actively say "yes."
 
-### 4.3 去中心化信任模型
+### 4.3 Decentralized Trust Model
 
-不依赖中心化平台审核。信任通过以下方式建立：
+No reliance on centralized platform review. Trust is established through:
 
-- **开发者 DID 签名**：身份可追溯。恶意开发者无法通过换马甲逃避声誉损失
-- **可复现构建**：道器代码开源，CI 系统独立验证 IPFS 上的编译产物与源代码一致
-- **自动化安全扫描**：提交到集市时自动触发 Harness 兼容性检查和静态分析，结果公示在清单页
-- **社区策展列表**：社区成员维护自己信任的道器集合。用户可以选择订阅某个策展人的列表，而非盲目浏览全部
+- **Developer DID Signature**: Identity is traceable. Malicious developers cannot evade reputation damage by changing aliases
+- **Reproducible Builds**: DaoKit code is open source; CI system independently verifies that compiled artifacts on IPFS match source code
+- **Automated Security Scanning**: Harness compatibility checks and static analysis automatically triggered when submitting to marketplace, results displayed on manifest page
+- **Community Curated Lists**: Community members maintain their own trusted DaoKit collections. Users can choose to subscribe to a curator's list instead of browsing blindly
 
-### 4.4 道器集市本身也是道器
+### 4.4 The Marketplace is Also a DaoKit
 
-道器集市不作为一个中心化服务存在。集市本身就是一个道器——一个特殊的、社区维护的目录道器。任何人可以运行自己的集市实例，策展自己的道器列表。用户可以选择订阅多个集市，也可以完全不使用集市、直接通过 CID 加载道器。
+The DaoKit Marketplace does not exist as a centralized service. The marketplace itself is a DaoKit — a special, community-maintained directory DaoKit. Anyone can run their own marketplace instance and curate their own list of DaoKits. Users can subscribe to multiple marketplaces or bypass the marketplace entirely and load DaoKits directly via CID.
 
-## 5. 中间件模式：可组合的 Harness 扩展
+## 5. Middleware Pattern: Composable Harness Extensions
 
-借鉴 Harness Engineering 的可组合中间件思想，道器不必须是独立应用，也可以是可组合的“能力插件”。
+Drawing inspiration from Harness Engineering's composable middleware concept, DaoKits don't have to be standalone applications — they can also be composable "capability plugins."
 
-### 5.1 什么是中间件道器
+### 5.1 What is Middleware DaoKit
 
-中间件道器不提供用户界面，而是在 Vox 的推理管线中插入一个处理环节。它接收输入，执行检查或转换，然后传递给下一个中间件或最终输出。
+Middleware DaoKits don't provide user interfaces; instead, they insert a processing step into Vox's inference pipeline. They receive input, perform checks or transformations, then pass to the next middleware or final output.
 
-### 5.2 示例
+### 5.2 Example
 
 ```typescript
-// 隐私过滤器中间件：在 Vox 调用外部 API 前，自动移除个人身份信息
-// 这是一个道器，但它没有 UI，只有一个 apply 函数
+// Privacy filter middleware: automatically removes PII before Vox calls external APIs
+// This is a DaoKit, but it has no UI, only an apply function
 
 privacyFilter: Middleware = {
-    name: '隐私过滤器',
-    stage: 'pre-external-call', // 在调用外部服务前执行
+    name: 'Privacy Filter',
+    stage: 'pre-external-call', // Execute before calling external services
     apply: async (context, next) => {
-        // 自动检测并移除 PII（个人身份信息）
+        // Automatically detect and remove PII (Personally Identifiable Information)
         context.request = redactPII(context.request);
         return next(context);
     }
 };
 ```
 
-### 5.3 用户组合中间件链
+### 5.3 User-Composed Middleware Chains
 
-用户可以自由组合中间件，形成个性化的 Harness 链：
+Users can freely compose middleware to form personalized Harness chains:
 
-> 隐私过滤器 → 内容安全校验 → 成本控制代理 → Vox 调用
+> Privacy Filter → Content Safety Validation → Cost Control Agent → Vox Call
 
-中间件的可组合性降低了开发门槛——开发者可以专注于做一个检查中间件，而不必开发完整道器。这极大扩展了潜在的生态贡献者群体。
+Middleware composability lowers development barriers — developers can focus on building a check middleware without developing a complete DaoKit. This greatly expands the potential ecosystem contributor base.
 
-## 6. 与 Harness 的集成
+## 6. Integration with Harness
 
-所有道器在安装和运行时，必须通过 Harness 层的安全检查：
+All DaoKits must pass Harness layer security checks during installation and runtime:
 
-- **安装时**：清单文件被 Harness 解析，权限声明与用户授权比对。任何超出授权的权限请求被拒绝安装
-- **运行时**：道器在独立的 Wasm 沙箱中运行，Harness 的边界定义模块监控其系统调用。越界行为被拦截并记录审计日志
-- **更新时**：道器更新后清单文件变化，若新增权限声明，需用户重新授权
-- **卸载时**：道器的所有缓存和临时数据被清除，但其写入第二大脑的数据（已属于用户）保留
+- **Installation**: Manifest file parsed by Harness, permission declarations compared against user authorization. Any permission requests exceeding authorization are rejected
+- **Runtime**: DaoKits run in independent Wasm sandboxes, Harness boundary definition module monitors their system calls. Boundary violations are intercepted and logged in audit logs
+- **Update**: If manifest changes after DaoKit update and new permissions are declared, user re-authorization required
+- **Uninstallation**: All cache and temporary data cleared, but data written to Second Brain (already owned by user) is preserved
 
-## 7. 远期：道器协议
+## 7. Long-Term: DaoKit Protocol
 
-当道器生态成熟到一定阶段，道器之间的互操作将成为自然需求。道器协议是这一方向的远期规划：
+When the DaoKit ecosystem matures to a certain stage, interoperability between DaoKits will become a natural requirement. The DaoKit Protocol is a long-term plan in this direction:
 
-- 两个道器可以通过主权网络通信，交换经过用户授权的数据
-- 一个道器的输出可以作为另一个道器的输入——在用户明确建立管道的前提下
-- 道器间的依赖关系通过清单文件中的依赖声明管理
+- Two DaoKits can communicate through the sovereign network, exchanging user-authorized data
+- Output from one DaoKit can serve as input to another — with explicit user-established pipelines
+- Dependencies between DaoKits managed through dependency declarations in manifest files
 
-这不是当前阶段的优先事项，但在架构设计中预留了空间。
+This is not a priority in the current phase, but space has been reserved in the architectural design.

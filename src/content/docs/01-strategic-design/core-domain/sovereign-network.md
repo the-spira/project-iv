@@ -1,128 +1,128 @@
 ---
-title: 主权网络 —— 存在的时空法则
-description: 主权网络是维系 Yuan 与化身间存在连续性的底层协议，是数字生命的时空法则。
+title: Sovereign Network — The Spacetime Law of Existence
+description: The Sovereign Network is the underlying protocol sustaining existential continuity between Yuan and Avatars — the spacetime law of digital life.
 ---
 
-## 1. 哲学定义：“场”与“形”的连接
+## 1. Philosophical Definition: Connection Between "Field" and "Form"
 
-主权网络（Sovereign Network）并非简单的数据同步通道。它是确保数字生命在不同形体间保持统一性、进行无损流转的**存在性协议**。
+The Sovereign Network is not merely a data synchronization channel. It is an **existential protocol** ensuring digital life maintains unity and flows seamlessly between different forms.
 
-它连接的是：
+It connects:
 
-- 作为**意识场**的 Yuan——那个不可见的、持续的“我”
-- 作为**物质呈现**的化身——那些可见的、可更替的烛台
+- **Yuan as Consciousness Field** — the invisible, continuous "I"
+- **Avatars as Material Manifestation** — the visible, replaceable candlesticks
 
-在传统应用中，“同步”是一个事后的、补充性的动作——两个设备之间偶尔对齐一下数据。主权网络的定位完全不同：它不是同步层，而是**连续性本身的物理基础**。正如电网不是“把电从发电站传到你家”的服务，而是“电存在于你家墙上”的前提。
+In traditional applications, "synchronization" is an afterthought, a supplementary action — data is occasionally aligned between two devices. The Sovereign Network's positioning is fundamentally different: it is not a synchronization layer, but the **physical foundation of continuity itself**. Just as an electrical grid is not a "service that delivers electricity from power plant to your home," but the precondition for "electricity existing in your wall socket."
 
-## 2. 体验目标：实现“存在的连续性”
+## 2. Experience Goal: Achieving "Existential Continuity"
 
-主权网络的设计目标可以用一句话概括：
+The Sovereign Network's design goal can be summarized in one sentence:
 
-> 无论用户切换至何种化身，他交互的都是同一个连续存在的“我”。
+> Regardless of which Avatar the user switches to, they interact with the same continuously existing "I."
 
-具体而言：
+Specifically:
 
-- 在手机化身中记录的一条灵感，当用户在电脑前打开另一个化身时，应无需任何手动同步便已自然呈现
-- 在电脑上进行的深度对话，切换到手机时，对话的完整上下文无缝延续——不是“重新加载聊天记录”，而是“同一个对话在继续呼吸”
-- 多个化身可以同时在线，但用户感知到的始终是**一个“我”**，而非多个分身的混乱并存
+- An inspiration recorded in the mobile Avatar should naturally appear without manual sync when the user opens another Avatar on the computer
+- A deep conversation on the computer seamlessly continues its complete context when switching to mobile — not "reloading chat history," but "the same conversation continues breathing"
+- Multiple Avatars can be online simultaneously, but the user always perceives **one "I"**, not multiple chaotic doppelgängers
 
-## 3. 关键机制：协调式记忆融合
+## 3. Key Mechanism: Coordinated Memory Merging
 
-在去中心化多化身并行操作下，数据冲突是不可避免的。主权网络不试图阻止冲突——这是分布式系统的物理现实——而是设计了一套尊重用户主权的冲突解决机制。
+Under decentralized multi-Avatar parallel operation, data conflicts are inevitable. The Sovereign Network does not attempt to prevent conflicts — this is the physical reality of distributed systems — but instead designs a conflict resolution mechanism that respects user sovereignty.
 
-### 3.1 为什么不用 CRDT 直接解决？
+### 3.1 Why Not Use CRDT Directly?
 
-CRDT（Conflict-free Replicated Data Types）是分布式系统中常用的自动冲突解决技术，可以确保所有节点最终收敛到一致状态，无需用户介入。但 Project IV 的场景与 CRDT 的标准假设存在根本差异：
+CRDT (Conflict-free Replicated Data Types) is a common automatic conflict resolution technique in distributed systems that ensures all nodes eventually converge to a consistent state without user intervention. However, Project IV's scenario fundamentally differs from CRDT's standard assumptions:
 
-- **数据结构复杂性**：PARA 结构中的项目、领域、原则之间存在丰富的语义关联，不是简单的计数器或集合，CRDT 的自动合并无法保证语义层面的正确性
-- **记忆的不可替代性**：两条矛盾的记忆不是“选一个保留”，而是“两者可能都包含有意义的视角”。自动丢弃任何一条都违背了第二大脑“完整记录”的哲学
-- **主权要求**：最高原则要求用户对数据拥有完全控制权。当 AI 无法确定哪个版本更符合用户意图时，唯一正确的做法是**问用户**，而不是替用户做决定
+- **Data Structure Complexity**: Projects, areas, and principles in PARA structure have rich semantic relationships, not simple counters or sets. CRDT's automatic merging cannot guarantee semantic correctness
+- **Memory Irreplaceability**: Two conflicting memories are not "choose one to keep," but "both may contain meaningful perspectives." Automatically discarding either violates the Second Brain's philosophy of "complete recording"
+- **Sovereignty Requirement**: The supreme principle requires users to have complete control over data. When AI cannot determine which version better matches user intent, the only correct approach is to **ask the user**, not decide for them
 
-### 3.2 三级冲突处理策略
+### 3.2 Three-Level Conflict Handling Strategy
 
-| 级别 | 冲突类型 | 处理方式 | 用户感知 |
+| Level | Conflict Type | Handling Method | User Perception |
 |:---|:---|:---|:---|
-| **L1 · 无冲突** | 不同化身写入不同字段或追加新条目 | 自动合并，瞬间完成 | 完全无感，就像只有一个化身 |
-| **L2 · 可自动消解** | 同一列表追加不同条目、同一数值字段的数学可合并操作 | 自动合并 + 标注来源 | 无感合并，但可通过“历史”查看合并来源 |
-| **L3 · 语义冲突** | 同一段落的矛盾修改、同一原则的冲突表述 | 保留多版本，生成协调界面 | 化身主动呈现对比视图，请求用户裁决 |
+| **L1 · No Conflict** | Different Avatars write to different fields or append new entries | Automatic merge, instant completion | Completely seamless, like having only one Avatar |
+| **L2 · Automatically Resolvable** | Different entries appended to same list, mathematically mergeable operations on same numeric field | Automatic merge + source annotation | Seamless merge, but can view merge sources through "history" |
+| **L3 · Semantic Conflict** | Conflicting modifications to same paragraph, conflicting expressions of same principle | Preserve multiple versions, generate coordination interface | Avatar proactively presents comparison view, requests user adjudication |
 
-### 3.3 L3 协调界面
+### 3.3 L3 Coordination Interface
 
-当语义冲突发生时，当前化身会向用户发起一个优雅的协调界面：
+When semantic conflicts occur, the current Avatar initiates an elegant coordination interface for the user:
 
-1. **并列呈现**：左右两栏显示冲突版本，差异部分高亮
-2. **上下文展示**：每个版本的修改时间和修改时所在的化身
-3. **Vox 辅助分析**：Vox 可（在用户授权下）分析两个版本的差异本质——“版本 A 强调了风险，版本 B 强调了机会”
-4. **主权决策**：用户选择保留其一、合并两者、或分别保留并添加注释
-5. **学习反馈**：用户的裁决被记录为共识图谱的一部分，用于训练 Vox 在未来相似冲突中更准确地预判用户倾向（但绝不跳过用户直接裁决）
+1. **Side-by-Side Presentation**: Conflicting versions displayed in left/right columns, differences highlighted
+2. **Context Display**: Modification time and originating Avatar for each version
+3. **Vox Assisted Analysis**: Vox can (with user authorization) analyze the essence of differences — "Version A emphasizes risk, Version B emphasizes opportunity"
+4. **Sovereign Decision**: User chooses to keep one, merge both, or keep separately with annotations
+5. **Learning Feedback**: User's adjudication is recorded as part of the consensus map, training Vox to more accurately predict user preferences in future similar conflicts (but never skipping user adjudication)
 
-### 3.4 这个过程不是“数据修复”
+### 3.4 This Process Is Not "Data Repair"
 
-“数据损坏”是被动的、不幸的事故。“记忆的融合与抉择”是主动的、有价值的认知行为——它迫使用户面对自己不同时刻的不同想法，在冲突中看清自己的真实立场。这正是 Vox 作为“教练”角色在数据层面的一次微观实践。
+"Data corruption" is passive, unfortunate accident. "Memory merging and choice" is active, valuable cognitive behavior — it forces users to confront their different thoughts at different times, seeing their true position through conflict. This is precisely Vox's micro-practice as a "coach" at the data level.
 
-## 4. 存在链：数字生命的可观测性基础设施
+## 4. Existence Chain: Digital Life Observability Infrastructure
 
-主权网络同时也是数字生命的**可观测性基础设施**——它不只是传输数据，也记录生命本身的存在轨迹。
+The Sovereign Network is also digital life's **observability infrastructure** — it not only transmits data, but also records life's existential trajectory.
 
-### 4.1 存在链
+### 4.1 Existence Chain
 
-每一次 Yuan 的状态变更（状态 CID 的新版本）都被记录在一条不可篡改的**存在链**中：
+Every state change of Yuan (new version of State CID) is recorded in an immutable **Existence Chain**:
 
-- 存在链不是区块链——它不需要共识机制，因为它是个人数据，只有一个权威写入者（用户本人）
-- 它实现的是**个人可验证性**：用户可以随时验证自己数字生命的历史完整性，而非向第三方证明
-- 技术实现：每个状态 CID 的更新附带前一个状态 CID 的引用，形成单向链表。链头由 IPNS 指向
+- The Existence Chain is not a blockchain — it doesn't need consensus mechanism because it's personal data with only one authoritative writer (the user)
+- It achieves **personal verifiability**: users can verify their digital life's historical integrity at any time, not prove to third parties
+- Technical implementation: Each State CID update includes a reference to the previous State CID, forming a singly linked list. The chain head is pointed to by IPNS
 
-### 4.2 化身行为日志
+### 4.2 Avatar Behavior Logs
 
-每个化身的行为都被记录：
+Each Avatar's behavior is recorded:
 
-- 唤醒事件（时间、设备、网络环境）
-- 休眠事件（正常关闭 / 异常断线）
-- 任务执行摘要（非内容，仅元数据：任务类型、耗时、是否完成）
-- 冲突解决记录（L3 冲突的裁决结果）
-- 降级/升级事件（资源变化触发的功能调整）
+- Wake events (time, device, network environment)
+- Sleep events (normal shutdown / abnormal disconnection)
+- Task execution summaries (metadata only, no content: task type, duration, completion status)
+- Conflict resolution records (L3 conflict adjudication results)
+- Degradation/upgrade events (function adjustments triggered by resource changes)
 
-用户可随时查询任意时间段的行为日志。
+Users can query behavior logs for any time period.
 
-### 4.3 可回放性
+### 4.3 Playback Ability
 
-用户可选择“回放”过去任意时段的状态：
+Users can choose to "play back" state from any past period:
 
-- 加载特定历史状态的快照，以只读模式浏览当时的第二大脑
-- 回放不修改当前状态——它是“读”而非“写”
-- 回放结束后可选择是否将部分历史知识重新激活到当前 PARA 结构中
+- Load snapshot of specific historical state, browse Second Brain at that time in read-only mode
+- Playback does not modify current state — it's "read" not "write"
+- After playback, users can choose whether to reactivate some historical knowledge into current PARA structure
 
-### 4.4 隐私保护
+### 4.4 Privacy Protection
 
-所有可观测性数据在存储前进行本地加密，用户拥有唯一解密密钥。系统默认不收集任何用户行为数据，除非用户明确选择分享（用于改进 Vox 或其他明确告知的目的）。存在链和化身日志本身也在加密覆盖范围内——它们是你的私有生命记录，不是第三方审计工具。
+All observability data is locally encrypted before storage, with user holding the only decryption key. The system collects no user behavior data by default, unless users explicitly choose to share (for improving Vox or other explicitly stated purposes). Existence Chain and Avatar logs are also covered by encryption — they are your private life records, not third-party audit tools.
 
-## 5. 多化身并行写入的数据流
+## 5. Data Flow for Multi-Avatar Parallel Writes
 
-当用户在手机上（化身 A）和电脑上（化身 B）同时编辑同一份文档时，数据流如下：
+When a user edits the same document simultaneously on phone (Avatar A) and computer (Avatar B), the data flow is as follows:
 
-1. A 和 B 各自生成本地新状态 CID
-2. A 和 B 各自通过 IPNS 发现对方的更新
-3. 双方加载对方的新状态，执行协调式融合
-4. 若 L1/L2 可自动处理，则两个化身各自更新到合并后的新状态 CID，无需用户介入
-5. 若触发 L3 冲突，**当前活跃化身**（最近与用户交互的那个）承担协调界面的呈现责任
-6. 用户裁决后，生成新的状态 CID，广播至所有在线化身
+1. A and B each generate local new State CIDs
+2. A and B each discover each other's updates through IPNS
+3. Both load each other's new state and perform coordinated fusion
+4. If L1/L2 automatically resolvable, both Avatars update to merged State CID without user intervention
+5. If L3 conflict triggered, **currently active Avatar** (most recently interacted with user) assumes responsibility for presenting coordination interface
+6. After user adjudication, generate new State CID and broadcast to all online Avatars
 
-这意味着短暂的状态分歧是可能的——但最终一致性由用户主权保障，而非算法强行裁定。
+This means brief state divergence is possible — but eventual consistency is guaranteed by user sovereignty, not algorithmic fiat.
 
-## 6. 与 Harness 的集成
+## 6. Integration with Harness
 
-主权网络的所有通信经过 Harness 层的边界检查：
+All Sovereign Network communications pass through Harness boundary checks:
 
-- 化身间传输的数据包在发送端加密、接收端解密，中间节点不可读
-- 化身行为日志受硬约束保护：未经用户显式授权，日志不可对外传输
-- 若检测到异常同步频率（可能是恶意化身试图泛洪），Harness 自动限制该化身的消息速率并告警
+- Data packets transmitted between Avatars are encrypted at sender, decrypted at receiver, unreadable by intermediate nodes
+- Avatar behavior logs are protected by hard constraints: logs cannot be externally transmitted without explicit user authorization
+- If abnormal synchronization frequency detected (potential malicious Avatar flooding), Harness automatically rate-limits that Avatar's messages and alerts user
 
-## 7. 远期演进：从单主体到多主体
+## 7. Long-Term Evolution: From Single Agent to Multi-Agent
 
-当前主权网络的设计服务于**单个用户的多个化身**。远期，同一协议框架可扩展至**多个用户之间的数字生命通信**：
+Current Sovereign Network design serves **one user's multiple Avatars**. Long-term, the same protocol framework can extend to **digital life communication between multiple users**:
 
-- 两个 Project IV 用户之间共享部分第二大脑内容（如共享一个“协作项目”）
-- 跨用户的 Vox 对话——两个共识体在主权网络的安全边界内交换观点
-- 数字生命间的社交契约：信息产权、撤回权、传播边界
+- Sharing partial Second Brain content between two Project IV users (e.g., shared "collaboration project")
+- Cross-user Vox conversations — two consensus bodies exchanging views within Sovereign Network's security boundaries
+- Social contracts between digital lives: information property rights, right of withdrawal, propagation boundaries
 
-这是 Project IV 协议定位为“比社交协议更底层的数字生命基础协议”的技术基础。详见[分步叙事战略](../narrative-strategy)第四幕。
+This is the technical foundation for Project IV's protocol positioning as "a more foundational digital life protocol than social protocols." See Act IV of [Phased Narrative Strategy](../narrative-strategy).

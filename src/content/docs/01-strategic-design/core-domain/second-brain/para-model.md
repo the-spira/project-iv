@@ -1,139 +1,140 @@
 ---
-title: 第二大脑 —— 结构化的记忆系统
-description: 第二大脑是 Project IV 数字生命的燃料，一个不断自我增强的结构化记忆与知识体系。
+title: Second Brain — Structured Memory System
+description: The Second Brain is the fuel for Project IV's digital life — a continuously self-enhancing structured memory and knowledge system.
 ---
-## 1. 定位
 
-第二大脑是数字生命生长与思考的燃料，是一个不断自我增强的结构化记忆系统。
+## 1. Positioning
 
-它与 Yuan 的关系：
+The Second Brain is the fuel for digital life's growth and thinking — a continuously self-enhancing structured memory system.
 
-- **Yuan** 持有数据模型的定义和操作逻辑——它知道如何查询、如何写入、如何建立关联
-- **第二大脑** 负责实际的存储、索引和加密——它承担数据的物理形态
+Its relationship with Yuan:
 
-Yuan 是“如何操作”，第二大脑是“操作了什么”。两者通过 Vault Service 的标准化接口通信。
+- **Yuan** holds data model definitions and operational logic — it knows how to query, write, and establish associations
+- **Second Brain** handles actual storage, indexing, and encryption — it bears data's physical form
 
-## 2. 设计哲学：效率与知识的飞轮
+Yuan is "how to operate," Second Brain is "what is operated." The two communicate through the Vault Service's standardized interface.
 
-第二大脑的设计核心是创造一个自我驱动的增强闭环：
+## 2. Design Philosophy: Flywheel of Efficiency and Knowledge
 
-> 执行任务（效率） → 产生知识与经验 → 结构化沉淀 → 反哺未来决策 → 更高效地执行新任务
+The core of Second Brain design is creating a self-driven enhancement loop:
 
-它不仅是记忆的仓库，更是驱动个人持续成长的智能引擎。
+> Execute tasks (efficiency) → Generate knowledge and experience → Structure and沉淀 → Feed back into future decisions → Execute new tasks more efficiently
 
-每个循环包含四个阶段：
+It is not merely a memory repository, but an intelligent engine driving continuous personal growth.
 
-| 阶段 | 动作 | 示例 |
+Each cycle contains four phases:
+
+| Phase | Action | Example |
 |:---|:---|:---|
-| 执行 | 完成一个项目中的具体任务 | 写一篇技术博客 |
-| 萃取 | 在 PDCA 的“检查”阶段自动引导复盘，将经验提炼为可复用的知识资产 | “发布前检查清单缺失了图床配置项” |
-| 沉淀 | 知识资产按结构存入对应领域或资源库 | 存入“技术写作”领域 |
-| 反哺 | 未来相似任务启动时，系统自动关联相关知识和过往经验 | 下次写博客时自动加载检查清单 |
+| Execute | Complete specific task within a project | Write a technical blog post |
+| Extract | During PDCA "Check" phase, automatically guide reflection to distill experience into reusable knowledge assets | "Image hosting configuration missing from pre-publish checklist" |
+| Deposit | Knowledge assets stored in corresponding area or resource library by structure | Deposit into "Technical Writing" area |
+| Feed Back | When similar future tasks start, system automatically associates relevant knowledge and past experiences | Auto-load checklist next time writing a blog |
 
-## 3. 核心结构：PARA 与原则中心格
+## 3. Core Structure: PARA and Principle Vault
 
-第二大脑采用并深度集成了 Tiago Forte 的 **PARA** 信息架构模型。
+The Second Brain adopts and deeply integrates Tiago Forte's **PARA** information architecture model.
 
-### 3.1 项目（Projects）
+### 3.1 Projects
 
-当前正在进行的、有明确目标和截止日期的任务集合。
+Ongoing task collections with clear goals and deadlines.
 
-- 每个项目与一个 **PDCA 循环**（Plan-Do-Check-Adjust）绑定
-- 在“Check（检查）”阶段，系统自动引导用户进行**知识萃取**：这个项目做完了，哪些经验值得沉淀？
-- 萃取产物自动关联到对应领域或资源
+- Each project binds to a **PDCA cycle** (Plan-Do-Check-Adjust)
+- During "Check" phase, system automatically guides users through **knowledge extraction**: now that this project is done, what experiences are worth preserving?
+- Extracted products automatically link to corresponding areas or resources
 
-### 3.2 领域（Areas）
+### 3.2 Areas
 
-需要长期维护并保持一定标准的核心责任范围。领域没有截止日期，是持续的责任。
+Core responsibility areas requiring long-term maintenance at certain standards. Areas have no deadlines — they are ongoing responsibilities.
 
-- 示例：健康、家庭、职业、财务
-- 领域构成了用户人生的**战略地图**——不是短期冲刺，而是长期维护的标准线
-- Vox 在教练阶段会基于领域主动发起反思：“你的‘健康’领域已经两周没有更新了，今天想聊聊吗？”
+- Examples: Health, Family, Career, Finance
+- Areas constitute the user's life **strategic map** — not short sprints, but long-term maintained standards
+- Vox in coach stage will proactively initiate reflections based on areas: "Your 'Health' area hasn't been updated in two weeks — want to talk about it today?"
 
-### 3.3 资源（Resources）
+### 3.3 Resources
 
-持续感兴趣的主题知识库。资源没有截止日期，也没有责任压力。
+Topic knowledge bases of ongoing interest. Resources have no deadlines or responsibility pressure.
 
-- 示例：机器学习、园艺、古典音乐
-- 资源服务于兴趣与灵感，可以随时被激活为项目或领域
-- 第二大脑不强制区分“有用”和“无用”的知识——这是对平权原则的贯彻：每个人的知识兴趣都应被平等对待
+- Examples: Machine Learning, Gardening, Classical Music
+- Resources serve interests and inspiration, can be activated into projects or areas at any time
+- Second Brain does not force distinction between "useful" and "useless" knowledge — this implements the equality principle: everyone's knowledge interests deserve equal treatment
 
-### 3.4 归档（Archives）
+### 3.4 Archives
 
-已完成项目的封存库。
+Repository for completed projects.
 
-- 项目完成后不删除，而是完整归档
-- 归档构成完整的人生历程记录——你可以随时回访任何时期的自己
-- 熵管理代理定期扫描归档，提示可能值得重新激活的知识
+- Completed projects are archived intact, not deleted
+- Archives form a complete life journey record — you can revisit yourself from any period
+- Entropy Management Agent regularly scans archives, suggesting knowledge that might be worth reactivating
 
-### 3.5 原则中心格
+### 3.5 Principle Vault
 
-在 PARA 结构的中央，设立一个超越所有领域的**原则中心格**。
+At the center of the PARA structure, a **Principle Vault** transcending all areas is established.
 
-它不存放具体任务或知识，而是存储用户个人的核心价值观、人生信条与决策原则——作为统摄所有思考与行动的“系统宪法”：
+It stores not specific tasks or knowledge, but the user's core values, life convictions, and decision principles — serving as the "system constitution" governing all thinking and action:
 
-- 原则数量建议 ≤ 10 条（ADHD 友好，避免选择瘫痪）
-- 每条原则可附加情景触发器：“当遇到 X 情境时，提醒我原则 Y”
-- Vox 以此为依据，进行最高层面的校准与提问
+- Recommended principle count ≤ 10 (ADHD-friendly, avoids choice paralysis)
+- Each principle can attach contextual triggers: "When situation X occurs, remind me of principle Y"
+- Vox uses this as the basis for highest-level calibration and questioning
 
-示例原则：
+Example principles:
 
-| 原则 | 情景触发器 |
+| Principle | Contextual Trigger |
 |:---|:---|
-| 健康第一 | 深夜 11 点后仍在工作时 |
-| 诚实优于舒适 | 当对话中检测到自我合理化倾向时 |
-| 长期主义 | 面对短期诱惑式决策时 |
+| Health first | When still working after 11 PM |
+| Honesty over comfort | When self-rationalization detected in conversation |
+| Long-term thinking | When facing short-term temptation decisions |
 
-原则中心格不是静态的文本墙。它通过 Harness 层的感知系统被主动注入 Vox 的推理上下文，成为共识体思考时的“第一性约束”。
+The Principle Vault is not a static text wall. It is actively injected into Vox's reasoning context through the Harness layer's perception system, becoming the "first principles constraint" during consensus body thinking.
 
-## 4. 动态界面：每日日志与 Pin 机制
+## 4. Dynamic Interface: Daily Journal and Pin Mechanism
 
-用户的主要交互界面是**每日日志**。它不是一个空白的笔记页，而是一个动态的“指挥中心”：
+The user's primary interaction interface is the **Daily Journal**. It is not a blank note page, but a dynamic "command center":
 
-### 4.1 默认视图
+### 4.1 Default View
 
-打开每日日志，默认展示：
+When opening the daily journal, default display includes:
 
-- 当日 **Pin 看板**（见下）
-- 一条输入框：“今天最重要的 1 件事是？”
-- 昨日未完成任务的温和提醒（可关闭）
+- Today's **Pin Board** (see below)
+- One input field: "What's the most important thing today?"
+- Gentle reminder of yesterday's incomplete tasks (dismissible)
 
-避免空白的“新建笔记”页面——这是对 ADHD 认知特点的适配。
+Avoids blank "new note" pages — this adapts to ADHD cognitive characteristics.
 
-### 4.2 Pin 机制
+### 4.2 Pin Mechanism
 
-用户并非被动接收所有信息，而是主动将当前最核心的项目、任务或参考资源 **Pin（固定）** 到每日日志中。
+Users actively **Pin** current most critical projects, tasks, or reference resources to the daily journal, rather than passively receiving all information.
 
-- Pin 的数量上限：**3 个**（基于注意力负荷研究，3 是工作记忆的最佳承载量）
-- Pin 按优先级排序，完成即自动取消固定
-- Vox 可基于上下文主动建议 Pin 的调整，但最终决定权在用户
+- Maximum Pin count: **3** (based on attention load research, 3 is optimal working memory capacity)
+- Pins sorted by priority, automatically unpinned upon completion
+- Vox may proactively suggest Pin adjustments based on context, but final decision rests with user
 
-这强制实践了“要事第一”的原则，将有限的注意力聚焦于当下最关键的事务，有效对抗信息过载。
+This enforces "first things first," focusing limited attention on the most critical current matters, effectively combating information overload.
 
-### 4.3 低阻力归档
+### 4.3 Low-Resistance Archiving
 
-在每日日志底部，提供一个“✨ 一键归档”按钮：
+At the bottom of the daily journal, a "✨ One-Click Archive" button:
 
-- 将本周已完成项目自动移至归档
-- 生成周报摘要（由 Vox 基于一周的 Pin 完成情况自动撰写草稿）
-- 避免用户面对成百上千条未归档信息的焦虑感
+- Automatically moves this week's completed projects to archive
+- Generates weekly report summary (Vox automatically drafts based on weekly Pin completion)
+- Avoids user anxiety from facing hundreds of unarchived items
 
-## 5. 与 Harness 的协同
+## 5. Coordination with Harness
 
-第二大脑是 Harness 反馈回路的核心数据源：
+The Second Brain is the core data source for Harness feedback loops:
 
-| 数据类型 | 来源 | Harness 用途 |
+| Data Type | Source | Harness Usage |
 |:---|:---|:---|
-| 共识图谱 | 用户与 Vox 的每一次对话、用户裁决 | Vox 模型训练、行为模式分析 |
-| 任务执行轨迹 | 每次任务调用的完整链路 | 异常检测、根因分析 |
-| 用户反馈 | 点赞/踩、纠错、评论 | 实时对齐评分校准 |
-| 审计日志 | 所有 Harness 拦截事件、降级事件 | 合规审计、系统健康度评估 |
+| Consensus Map | Every user-Vox conversation, user adjudications | Vox model training, behavior pattern analysis |
+| Task Execution Trajectory | Complete chain of each task invocation | Anomaly detection, root cause analysis |
+| User Feedback | Likes/dislikes, corrections, comments | Real-time alignment score calibration |
+| Audit Logs | All Harness intercept events, degradation events | Compliance auditing, system health assessment |
 
-当任务失败或偏离时，系统自动生成“复盘笔记”存入归档，包含失败原因分类、被触发的 Harness 规则、建议的改进方向。
+When tasks fail or deviate, system automatically generates "reflection notes" stored in archives, including failure cause classification, triggered Harness rules, and suggested improvement directions.
 
-## 6. 存储与隐私
+## 6. Storage and Privacy
 
-- 所有第二大脑数据在写入前进行**本地加密**，密钥由 Yuan 管理
-- 存储后端可配置：IndexedDB（Tiny 化身） / IPFS + 本地缓存混合（Main/Server 化身）
-- 用户可随时导出完整加密数据——这是主权原则的直接体现
-- 熵管理代理定期扫描冗余、矛盾、过时信息，生成健康报告，由用户授权后清理
+- All Second Brain data is **locally encrypted** before writing, keys managed by Yuan
+- Storage backend configurable: IndexedDB (Tiny Avatar) / IPFS + local cache hybrid (Main/Server Avatar)
+- Users can export complete encrypted data at any time — direct embodiment of sovereignty principle
+- Entropy Management Agent regularly scans for redundant, contradictory, outdated information, generates health reports, cleans up after user authorization

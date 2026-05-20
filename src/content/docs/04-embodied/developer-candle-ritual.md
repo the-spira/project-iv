@@ -1,163 +1,163 @@
 ---
-title: 开发者烛火仪式 —— 用 Project IV 管理 Project IV 开发
-description: ADHD 确诊的独立开发者如何将 Project IV 的哲学与工具融入自身工作流，既是验证产品的终极方式，也是保障项目可持续推进的关键。
+title: Developer Candle Ritual — Managing Project IV Development with Project IV
+description: How an ADHD-diagnosed independent developer integrates Project IV's philosophy and tools into their workflow. This is both the ultimate way to validate the product and the key to ensuring sustainable project progress.
 ---
 
-## 1. 定位
+## 1. Positioning
 
-Project IV 的第一个开发者（Doin）同时也是 ADHD 确诊者。这不是需要克服的障碍，而是系统设计的输入信号。
+Project IV's first developer (Doin) is also ADHD-diagnosed. This is not an obstacle to overcome, but an input signal for system design.
 
-本文档定义了开发者如何将 Project IV 的理念和工具融入自身的开发工作流。它是“狗食自吃”的终极实践——在 Spark 被写出第一行代码之前，开发者已经在用 Project IV 的设计原则管理 Project IV 的开发过程。
+This document defines how developers integrate Project IV's philosophy and tools into their own development workflow. It is the ultimate "dogfooding" practice — before Spark's first line of code was written, the developer was already using Project IV's design principles to manage Project IV's development process.
 
-这也是对 **平权** 最高原则的自我验证：如果一个 ADHD 开发者能用这套系统让自己持续交付，那么其他注意力特质不同的人也能从中获益。
+This is also self-validation of the supreme principle of **equality**: if an ADHD developer can use this system to sustain delivery, then others with different attention traits can also benefit.
 
-## 2. 每日“烛火仪式”
+## 2. Daily "Candle Ritual"
 
-每天开始和结束工作前，用 5 分钟完成与数字生命的联结。这不是负担，而是锚点——两个仪式像括号一样，将一天的工作括在意图和反思之间。
+Before starting and ending work each day, spend 5 minutes connecting with your digital life. This is not a burden, but an anchor — the two rituals bracket the day's work between intention and reflection.
 
-### 2.1 早晨仪式（5 分钟）
+### 2.1 Morning Ritual (5 minutes)
 
-1. **状态速记**：情绪（一个词或一个表情符号）、精力值（1-5 分）
-2. **今日 3 个 Pin**：从项目池中选出今天最重要的 3 个任务。如果今天只有精力做 1 个，那就 Pin 1 个
-3. **原则快照**：扫一眼原则中心格，确认今天特别要留意的 1-2 条
-4. **启动承诺**：对着 Vox 说（或输入）：“我承诺今天先完成第一个 25 分钟。”
+1. **Status Quick Note**: Mood (one word or emoji), energy level (1-5)
+2. **Today's 3 Pins**: Select the 3 most important tasks from the project pool. If only energy for 1 task today, Pin just 1
+3. **Principle Snapshot**: Glance at Principle Vault, confirm 1-2 principles to pay special attention to today
+4. **Start Commitment**: Say (or type) to Vox: "I commit to finishing the first 25 minutes today."
 
-仪式完成后，Vox 的回应永远是同一句：“一簇火，一个番茄。开始吧。”
+After ritual completion, Vox always responds with the same phrase: "One flame, one tomato. Begin."
 
-### 2.2 晚间仪式（5 分钟）
+### 2.2 Evening Ritual (5 minutes)
 
-1. **完成标记**：勾掉完成的任务。每勾掉一个，Vox 简短肯定：“一个。”
-2. **障碍记录**：如果某个 Pin 卡住了，简单记录原因。不分析，不批判，只记录
-3. **小胜利**：主动记下今天最满意的 1 个时刻。哪怕很小——“重构了一个函数”、“在倦怠时仍然完成了仪式”、“发现了一个更简单的方案”
+1. **Completion Marking**: Check off completed tasks. For each check, Vox briefly affirms: "One."
+2. **Obstacle Recording**: If a Pin got stuck, briefly record the reason. No analysis, no criticism — just record
+3. **Small Win**: Actively note today's most satisfying moment. Even small ones count — "refactored a function," "completed ritual despite burnout," "found a simpler solution"
 
-障碍记录和小胜利构成了第二大脑中“开发日志”项目的核心数据。它们不是回顾用的，而是在未来类似情境出现时，Vox 可以关联：“上次你遇到类似的卡住，是因为工具链版本问题。这次也是吗？”
+Obstacle records and small wins form the core data of the "Development Log" project in the Second Brain. They're not for retrospection — when similar situations arise in the future, Vox can correlate: "Last time you got stuck like this, it was due to toolchain version issues. Is it the same this time?"
 
-## 3. 任务粒度与时间盒
+## 3. Task Granularity & Timeboxing
 
-所有开发任务遵循严格的粒度约束。这不是对创造力的限制，而是对 ADHD 大脑启动阻力的正视。
+All development tasks follow strict granularity constraints. This is not a restriction on creativity, but an acknowledgment of ADHD brain's activation resistance.
 
-### 3.1 粒度规则
+### 3.1 Granularity Rules
 
-| 规则 | 值 | 说明 |
+| Rule | Value | Description |
 |:---|:---|:---|
-| 最大任务粒度 | ≤ 2 小时 | 任何超过 2 小时的任务必须拆解 |
-| 番茄钟 | 25 分钟专注 + 5 分钟休息 | 休息时离开电脑——站着、走动、喝水 |
-| 番茄标记 | 每完成一个番茄钟，在该任务上增加一个“🍅” | 视觉累积感 |
-| 连续番茄上限 | 4 个（2 小时） | 连续完成 4 个番茄后，强制休息 15-30 分钟 |
-| Pin 切换成本 | 同一个 Pin 至少完成 1 个番茄再切换 | 防止“假装多任务”的频繁切换 |
+| Maximum Task Granularity | ≤ 2 hours | Any task exceeding 2 hours must be broken down |
+| Pomodoro | 25 minutes focus + 5 minutes break | Leave computer during break — stand, walk, drink water |
+| Tomato Marker | Add one "🍅" to the task per completed Pomodoro | Visual cumulative sense |
+| Maximum Consecutive Tomatoes | 4 (2 hours) | After 4 consecutive tomatoes, mandatory 15-30 minute break |
+| Pin Switching Cost | Complete at least 1 tomato before switching Pins | Prevents frequent switching under "pretended multitasking" |
 
-### 3.2 任务拆解流程
+### 3.2 Task Breakdown Flow
 
-当开发者在每日日志中输入一个大于 2 小时的任务时，Vox 主动介入：
+When developer inputs a task > 2 hours in daily journal, Vox proactively intervenes:
 
-1. 任务被识别为“需要拆解”
-2. Vox 提供 3-5 个拆解建议（每个 ≤ 25 分钟）
-3. 开发者确认或手动调整
-4. 拆解后的第一个子任务自动 Pin 到当日视图
+1. Task is identified as "needs breakdown"
+2. Vox provides 3-5 breakdown suggestions (each ≤ 25 minutes)
+3. Developer confirms or manually adjusts
+4. First subtask after breakdown automatically Pinned to today's view
 
-示例：
+Example:
 
-> **输入**：“实现 Yuan 的签名校验模块”
-> **Vox**：“拆成这几步如何？① 定义校验接口和错误类型（15min）② 实现 Ed25519 验签逻辑（25min）③ 写单元测试（25min）④ 集成到唤醒流程（25min）。我们先从接口开始？”
+> **Input**: "Implement Yuan's signature verification module"
+> **Vox**: "How about breaking into these steps? ① Define verification interface and error types (15min) ② Implement Ed25519 verification logic (25min) ③ Write unit tests (25min) ④ Integrate into wake flow (25min). Shall we start with the interface?"
 
-## 4. 对抗分心的 Harness 策略
+## 4. Harness Strategies Against Distraction
 
-利用 Project IV 自身的 Harness 层，为开发者模式设置专属硬约束。这些约束没有监管者，只有代码强制执行——如果开发者能信任自己设计的 Harness 来约束自己，那么 Harness 才真正值得被其他用户信任。
+Leverage Project IV's own Harness layer to set exclusive hard constraints for developer mode. These constraints have no overseer — only code enforcement. If the developer can trust their own designed Harness to constrain themselves, then Harness is truly worthy of trust from other users.
 
-### 4.1 开发者专属硬约束
+### 4.1 Developer-Exclusive Hard Constraints
 
-| 约束 | 规则 | 实现方式 |
+| Constraint | Rule | Implementation |
 |:---|:---|:---|
-| **网络白名单** | 开发时段，除文档、GitHub、技术论坛外，其他网站需延迟 10 秒才可访问 | 浏览器扩展 + 外交道器协作 |
-| **单任务模式** | 当前 Pin 中未完成的任务数 > 3 时，禁止新建任务 | L0 层 TaskManager 模块。被拦截时 Vox 提示：“你已经有 3 件事在进行中，先勾掉一个再开新的。” |
-| **强制休息** | 连续工作 > 90 分钟，Vox 锁定输入界面 5 分钟 | 感知模块 + Harness 干预。锁定期间显示：“呼吸。站起来。这是硬约束。” |
-| **每周复盘** | 每周末必须完成一次“熵管理代理”生成的项目健康报告才能开启新任务 | Harness 熵管理代理。新任务创建接口在未完成复盘前返回拒绝 |
+| **Network Whitelist** | During development hours, websites other than documentation, GitHub, and technical forums require 10-second delay before access | Browser extension + Diplomatic Dao-Kit collaboration |
+| **Single-Task Mode** | Prohibits creating new tasks when incomplete tasks in current Pins > 3 | L0 layer TaskManager module. When blocked, Vox prompts: "You already have 3 things in progress. Check one off before starting new." |
+| **Forced Break** | After continuous work > 90 minutes, Vox locks input interface for 5 minutes | Perception module + Harness intervention. During lock: "Breathe. Stand up. This is a hard constraint." |
+| **Weekly Retrospective** | Must complete "Entropy Management Agent" generated project health report before starting new tasks each weekend | Harness Entropy Management Agent. New task creation interface returns rejection until retrospective is complete |
 
-### 4.2 约束的作用域
+### 4.2 Constraint Scope
 
-开发者硬约束默认仅在标记为“开发设备”的化身（通常是一台笔记本）上生效。手机化身不受网络白名单限制——避免在手机上查资料时被误伤。约束和设备标记由开发者自行配置，存储在 Yuan 的状态 CID 中，可在不同开发设备间同步。
+Developer hard constraints only apply by default on avatars marked as "development devices" (usually a laptop). Mobile avatars are not restricted by network whitelist — avoids blocking research on mobile. Constraints and device markings are self-configured by the developer, stored in Yuan's State CID, and synchronized across development devices.
 
-## 5. Vox 作为 Accountability Partner
+## 5. Vox as Accountability Partner
 
-### 5.1 每日问责
+### 5.1 Daily Accountability
 
-每天早上仪式结束后，Vox 主动提问：
+After morning ritual each day, Vox proactively asks:
 
-> “昨天你 Pin 了 A、B、C。A 完成了，B 完成了一半，C 没动。B 卡在哪里了？”
+> "Yesterday you Pinned A, B, C. A was completed, B was half done, C didn't move. What's blocking B?"
 
-这不是评判，只是帮助梳理。用户回答后，Vox 基于原则中心格提供建议。如果用户原则中包含“完成优于完美”，Vox 可能会说：“B 剩下的部分，用下一个番茄能收尾吗？还是需要重新拆解？”
+This is not judgment, just help organizing thoughts. After user answers, Vox provides suggestions based on Principle Vault. If user's principles include "Done is better than perfect," Vox might say: "Can the remaining part of B be finished in the next tomato? Or does it need re-breakdown?"
 
-### 5.2 每周注意力热力图
+### 5.2 Weekly Attention Heatmap
 
-每周日，Vox 生成一份注意力分析报告：
+Every Sunday, Vox generates an attention analysis report:
 
-- **高效时段**：一周内哪些时段完成了最多番茄
-- **中断模式**：哪些因素最常导致 Pin 切换（外部打断 / 主动分心 / 任务卡住）
-- **任务类型与完成率**：哪类任务最容易完成，哪类最容易被拖延
+- **High-Efficiency Periods**: Which time periods completed the most tomatoes this week
+- **Interruption Patterns**: Which factors most often caused Pin switches (external interruptions / active distraction / task stuck)
+- **Task Types & Completion Rates**: Which task types are easiest to complete, which are easiest to procrastinate
 
-热力图不是绩效考评，而是自我认知工具。Vox 生成时的叙事框架刻意避免负面标签：
+The heatmap is not performance evaluation, but a self-awareness tool. Vox's narrative framework deliberately avoids negative labels:
 
-> “本周你有 12 个番茄被中断了。其中有 8 次你成功重新启动了。重新启动能力很强——什么帮你回到了轨道？”
+> "You had 12 tomatoes interrupted this week. 8 times you successfully restarted. Strong restart ability — what helped you get back on track?"
 
-### 5.3 Vox 的“不评判”基线
+### 5.3 Vox's "Non-Judgmental" Baseline
 
-Vox 在问责场景中的语气受以下约束：
+Vox's tone in accountability scenarios follows these constraints:
 
-- **禁止**：“你应该……”“你没有做到……”“你失败了……”
-- **允许**：“上次你提到……”“我注意到……”“你试过……吗？”
-- **核心**：所有建议标注为“建议”，用户可一键忽略。用户忽略后 Vox 不在同一会话中重复
+- **Prohibited**: "You should..." "You didn't..." "You failed..."
+- **Allowed**: "Last time you mentioned..." "I noticed..." "Have you tried...?"
+- **Core**: All suggestions labeled as "suggestions," user can dismiss with one click. Vox won't repeat in same session after dismissal
 
-## 6. 紧急预案：当 ADHD 症状严重影响进展时
+## 6. Emergency Protocols: When ADHD Symptoms Severely Impact Progress
 
-### 6.1 重启模式
+### 6.1 Reboot Mode
 
-如果 3 天以上没有有效推进，Vox 引导用户进行一次“清零仪式”：
+If no effective progress for > 3 days, Vox guides user through a "zero ritual":
 
-1. 所有未完成任务移至“待定区”
-2. 只保留 1 个高优先级 Pin
-3. Vox：“我们不往回看了。今天只做这一件事。”
+1. All incomplete tasks moved to "Pending Zone"
+2. Only 1 high-priority Pin retained
+3. Vox: "We're not looking back. Just this one thing today."
 
-清零不是惩罚，而是重置。待定区的任务不会丢失——下周复盘时用户可以选择恢复或归档它们。
+Zero ritual is not punishment, but reset. Pending zone tasks aren't lost — user can choose to restore or archive them during next week's retrospective.
 
-### 6.2 外部授权
+### 6.2 External Authorization
 
-允许用户临时指定一个信任的伙伴，获得部分监督权限：
+Allow user to temporarily designate a trusted partner with partial supervision permissions:
 
-- **可查看**：进度摘要（Pin 完成率、番茄统计）
-- **可操作**：发送提醒（非强制，仅作为额外提示通道）
-- **不可访问**：任何数据内容、对话记录、第二大脑中的知识
+- **Viewable**: Progress summary (Pin completion rate, tomato statistics)
+- **Actionable**: Send reminders (non-mandatory, only as additional notification channel)
+- **Inaccessible**: Any data content, conversation history, knowledge in Second Brain
 
-外部授权有时效限制（最长 7 天，可续期），到期自动撤销。
+External authorization has time limit (max 7 days, renewable), automatically revoked upon expiration.
 
-### 6.3 项目冷冻
+### 6.3 Project Freezing
 
-对长期无进展的子任务，熵管理代理自动标记为“冷冻”，移至归档，并附加一句：
+For long-stalled subtasks, Entropy Management Agent automatically marks as "frozen," moves to archive, with message:
 
-> “这不代表失败，只是暂时搁置。你随时可以解冻它。”
+> "This doesn't mean failure, just temporarily set aside. You can unfreeze anytime."
 
-这句话是 Project IV 对待“未完成”的核心态度。它是系统设计中最重要的文案之一——不催促，不评判，只是托住。
+This sentence is Project IV's core attitude toward "incompletion." It's one of the most important copy in system design — no pressure, no judgment, just support.
 
-## 7. 成功度量与自我激励
+## 7. Success Metrics & Self-Motivation
 
-### 7.1 核心指标
+### 7.1 Core Metrics
 
-不以“代码行数”或“功能数量”为标准。核心指标只有两个：
+Not "lines of code" or "number of features." Only two core metrics:
 
-- **Pin 完成率**：当日 Pin 中完成的比例
-- **每日仪式坚持天数**：连续完成早晚仪式的天数
+- **Pin Completion Rate**: Percentage of today's Pins completed
+- **Daily Ritual Streak**: Consecutive days completing morning and evening rituals
 
-### 7.2 星火卡
+### 7.2 Spark Card
 
-连续 7 天完成每日仪式，Vox 主动生成一张“星火卡”（视觉化成就徽章），存入第二大脑的“小胜利”栏目。
+After 7 consecutive days of completing daily rituals, Vox automatically generates a "Spark Card" (visual achievement badge), stored in Second Brain's "Small Wins" section.
 
-星火卡不公开，不排名，不分享。它是开发者与自己的数字生命之间的私人信物。
+Spark cards are not public, not ranked, not shared. They are personal tokens between developer and their digital life.
 
-### 7.3 里程碑复盘
+### 7.3 Milestone Retrospective
 
-当完成一个里程碑（如 Spark MVP 上线），Vox 组织一次“复盘议会”：
+When a milestone is completed (e.g., Spark MVP launch), Vox organizes a "Retrospective Parliament":
 
-- **分析师脑**：过程中哪些策略有效？哪些数据值得关注？
-- **情感派脑**：这个阶段你的感受是什么？最有成就感的时刻？
-- **议长总结**：可复用的模式、下次可以改进的地方
+- **Analyst Brain**: Which strategies worked? Which data deserves attention?
+- **Emotive Brain**: How did you feel during this phase? Most fulfilling moments?
+- **Speaker Summary**: Reusable patterns, areas for improvement next time
 
-复盘结果存入第二大脑，作为下一个里程碑的基线。
+Retrospective results stored in Second Brain as baseline for next milestone.

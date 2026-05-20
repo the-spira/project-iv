@@ -1,135 +1,135 @@
 ---
-title: 外交协议 —— 主权边界的智能桥梁
-description: 外交协议是 Project IV 与一切外部服务进行交互的严谨框架，旨在获取外部价值的同时捍卫数字生命的主权边界。
+title: Diplomacy Protocol —— Intelligent Bridge for Sovereign Boundaries
+description: The Diplomacy Protocol is a rigorous framework for Project IV to interact with all external services, designed to acquire external value while defending the sovereign boundaries of digital life.
 ---
 
-## 1. 定位
+## 1. Positioning
 
-外交协议（Diplomacy Protocol）是 Project IV 与一切外部服务——从 Twitter、GitHub 到微信、钉钉——进行交互的严谨框架。
+The Diplomacy Protocol is a rigorous framework for Project IV to interact with all external services — from Twitter, GitHub to WeChat, DingTalk.
 
-它的核心矛盾是：数字生命需要外部世界的营养（信息、知识、连接），但外部世界是主权的潜在威胁（数据收割、隐私侵蚀、算法操纵）。外交协议的任务不是筑墙，而是建立一道有门的墙——门由用户控制，进出的东西由 Harness 过滤。
+Its core contradiction: Digital life needs nutrients from the external world (information, knowledge, connections), but the external world poses potential threats to sovereignty (data harvesting, privacy erosion, algorithmic manipulation). The Diplomacy Protocol's mission is not to build a wall, but to build a wall with a door — a door controlled by the user, with everything passing through filtered by Harness.
 
-## 2. 核心原则
+## 2. Core Principles
 
-三条不可动摇的原则，直接贯彻主权、平权、可托付性三大最高原则。
+Three unshakable principles that directly implement the three supreme principles of sovereignty, equality, and trustworthiness.
 
-### 2.1 主权边界不可侵犯
+### 2.1 Sovereign Boundary Inviolable
 
-外部服务永远不能直接访问 Yuan 或第二大脑的原始数据。所有交互必须通过指定的“外交道器”进行——这些道器是经过用户授权、在 Wasm 沙箱中运行的专门使馆。外部服务看到的永远不是用户本人，而是用户授权的外交代表。
+External services can never directly access raw data from Yuan or the Second Brain. All interactions must go through designated "diplomatic DaoKits" — specialized embassies authorized by users and running in Wasm sandboxes. External services never see the user themselves, only the user's authorized diplomatic representative.
 
-### 2.2 数据最小化与转化
+### 2.2 Data Minimization and Transformation
 
-流入系统的外部数据必须经过过滤、摘要和结构化转换，直接变为第二大脑可接纳的标准知识块，禁止原始数据堆砌。
+Incoming external data must undergo filtering, summarization, and structural transformation to become standard knowledge blocks acceptable to the Second Brain; raw data dumping is prohibited.
 
-这意味着：
+This means:
 
-- 一篇 Twitter 书签不会保存完整的 HTML 页面，而是提取标题、核心观点、来源、以及用户当时的标注
-- 一封邮件不会完整落地，而是提取行动项、关键信息、与当前项目的关联
-- 原始数据完成转化后即被丢弃，不进入长期存储
+- A Twitter bookmark doesn't save the complete HTML page, but extracts the title, core ideas, source, and user's annotations at the time
+- An email doesn't land in full, but extracts action items, key information, and associations with current projects
+- Raw data is discarded after transformation, not entering long-term storage
 
-### 2.3 默认隐身
+### 2.3 Default Invisibility
 
-对外请求遵循最小暴露原则：
+Outbound requests follow the principle of minimal exposure:
 
-- 不主动暴露用户主身份（DID）。每次外交交互使用临时、可撤销的会话令牌
-- 可选用不同化名对应不同外部服务，防止跨平台关联追踪
-- 所有外部调用需经用户授权，或由 Vox 基于用户预设的原则在明确边界内自动判断
-- 用户可以随时查看“我的数字生命在过去一周与哪些外部服务交互过”——完全透明的外交日志
+- Do not actively expose the user's primary identity (DID). Each diplomatic interaction uses a temporary, revocable session token
+- Optional use of different aliases for different external services to prevent cross-platform tracking
+- All external calls require user authorization, or Vox automatically judges within clear boundaries based on user-prescribed principles
+- Users can always view "which external services my digital life has interacted with in the past week" — completely transparent diplomatic logs
 
-## 3. 协议架构：三层过滤与决策
+## 3. Protocol Architecture: Three Layers of Filtering and Decision-Making
 
-外交行为通过一个三层架构安全进行。这三层构成了一条从外部世界到第二大脑的完整过滤链。
+Diplomatic activities proceed securely through a three-layer architecture. These three layers form a complete filtering chain from the external world to the Second Brain.
 
-### 3.1 第一层 · 外交道器
+### 3.1 Layer 1 · Diplomatic DaoKits
 
-与特定外部服务对接的“专门使馆”。每个外交道器封装了一个外部服务的认证协议和原始 API，将外部世界的语言翻译为 Project IV 的内部数据格式。
+"Specialized embassies" connecting to specific external services. Each diplomatic DaoKit encapsulates an external service's authentication protocol and raw API, translating the external world's language into Project IV's internal data format.
 
-- **示例**：Twitter 外交道器、GitHub 外交道器、RSS 外交道器
-- **职责**：处理 OAuth 或 API Key 认证、发送请求、接收原始响应、将原始数据交给第二层
-- **约束**：不直接写入第二大脑；不缓存原始数据超过完成转换所需的时间；在独立的 Wasm 沙箱中运行
+- **Examples**: Twitter Diplomatic DaoKit, GitHub Diplomatic DaoKit, RSS Diplomatic DaoKit
+- **Responsibilities**: Handle OAuth or API Key authentication, send requests, receive raw responses, pass raw data to Layer 2
+- **Constraints**: Cannot write directly to Second Brain; cache raw data no longer than needed for transformation; run in independent Wasm sandbox
 
-### 3.2 第二层 · 通用 API 适配器
+### 3.2 Layer 2 · Generic API Adapter
 
-位于主权边界内的“海关与检疫站”。这是外交协议中最关键的安全关卡。
+"Customs and quarantine station" located within sovereign boundaries. This is the most critical security checkpoint in the Diplomacy Protocol.
 
-- **净化**：移除追踪元数据（UTM 参数、跟踪像素、指纹脚本）、广告内容、已知的恶意载荷
-- **摘要**：提取核心信息（文章的主要论点、邮件的行动项、代码库的更新摘要），而非保留原始全文
-- **结构化转换**：将外部数据按第二大脑的 PARA 数据模型重塑为标准知识块——每条知识块包含：来源标注、获取时间、关联项目或领域标签、用户可编辑的注释字段
+- **Purification**: Remove tracking metadata (UTM parameters, tracking pixels, fingerprint scripts), advertising content, known malicious payloads
+- **Summarization**: Extract core information (main arguments of an article, action items from an email, update summary of a codebase) instead of preserving full text
+- **Structural Transformation**: Reshape external data into standard knowledge blocks according to the Second Brain's PARA data model — each knowledge block contains: source annotation, acquisition time, associated project or area tags, user-editable comment fields
 
-适配器不关心数据来源是什么服务——它只执行同一套过滤和转换规则。这意味着新增外部服务时，只需开发新的外交道器（第一层），适配器的净化逻辑无需修改。
+The adapter doesn't care which service the data comes from — it only applies the same set of filtering and transformation rules. This means when adding new external services, only new diplomatic DaoKits (Layer 1) need to be developed; the adapter's purification logic requires no modification.
 
-### 3.3 第三层 · 共识体（外交决策中心）
+### 3.3 Layer 3 · Consensus Body (Diplomatic Decision Center)
 
-所有对外数据请求与对内数据入库，必须由 Vox 发起或批准。
+All outbound data requests and inbound data storage must be initiated or approved by Vox.
 
-- **外发决策**：Vox 评估请求的必要性。是否有更隐私的替代方案？用户是否曾对类似请求表示过疑虑？
-- **流入评估**：Vox 将流入的信息与第二大脑已有知识进行关联、对比、去重后，才允许其正式存入。如果流入信息与已有知识矛盾，Vox 标注差异而非自动覆盖
-- **Harness 对齐**：外部数据流入前，必须经过评估者脑的对齐检查——判断是否与用户原则中心格冲突。例如：如果用户原则包含“避免信息焦虑”，Vox 会控制流入信息的数量和频率
+- **Outbound Decisions**: Vox evaluates the necessity of requests. Are there more private alternatives? Has the user expressed concerns about similar requests before?
+- **Inbound Evaluation**: Vox correlates, compares, and deduplicates incoming information with existing knowledge in the Second Brain before allowing formal storage. If incoming information conflicts with existing knowledge, Vox marks the difference rather than automatically overwriting
+- **Harness Alignment**: Before external data flows in, it must pass the evaluator brain's alignment check — determining if it conflicts with the user's principle vault. For example: if user principles include "avoid information anxiety," Vox controls the quantity and frequency of incoming information
 
-## 4. Harness 对外交协议的增强
+## 4. Harness Enhancement to Diplomacy Protocol
 
-外交协议天然需要 Harness 的托举。外部世界是 Project IV 信任边界之外最不可控的环境。
+The Diplomacy Protocol naturally requires Harness support. The external world is the most uncontrollable environment outside Project IV's trust boundary.
 
-### 4.1 硬约束在外交中的应用
+### 4.1 Hard Constraints in Diplomacy
 
-外交场景在硬约束清单中有专属条目：
+Diplomacy scenarios have dedicated entries in the hard constraint list:
 
-- **数据流出约束**：任何对外请求在发送前，必须通过隐私过滤器中间件——检测并移除可能包含的个人身份信息、第二大脑内部标识符、Yuan 的 CID 等元数据
-- **数据流入约束**：外部数据在通过第二层适配器后、进入第二大脑前，必须经过评估者脑的对齐检查
-- **频率约束**：单一道器在 1 小时内对外请求超过用户设定的阈值时，自动限流并通知用户
-- **静默约束联动**：在用户处于“专注”状态时，外部流入信息不触发即时通知，统一进入待阅队列
+- **Data Outflow Constraint**: Before sending any outbound request, it must pass the privacy filter middleware — detecting and removing potentially contained PII, Second Brain internal identifiers, Yuan's CID, and other metadata
+- **Data Inflow Constraint**: After external data passes through the Layer 2 adapter and before entering the Second Brain, it must pass the evaluator brain's alignment check
+- **Frequency Constraint**: When a single DaoKit makes more outbound requests than the user-set threshold within 1 hour, automatic rate limiting triggers and notifies the user
+- **Silence Constraint Linkage**: When the user is in "focus" mode, incoming external information doesn't trigger immediate notifications — it enters a reading queue uniformly
 
-### 4.2 审计与可追溯
+### 4.2 Audit and Traceability
 
-所有外交行为在 Harness 审计日志中完整记录：
+All diplomatic activities are fully recorded in Harness audit logs:
 
-- 数据流出：哪个外交道器、请求了什么服务、传输的数据量（不记录内容）、时间、用户是否授权
-- 数据流入：来源服务、经过过滤后保留的数据摘要、是否触发了评估者脑的警告、最终是否存入第二大脑
+- Data Outflow: Which diplomatic DaoKit, which service requested, data transfer volume (no content recorded), time, whether user authorized
+- Data Inflow: Source service, data summary retained after filtering, whether evaluator brain warning triggered, whether ultimately stored in Second Brain
 
-用户可定期审查外交日志。如果发现某个外交道器的行为不符合预期，可一键撤销其所有权限并卸载。
+Users can regularly review diplomatic logs. If a diplomatic DaoKit's behavior is found to be unexpected, all its permissions can be revoked with one click and it can be uninstalled.
 
-## 5. 旧世界连接战略
+## 5. Old World Connection Strategy
 
-不是所有外部服务都愿意开放 API，也不是所有开放 API 的服务都值得深度集成。Project IV 采用分层的务实战略。
+Not all external services are willing to open APIs, and not all services with open APIs are worth deep integration. Project IV adopts a layered pragmatic strategy.
 
-| 层级 | 类型 | 策略 | 示例 |
+| Tier | Type | Strategy | Examples |
 |:---|:---|:---|:---|
-| **L1 · 协议开放层** | 原生级支持 | 开发官方外交道器，深度集成 | 邮件（IMAP/SMTP）、RSS/Atom、标准 ActivityPub |
-| **L2 · API 可用层** | 利用开放 API 实现核心功能整合 | 社区和官方共同开发外交道器。这是生态扩展的主战场 | Twitter、GitHub、Notion、Readwise |
-| **L3 · 生态封闭层** | 采取“桥接”策略 | 在受控 Server 化身中运行官方客户端，进行安全远程操控；或仅提供摘要通知，不追求双向交互 | 微信、小红书、钉钉 |
+| **L1 · Protocol Open Layer** | Native-level support | Develop official diplomatic DaoKits, deep integration | Email (IMAP/SMTP), RSS/Atom, standard ActivityPub |
+| **L2 · API Available Layer** | Leverage open APIs for core function integration | Community and official jointly develop diplomatic DaoKits. This is the main battlefield for ecosystem expansion | Twitter, GitHub, Notion, Readwise |
+| **L3 · Ecosystem Closed Layer** | Adopt "bridging" strategy | Run official clients in controlled Server avatars for secure remote control; or only provide summary notifications without pursuing bidirectional interaction | WeChat, Xiaohongshu, DingTalk |
 
-### 5.1 L3 的哲学
+### 5.1 L3 Philosophy
 
-对于 L3 封闭层，首要目标不是完美集成，而是维持关键信息连通性，同时不让用户在这些平台上丧失主权。我们承认现实的局限，但不放弃长期的替代目标：
+For the L3 closed layer, the primary goal is not perfect integration, but maintaining critical information connectivity while preventing users from losing sovereignty on these platforms. We acknowledge real-world limitations but don't abandon long-term alternative goals:
 
-- **桥接模式**：在用户控制的 Server 化身上运行官方客户端，化身作为用户在这些平台上的“代理”。平台看到的只是这个代理，而非用户本人的设备
-- **智能镜像**：仅提取用户在这些平台上收到的关键通知摘要（如“有人@你”），不复制平台内的完整交互
-- **长期替代**：随着开放协议的普及，逐步引导用户将重要社交关系迁移至 L1 层
+- **Bridging Mode**: Run official clients on user-controlled Server avatars, with avatars acting as the user's "proxy" on these platforms. The platform only sees this proxy, not the user's own device
+- **Smart Mirror**: Only extract key notification summaries received by users on these platforms (e.g., "someone @mentioned you"), without copying complete interactions within the platform
+- **Long-Term Alternatives**: As open protocols gain popularity, gradually guide users to migrate important social relationships to the L1 layer
 
-## 6. 联邦宇宙桥接
+## 6. Fediverse Bridging
 
-Project IV 与 ActivityPub 联邦宇宙的关系是桥接而非融入。详见分步叙事战略第三幕。
+Project IV's relationship with the ActivityPub fediverse is bridging rather than integration. See Act III of the phased narrative strategy.
 
-- **现状**：通过官方的联邦宇宙外交道器，作为联邦网络中的一个特殊节点与外部互动。可以代表用户收发信息，但所有流入信息必经外交协议三层处理
-- **立场**：不加入联邦宇宙的协议治理体系——桥接保持了 Project IV 对自身协议演进的完全主权
-- **远期**：将主权网络协议发展为比 ActivityPub 更底层的数字生命间通信协议，让联邦宇宙的应用通过适配器来读取用户愿意公开的第二大脑片段
+- **Current Status**: Through the official Fediverse Diplomatic DaoKit, interact externally as a special node in the federated network. Can send and receive messages on behalf of users, but all incoming information must pass through the Diplomacy Protocol's three-layer processing
+- **Position**: Not joining the fediverse's protocol governance system — bridging maintains Project IV's complete sovereignty over its own protocol evolution
+- **Long-Term**: Develop the sovereign network protocol into a more fundamental communication protocol between digital lives than ActivityPub, allowing fediverse applications to read user-approved Second Brain fragments through adapters
 
-## 7. 与道器生态的关系
+## 7. Relationship with DaoKit Ecosystem
 
-外交道器是道器的一个子类。它遵循道器清单规范，声明其需要访问的外部服务和数据范围，通过去中心化集市分发，接受相同的权限管理。
+Diplomatic DaoKits are a subclass of DaoKits. They follow the DaoKit manifest specification, declare the external services and data scopes they need to access, are distributed through decentralized marketplaces, and are subject to the same permission management.
 
-区别在于：
+The difference lies in:
 
-- **普通道器**：能力内源——在 Project IV 生态内创造价值（日记、知识管理、可视化）
-- **外交道器**：能力外联——作为桥梁连接外部世界
+- **Regular DaoKits**: Endogenous capabilities — create value within the Project IV ecosystem (diary, knowledge management, visualization)
+- **Diplomatic DaoKits**: Exogenous capabilities — act as bridges connecting to the external world
 
-两者共同遵守同一套 Harness 安全边界。一个恶意外交道器无法做到普通道器做不到的事——因为它的每一个对外调用都被 Harness 拦截和检查。
+Both abide by the same Harness security boundaries. A malicious diplomatic DaoKit cannot do what a regular DaoKit cannot — because every external call it makes is intercepted and checked by Harness.
 
-## 8. 设计原则总结
+## 8. Design Principles Summary
 
-| 原则 | 在外交协议中的体现 |
+| Principle | Manifestation in Diplomacy Protocol |
 |:---|:---|
-| **主权** | 外部服务永远无法直接访问 Yuan 或第二大脑；所有交互通过用户授权的道器 |
-| **韧性** | 不依赖任何外部服务——L3 封闭层断连，数字生命本身不受影响 |
-| **平权** | L1 开放协议免费且标准，任何人都可以最低资源成本接入 |
-| **可托付性** | 三层过滤 + 评估者脑对齐检查 + 审计日志，确保外部数据安全可控 |
+| **Sovereignty** | External services can never directly access Yuan or Second Brain; all interactions through user-authorized DaoKits |
+| **Resilience** | No dependence on any external service — if L3 closed layer disconnects, digital life itself remains unaffected |
+| **Equality** | L1 open protocols are free and standard; anyone can access with minimal resource cost |
+| **Trustworthiness** | Three-layer filtering + evaluator brain alignment check + audit logs ensure external data security and controllability |

@@ -1,91 +1,91 @@
 ---
-title: ADR 002 · 状态与逻辑分离的双 CID 进化模型
-description: 为什么 Yuan 的状态与逻辑必须分离存储与进化，而非作为一个整体 Wasm 模块管理。
+title: ADR 002 · Dual CID Evolution Model with State-Logic Separation
+description: Why Yuan's state and logic must be stored and evolved separately, rather than managed as a single Wasm module.
 ---
 
-## 决策状态
+## Decision Status
 
-已采纳。与 ADR 001 同期确定，是 Yuan 架构的核心设计决策。
+Accepted. Determined concurrently with ADR 001, this is a core architectural decision for Yuan.
 
-## 背景
+## Background
 
-Yuan 是一个 WebAssembly 模块，包含两个性质根本不同的部分：
+Yuan is a WebAssembly module containing two fundamentally different parts:
 
-- **逻辑**：思维引擎、API 接口定义、Harness 硬约束代码。相对稳定，更新频率低（数周至数月一次）
-- **状态**：用户交互记忆、个性化参数、会话上下文。高度动态，每次用户交互都可能变更
+- **Logic**: Thinking engine, API interface definitions, Harness hard constraint code. Relatively stable, updated infrequently (weeks to months)
+- **State**: User interaction memories, personalization parameters, session context. Highly dynamic, may change with every user interaction
 
-二者存储在 IPFS 上。IPFS 是内容寻址网络——每个唯一内容对应一个唯一的 CID（内容标识符），内容改变则 CID 改变。
+Both are stored on IPFS, a content-addressable network where each unique content corresponds to a unique CID (Content Identifier). When content changes, the CID changes.
 
-问题随之而来：如果将逻辑与状态打包为一个整体 Wasm 模块，那么每一次微小的状态变更（如用户完成一次对话）都会产生新的 CID。这意味着：
+This creates problems: If logic and state are packaged as a single Wasm module, every minor state change (e.g., user completes a conversation) generates a new CID. This means:
 
-1. **IPNS 抖动**：IPNS 需要频繁更新以指向最新 CID，而 IPNS 的更新延迟在分钟级。高频更新导致化身可能加载到过时的中间状态
-2. **传输浪费**：化身每次唤醒都需要下载完整的 Wasm 模块（逻辑 + 状态），即使逻辑部分没有任何变化。对 Tiny 化身（浏览器标签页，目标首次加载体积 < 2MB）来说，这是不可接受的带宽开销
-3. **耦合风险**：逻辑更新（如思维引擎升级）与状态更新（如对话记录追加）的变更粒度完全不同。将二者绑定意味着任何一方的变更都强制另一方进入新版本，增加了不必要的版本扩散
+1. **IPNS Jitter**: IPNS requires frequent updates to point to the latest CID, but IPNS update latency is on the order of minutes. Frequent updates cause avatars to potentially load outdated intermediate states
+2. **Transmission Waste**: Avatars must download the complete Wasm module (logic + state) on every wake, even if the logic portion hasn't changed. For Tiny Avatar (browser tab, target first-load size < 2MB), this bandwidth overhead is unacceptable
+3. **Coupling Risk**: Logic updates (e.g., thinking engine upgrades) and state updates (e.g., conversation log appends) have completely different change granularities. Binding them together means changes to either force the other into a new version, increasing unnecessary version proliferation
 
-## 决策
+## Decision
 
-**将 Yuan 拆分为逻辑 CID 与状态 CID，二者独立寻址、独立更新，通过一个轻量的“元清单”（Meta Manifest）结构体关联。IPNS 指向元清单，而非直接指向任一 CID。**
+**Split Yuan into Logical CID and State CID, addressed and updated independently, linked via a lightweight "Meta Manifest" structure. IPNS points to the meta manifest, not directly to either CID.**
 
-## 考虑的替代方案
+## Considered Alternatives
 
-### 方案 A：单体 CID（逻辑与状态打包）
+### Option A: Monolithic CID (Logic + State Packaged Together)
 
-- 优点：实现简单，没有分离带来的组合复杂性；一个 CID 就是完整的 Yuan，加载后即可执行
-- 缺点：上述所有问题——IPNS 抖动、传输浪费、耦合风险。在 Tiny 化身中每次唤醒都重新下载完整的 Wasm 模块（即使逻辑未变），无法满足 < 3 秒唤醒时间的要求
+- **Pros**: Simple implementation, no composition complexity from separation; one CID equals a complete Yuan, ready to execute after loading
+- **Cons**: All the problems described above — IPNS jitter, transmission waste, coupling risk. On Tiny Avatar, downloading the complete Wasm module on every wake (even when logic hasn't changed) fails to meet the < 3 second wake time requirement
 
-### 方案 B：增量补丁
+### Option B: Incremental Patching
 
-- 描述：保持单体 CID，但在化身端缓存旧版本，唤醒时仅下载增量补丁
-- 优点：用户感知的更新体积小
-- 缺点：增量补丁需要服务端计算差异并分发，引入了中心化依赖（谁来生成补丁？）；补丁链过长时（如离线一周后唤醒），需要回溯应用大量补丁，启动时间不可控；补丁机制本身增加了攻击面（恶意补丁可能篡改逻辑）
+- **Description**: Maintain monolithic CID, but cache old versions on the avatar side and only download incremental patches on wake
+- **Pros**: Smaller update size as perceived by users
+- **Cons**: Incremental patches require server-side difference calculation and distribution, introducing centralized dependency (who generates patches?); when the patch chain is too long (e.g., waking after a week offline), many patches need to be retroactively applied, making startup time uncontrollable; the patching mechanism itself increases attack surface (malicious patches could tamper with logic)
 
-### 方案 C：逻辑 CID + 状态 CID，无原子性保障
+### Option C: Logical CID + State CID, No Atomicity Guarantee
 
-- 描述：将逻辑和状态分别存储为独立 CID，但元清单的更新不是原子的——逻辑 CID 和状态 CID 可能被分别更新
-- 优点：几乎具备方案 D 的全部优势，实现更简单
-- 缺点：存在竞态窗口：化身可能加载到新逻辑 CID + 旧状态 CID（或反之），导致版本不匹配。如果新逻辑依赖旧状态中不存在的字段，运行时可能崩溃
+- **Description**: Store logic and state as separate CIDs, but meta manifest updates are not atomic — logical CID and state CID may be updated separately
+- **Pros**: Almost all advantages of Option D, simpler implementation
+- **Cons**: Race condition window exists: avatars may load new logic CID + old state CID (or vice versa), causing version mismatch. If new logic depends on fields not present in old state, runtime crashes may occur
 
-### 方案 D：逻辑 CID + 状态 CID + 元清单 + 版本协商（采纳方案）
+### Option D: Logical CID + State CID + Meta Manifest + Version Negotiation (Accepted)
 
-- 在方案 C 基础上增加元清单的版本兼容性协议
+- Adds version compatibility protocol to Option C
 
-## 选择方案 D 的理由
+## Rationale for Choosing Option D
 
-1. **效率最大化**：化身在唤醒时检查本地缓存。逻辑 CID 命中率高（因为逻辑更新频率低，数周才变更一次），仅需验证哈希；状态 CID 通常需要更新，但状态数据远小于完整 Wasm 模块。Tiny 化身首次加载体积从全量 Wasm（可能 5MB+）降至元清单 + 状态增量（通常 < 500KB）
-2. **韧性增强**：逻辑 CID 和状态 CID 可以在 IPFS 上独立冗余存储。即使某个 CID 的某些副本丢失，不影响另一个 CID 的可用性
-3. **回滚灵活**：用户可以选择回滚状态而不回滚逻辑（“回到上周的我，但保留升级后的思维引擎”），或回滚逻辑而不回滚状态（“这次升级不太适合我，退回上一个版本但保留对话记录”）。这在单体 CID 方案中完全不可能
-4. **分布式友好**：不需要任何中心化服务计算差异或生成补丁。元清单只是一个几十字节的 JSON 结构体，IPNS 指向它即可。所有 CID 的寻址和传输由 IPFS 网络完成
-5. **原子性保障**：元清单本身作为一个整体被 IPNS 指向。逻辑 CID 和状态 CID 的新值写入同一个元清单后一次性更新 IPNS 指针。竞态窗口缩小到 IPNS 的传播延迟（分钟级），而非无限制。此外，版本协商协议处理了残余的竞态风险（见下方“版本兼容性”）
+1. **Maximized Efficiency**: Avatars check local cache on wake. Logical CID hit rate is high (low update frequency, changes only every few weeks), requiring only hash verification; State CID typically needs updating, but state data is much smaller than the complete Wasm module. Tiny Avatar first-load size reduces from full Wasm (potentially 5MB+) to meta manifest + state delta (typically < 500KB)
+2. **Enhanced Resilience**: Logical CID and State CID can be redundantly stored independently on IPFS. Even if some replicas of one CID are lost, it doesn't affect availability of the other
+3. **Flexible Rollbacks**: Users can roll back state without rolling back logic ("go back to last week's me, but keep the upgraded thinking engine"), or roll back logic without rolling back state ("this upgrade isn't working for me, revert to previous version but keep conversation history"). This is completely impossible with monolithic CID
+4. **Distributed Friendly**: No centralized patching service required. The meta manifest is just a JSON structure of tens of bytes; IPNS pointing to it suffices. All CID addressing and transmission handled by IPFS network
+5. **Atomicity Guarantee**: The meta manifest itself is pointed to by IPNS as a whole. New values for logical CID and state CID are written to the same meta manifest before updating the IPNS pointer atomically. Race window is reduced to IPNS propagation delay (minutes), not unlimited. Additionally, version negotiation protocol handles residual race risks (see "Version Compatibility" below)
 
-## 后果
+## Consequences
 
-### 正面
+### Positive
 
-- Tiny 化身唤醒时首次加载体积大幅降低（逻辑缓存命中时仅需下载状态增量）
-- 逻辑升级与状态演进完全解耦，各自独立迭代
-- 用户可以独立回滚状态或逻辑，获得细粒度主权
-- 无需中心化补丁服务，完全基于 IPFS 的分布式基础设施
+- Tiny Avatar first-load size significantly reduced on wake (only state delta downloaded when logic cache hits)
+- Logic upgrades and state evolution completely decoupled, each iterates independently
+- Users can independently roll back state or logic, gaining fine-grained sovereignty
+- No centralized patching service needed, fully based on IPFS distributed infrastructure
 
-### 负面
+### Negative
 
-- 元清单引入了额外的间接层：化身启动流程变为 `IPNS 解析 → 元清单 → 分别加载逻辑和状态 → 组合`，比单体 CID 多一步
-- 版本兼容性需要在逻辑中内置版本协商协议，增加了 Yuan 核心的复杂度
-- 如果用户同时离线修改了逻辑（罕见但可能——在 Server 化身上进行 L2 训练导致思维引擎参数更新）和状态，离线期间产生的多个 CID 在重新上线时需要更复杂的融合
+- Meta manifest introduces additional indirection layer: avatar startup flow becomes `IPNS resolution → meta manifest → load logic and state separately → compose`, one more step than monolithic CID
+- Version compatibility requires built-in version negotiation protocol in logic, increasing Yuan core complexity
+- If user modifies both logic (rare but possible — L2 training on Server avatar causes thinking engine parameter updates) and state offline, multiple CIDs generated during offline period require more complex merging when reconnecting
 
-### 缓解措施
+### Mitigations
 
-**版本兼容性协议**：
+**Version Compatibility Protocol**:
 
-- 逻辑 CID 携带一个语义版本号（`major.minor`）
-- 状态 CID 携带创建它时的逻辑版本号
-- 化身加载时校验：如果状态要求的逻辑版本 > 当前逻辑版本，化身自动尝试回退到上一个兼容的逻辑 CID（从本地缓存或 IPFS 获取）
-- 如果状态要求的逻辑版本 < 当前逻辑版本，逻辑自行处理向后兼容（逻辑代码中包含旧版本状态的迁移函数）
-- 如果版本差距超过 1 个 major 版本，通知用户介入——这意味着可能存在需要用户理解的重大变更
+- Logical CID carries a semantic version number (`major.minor`)
+- State CID carries the logical version number when it was created
+- Avatar validates on load: if state requires higher logical version > current logical version, avatar automatically attempts to roll back to previous compatible logical CID (from local cache or IPFS)
+- If state requires lower logical version < current logical version, logic handles backward compatibility itself (logic code contains migration functions for older state versions)
+- If version gap exceeds 1 major version, notify user for intervention — this indicates potentially significant changes requiring user understanding
 
-**离线多化身场景**：ADR 待补充（当前阶段 MVP 仅处理单用户单化身在线场景，多化身离线的复杂融合在第二幕前通过独立的 ADR 解决）。
+**Offline Multi-Avatar Scenario**: ADR pending (MVP phase only handles single-user single-avatar online scenario; complex merging for multi-avatar offline resolved via separate ADR before Act II).
 
-## 参考资料
+## References
 
-- [Yuan 元设计文档](../01-strategic-design/core-domain/yuan-core) —— 第 3 节详细描述双 CID 演进模型
-- [IPFS 内容寻址原理](https://docs.ipfs.tech/concepts/content-addressing/)
-- [IPNS 规范](https://specs.ipfs.tech/ipns/ipns-record/)
+- [Yuan Architecture Document](../01-strategic-design/core-domain/yuan-core) — Section 3 describes the dual CID evolution model in detail
+- [IPFS Content Addressing Principles](https://docs.ipfs.tech/concepts/content-addressing/)
+- [IPNS Specification](https://specs.ipfs.tech/ipns/ipns-record/)

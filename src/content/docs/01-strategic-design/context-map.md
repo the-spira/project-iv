@@ -1,122 +1,122 @@
 ---
-title: 上下文映射 —— 各领域间的契约与通信
-description: Project IV 各限界上下文之间的关系映射，定义核心域、支撑域与通用域之间的集成模式与通信契约。
+title: Context Map — Contracts and Communications Between Domains
+description: Relationship mapping between Project IV's bounded contexts, defining integration patterns and communication contracts between core, supporting, and generic domains.
 ---
 
-## 1. 定位
+## 1. Positioning
 
-上下文映射是 DDD 战略设计的收口。它不描述每个领域内部的设计（那些在各自的文档中），而是定义领域之间的**关系模式、集成方式与通信契约**。
+Context map is the conclusion of DDD strategic design. It does not describe the internal design of each domain (those are in their respective documents), but defines the **relationship patterns, integration methods, and communication contracts** between domains.
 
-这确保了当不同领域独立演化时，它们之间的边界不会被意外破坏。
+This ensures that when different domains evolve independently, their boundaries are not accidentally broken.
 
-## 2. 限界上下文一览
+## 2. Bounded Context Overview
 
-Project IV 识别出以下限界上下文：
+Project IV identifies the following bounded contexts:
 
-| 上下文 | 类型 | 核心职责 |
+| Context | Type | Core Responsibility |
 |:---|:---|:---|
-| **Yuan 上下文** | 核心域 | 数字灵魂的生命周期管理：创建、加载、进化、休眠、唤醒 |
-| **第二大脑上下文** | 核心域 | 记忆的存储、索引、检索、结构化（PARA）、版本化 |
-| **化身上下文** | 核心域 | 形体的注册、发现、唤醒、降级/升级、资源适配 |
-| **主权网络上下文** | 核心域 | Yuan 与化身之间的存在性通信、协调式融合、存在链 |
-| **Vox 上下文** | 支撑域 | 共识体的推理、三阶段演进、多元思维议会、意图路由 |
-| **Harness 上下文** | 支撑域 | 边界定义、硬约束与软建议、生成-评估双循环、熵管理 |
-| **感知上下文** | 支撑域 | 环境数据采集、脱敏、融合、上下文状态输出 |
-| **道器上下文** | 通用域 | 道器的生命周期、权限模型、清单规范、集市 |
-| **外交上下文** | 通用域 | 外部服务连接、三层过滤、数据净化与流入 |
+| **Yuan Context** | Core Domain | Digital soul lifecycle management: creation, loading, evolution, hibernation, awakening |
+| **Second Brain Context** | Core Domain | Memory storage, indexing, retrieval, structuring (PARA), versioning |
+| **Avatar Context** | Core Domain | Form registration, discovery, awakening, degradation/upgrade, resource adaptation |
+| **Sovereign Network Context** | Core Domain | Existential communication between Yuan and Avatars, coordinated fusion, existence chain |
+| **Vox Context** | Supporting Domain | Consensus body reasoning, three-stage evolution, multi-perspective parliament, intent routing |
+| **Harness Context** | Supporting Domain | Boundary definition, hard constraints and soft guidance, generate-evaluate dual loop, entropy management |
+| **Perception Context** | Supporting Domain | Environmental data collection, desensitization, fusion, context state output |
+| **Dao-Kit Context** | Generic Domain | Dao-Kit lifecycle, permission model, manifest specification, marketplace |
+| **Diplomacy Context** | Generic Domain | External service connection, three-layer filtering, data cleansing and inflow |
 
-## 3. 上下文映射图
+## 3. Context Map
 
-各上下文之间的关系定义如下。
+Relationships between contexts are defined below.
 
-### 3.1 核心域内部关系
+### 3.1 Core Domain Internal Relationships
 
-| 上游 | 下游 | 关系模式 | 说明 |
+| Upstream | Downstream | Relationship Pattern | Description |
 |:---|:---|:---|:---|
-| Yuan | 第二大脑 | **上下游（Upstream-Downstream）** | Yuan 定义数据模型和访问逻辑，第二大脑遵从 Yuan 的数据模型执行存储和检索。Yuan 是上游，第二大脑不反向依赖 Yuan 的具体实现——只依赖 Yuan 定义的数据模型接口 |
-| Yuan | 化身 | **上下游** | Yuan 被化身加载和托管。Yuan 定义了标准化的 Wasm 接口，化身负责提供符合该接口的运行时环境。一个化身可承载一个 Yuan 实例（单租户） |
-| 化身 | 主权网络 | **上下游** | 化身作为主权网络的物理锚点，通过主权网络收发状态更新。化身不直接与其他化身通信——所有通信经过主权网络协议 |
+| Yuan | Second Brain | **Upstream-Downstream** | Yuan defines data models and access logic; Second Brain follows Yuan's data model for storage and retrieval. Yuan is upstream; Second Brain does not depend on Yuan's specific implementation — only on data model interfaces defined by Yuan |
+| Yuan | Avatar | **Upstream-Downstream** | Yuan is loaded and hosted by Avatar. Yuan defines standardized Wasm interfaces; Avatar provides runtime environments compliant with those interfaces. One avatar can host one Yuan instance (single-tenant) |
+| Avatar | Sovereign Network | **Upstream-Downstream** | Avatar serves as the physical anchor of the Sovereign Network, sending and receiving state updates through it. Avatars do not communicate directly with other avatars — all communication goes through the Sovereign Network protocol |
 
-### 3.2 核心域与支撑域之间
+### 3.2 Between Core Domain and Supporting Domain
 
-| 上游 | 下游 | 关系模式 | 说明 |
+| Upstream | Downstream | Relationship Pattern | Description |
 |:---|:---|:---|:---|
-| Yuan | Vox | **共享内核（Shared Kernel）** | Yuan 与 Vox 共享“元清单”结构（逻辑 CID + 状态 CID 的组合方式）和原则中心格的数据模型。Vox 的推理能力依赖于 Yuan 的身份认证和密钥管理，但 Vox 的议会算法和演进阶段是独立演化的 |
-| Vox | 第二大脑 | **上下游** | Vox 读取第二大脑进行上下文推理，写入共识图谱和对话记忆。第二大脑对 Vox 的写入执行硬约束检查 |
-| Vox | 感知 | **上下游** | 感知系统为 Vox 提供融合后的上下文状态，Vox 决定是否以及如何基于感知结果介入。感知系统不关心 Vox 如何使用其输出 |
-| Vox | Harness | **遵奉者（Conformist）** | Vox 必须遵从 Harness 定义的所有硬约束和评分标准。Vox 不能修改 Harness 规则，但可以通过反馈回路（用户对评估者脑的纠偏）间接影响 Harness 的评分基准 |
-| Harness | Yuan | **遵奉者** | Harness 的硬约束在 Yuan 的 Wasm 模块中编译时嵌入。Harness 定义约束内容，Yuan 负责执行——这是部署时的静态绑定，而非运行时的动态依赖。这意味着 Harness 不是 Yuan 的“服务调用方”，而是 Yuan 代码的一部分 |
-| Harness | 第二大脑 | **上下游** | Harness 的熵管理代理扫描第二大脑，生成健康报告。第二大脑存储 Harness 的审计日志 |
-| Harness | 化身 | **上下游** | Harness 的边界检查随 Yuan 加载到化身中生效。所有化身统一执行相同的硬约束（因为它们加载同一个 Yuan），不存在某些化身更“宽松”的情况 |
+| Yuan | Vox | **Shared Kernel** | Yuan and Vox share the "meta manifest" structure (logical CID + state CID combination) and Principle Vault data model. Vox's reasoning capabilities depend on Yuan's identity authentication and key management, but Vox's parliament algorithms and evolution stages evolve independently |
+| Vox | Second Brain | **Upstream-Downstream** | Vox reads Second Brain for context reasoning, writes consensus maps and conversation memories. Second Brain performs hard constraint checks on Vox's writes |
+| Vox | Perception | **Upstream-Downstream** | Perception system provides fused context states to Vox; Vox decides whether and how to intervene based on perception results. Perception system doesn't care how Vox uses its output |
+| Vox | Harness | **Conformist** | Vox must comply with all hard constraints and scoring standards defined by Harness. Vox cannot modify Harness rules, but can indirectly influence Harness scoring benchmarks through feedback loops (user corrections to Evaluator Mind) |
+| Harness | Yuan | **Conformist** | Harness hard constraints are embedded in Yuan's Wasm module at compile time. Harness defines constraint content, Yuan executes — this is static binding at deployment time, not dynamic dependency at runtime. This means Harness is not a "service caller" of Yuan, but part of Yuan's code |
+| Harness | Second Brain | **Upstream-Downstream** | Harness's entropy management agent scans Second Brain, generating health reports. Second Brain stores Harness audit logs |
+| Harness | Avatar | **Upstream-Downstream** | Harness boundary checks take effect when Yuan loads into Avatar. All avatars execute the same hard constraints (since they load the same Yuan), preventing some avatars from being more "lenient" |
 
-### 3.3 核心域与通用域之间
+### 3.3 Between Core Domain and Generic Domain
 
-| 上游 | 下游 | 关系模式 | 说明 |
+| Upstream | Downstream | Relationship Pattern | Description |
 |:---|:---|:---|:---|
-| Yuan | 道器 | **开放主机服务（Open Host Service）** | Yuan 通过标准 Wasm ABI 和 dao.js SDK 为道器提供一组稳定的、版本化的接口。道器通过声明式权限模型请求对这些接口的访问。Yuan 接口的变更通过版本号管理，确保向后兼容 |
-| 道器 | 第二大脑 | **上下游** | 道器写入第二大脑的数据必须经过 Harness 边界检查。道器不能直接访问第二大脑的原始存储——只能通过 Yuan 提供的标准接口进行声明式读写 |
-| 化身 | 道器 | **上下游** | 道器的 UI 在化身中渲染。道器通过化身获取运行时资源（屏幕尺寸、输入方式），但不直接控制化身——化身只加载道器的 Wasm 模块并在沙箱中执行 |
+| Yuan | Dao-Kit | **Open Host Service** | Yuan provides a set of stable, versioned interfaces for Dao-Kits through standard Wasm ABI and dao.js SDK. Dao-Kits request access to these interfaces through declarative permission models. Yuan interface changes are managed through version numbers, ensuring backward compatibility |
+| Dao-Kit | Second Brain | **Upstream-Downstream** | Data written to Second Brain by Dao-Kits must pass Harness boundary checks. Dao-Kits cannot directly access Second Brain's raw storage — only perform declarative read/write through Yuan-provided standard interfaces |
+| Avatar | Dao-Kit | **Upstream-Downstream** | Dao-Kit UIs render within avatars. Dao-Kits obtain runtime resources (screen size, input method) through avatars, but do not directly control avatars — avatars only load Dao-Kit Wasm modules and execute them in sandboxes |
 
-### 3.4 通用域与支撑域之间
+### 3.4 Between Generic Domain and Supporting Domain
 
-| 上游 | 下游 | 关系模式 | 说明 |
+| Upstream | Downstream | Relationship Pattern | Description |
 |:---|:---|:---|:---|
-| 道器 | Harness | **遵奉者** | 所有道器在安装、更新、运行时必须通过 Harness 的安全检查。道器不能绕过 Harness 的边界定义模块。中间件道器是这一关系的特例——它们作为 Harness 管线的可组合扩展，但自身也受 Harness 约束 |
-| 外交 | Harness | **遵奉者** | 外交协议的三层过滤中，通用 API 适配器的净化规则由 Harness 定义。外部数据流入前必须通过评估者脑的对齐检查。外交道器作为道器的子类，继承遵奉者关系 |
+| Dao-Kit | Harness | **Conformist** | All Dao-Kits must pass Harness security checks during installation, update, and runtime. Dao-Kits cannot bypass Harness boundary definition modules. Middleware Dao-Kits are exceptions to this relationship — they serve as composable extensions to the Harness pipeline, but are themselves constrained by Harness |
+| Diplomacy | Harness | **Conformist** | In the diplomacy protocol's three-layer filtering, the universal API adapter's cleansing rules are defined by Harness. External data must pass Evaluator Mind alignment checks before inflow. Diplomatic Dao-Kits, as a subclass of Dao-Kits, inherit the conformist relationship |
 
-### 3.5 通用域内部关系
+### 3.5 Generic Domain Internal Relationships
 
-| 上游 | 下游 | 关系模式 | 说明 |
+| Upstream | Downstream | Relationship Pattern | Description |
 |:---|:---|:---|:---|
-| 道器 | 外交 | **共享内核** | 外交道器是道器的子类，共享清单规范、权限模型和分发机制。外交道器扩展了道器清单，增加了外部服务声明和净化规则配置 |
+| Dao-Kit | Diplomacy | **Shared Kernel** | Diplomatic Dao-Kits are a subclass of Dao-Kits, sharing manifest specifications, permission models, and distribution mechanisms. Diplomatic Dao-Kits extend the Dao-Kit manifest, adding external service declarations and cleansing rule configurations |
 
-## 4. 集成模式总结
+## 4. Integration Pattern Summary
 
-Project IV 各上下文之间使用以下集成模式：
+Project IV contexts use the following integration patterns:
 
-| 模式 | 使用场景 | 含义 |
+| Pattern | Usage Scenario | Meaning |
 |:---|:---|:---|
-| **上下游** | 大多数跨域关系 | 上游定义接口，下游适配。上游可以独立演化，下游跟随上游的变更节奏。上游不需要知道下游的具体实现 |
-| **共享内核** | Yuan-Vox、道器-外交 | 两个上下文共享一部分核心模型（如元清单结构、原则中心格、道器清单规范）。共享内核的变更需要跨上下文协调。这是最紧密的集成模式，仅在两个上下文有强共生关系时使用 |
-| **遵奉者** | Vox-Harness、道器-Harness、外交-Harness | 下游完全服从上游的规则，没有协商余地。Harness 的硬约束对所有遵奉者是同一套规则，不可被下游的本地优化所削弱 |
-| **开放主机服务** | Yuan-道器 | 上游暴露一组稳定的、版本化的接口，下游通过这些接口访问能力。接口变更通过版本号管理，下游可以选择适配新版本或停留在旧版本 |
+| **Upstream-Downstream** | Most cross-domain relationships | Upstream defines interfaces, downstream adapts. Upstream can evolve independently, downstream follows upstream's change rhythm. Upstream doesn't need to know downstream's specific implementation |
+| **Shared Kernel** | Yuan-Vox, Dao-Kit-Diplomacy | Two contexts share part of core models (e.g., meta manifest structure, principle vault, Dao-Kit manifest specification). Shared kernel changes require cross-context coordination. This is the tightest integration pattern, used only when two contexts have strong symbiotic relationships |
+| **Conformist** | Vox-Harness, Dao-Kit-Harness, Diplomacy-Harness | Downstream completely obeys upstream's rules, no room for negotiation. Harness hard constraints are the same set of rules for all conformists, cannot be weakened by downstream local optimizations |
+| **Open Host Service** | Yuan-Dao-Kit | Upstream exposes a set of stable, versioned interfaces; downstream accesses capabilities through these interfaces. Interface changes managed through version numbers, downstream can choose to adapt to new versions or stay on old versions |
 
-## 5. 通信契约
+## 5. Communication Contracts
 
-各上下文之间的具体通信方式与数据格式约定。
+Specific communication methods and data format conventions between contexts.
 
-| 通信双方 | 通信方式 | 数据格式 | 同步/异步 | 说明 |
+| Communication Parties | Communication Method | Data Format | Sync/Async | Description |
 |:---|:---|:---|:---|:---|
-| Yuan → 化身 | Wasm 函数调用 | 二进制（Wasm ABI） | 同步 | 化身加载 Yuan 后在本地内存中调用，无网络开销 |
-| 化身 → 化身 | 主权网络消息 | 加密的 Protobuf 二进制 | 异步 | 经过 IPFS PubSub 或中继节点。消息类型：状态 CID 更新、协调式融合请求、唤醒通知 |
-| Yuan → 第二大脑 | Vault Service gRPC | Protobuf | 同步 | 本地调用（同一化身内）或局域网调用（边节点） |
-| Vox → 第二大脑 | Vault Service gRPC | Protobuf | 同步 | 读写共识图谱和对话记忆 |
-| 感知 → Vox | 内存通道 | 结构化 JSON | 异步事件 | 感知模块推送上下文状态变更事件，Vox 订阅 |
-| Vox → Harness | 内部 API 调用 | 结构化 JSON | 同步 | 生成-评估双循环中，Vox 的输出在呈现给用户前调用评估者脑 |
-| 道器 → Yuan | dao.js SDK | JSON over Wasm ABI | 同步 | 声明式接口：`read('projects')`, `write('daily-log', entry)` |
-| 外交道器 → 通用 API 适配器 | 内部管道 | 结构化 JSON | 同步 | 第一层到第二层的数据传递，适配器不暴露为网络服务 |
-| 通用 API 适配器 → Vox | 内部 API 调用 | 结构化 JSON | 同步 | 净化后的数据在流入第二大脑前请求 Vox 批准 |
-| 熵管理代理 → 第二大脑 | Vault Service gRPC | Protobuf | 异步 | 每周/每月定时扫描，不影响正常读写 |
+| Yuan → Avatar | Wasm function call | Binary (Wasm ABI) | Synchronous | Called in local memory after avatar loads Yuan, no network overhead |
+| Avatar → Avatar | Sovereign Network message | Encrypted Protobuf binary | Asynchronous | Via IPFS PubSub or relay nodes. Message types: state CID update, coordinated fusion request, wake notification |
+| Yuan → Second Brain | Vault Service gRPC | Protobuf | Synchronous | Local call (within same avatar) or LAN call (edge node) |
+| Vox → Second Brain | Vault Service gRPC | Protobuf | Synchronous | Read/write consensus maps and conversation memories |
+| Perception → Vox | Memory channel | Structured JSON | Async event | Perception module pushes context state change events, Vox subscribes |
+| Vox → Harness | Internal API call | Structured JSON | Synchronous | In generate-evaluate dual loop, Vox output calls Evaluator Mind before presentation to user |
+| Dao-Kit → Yuan | dao.js SDK | JSON over Wasm ABI | Synchronous | Declarative interface: `read('projects')`, `write('daily-log', entry)` |
+| Diplomatic Dao-Kit → Universal API Adapter | Internal pipeline | Structured JSON | Synchronous | First layer to second layer data transfer, adapter not exposed as network service |
+| Universal API Adapter → Vox | Internal API call | Structured JSON | Synchronous | Cleansed data requests Vox approval before flowing into Second Brain |
+| Entropy Management Agent → Second Brain | Vault Service gRPC | Protobuf | Asynchronous | Weekly/monthly scheduled scans, no impact on normal read/write |
 
-## 6. 边界违约处理
+## 6. Boundary Violation Handling
 
-当某个上下文的行为超出其声明的契约时，按以下策略处理：
+When a context's behavior exceeds its declared contract, handle according to the following strategy:
 
-| 违约类型 | 检测方式 | 处理 |
+| Violation Type | Detection Method | Handling |
 |:---|:---|:---|
-| 道器越界读写 | Harness 运行时边界检查 | 拦截调用，记录审计日志，通知用户。首次警告，再次自动冻结道器权限 |
-| Vox 输出违反硬约束 | 生成-评估双循环评分 < 7 | 不输出，进入反思修订流程。最多 2 轮，否则请求用户介入 |
-| 外交数据未经净化流入 | 通用 API 适配器检查 | 拦截流入，标记来源服务为“待审查”，通知用户 |
-| 化身加载未签名 Yuan | 化身签名校验 | 拒绝执行。将加载尝试记录为安全事件 |
-| 主权网络消息泛洪 | Harness 频率检测 | 限制来源化身的消息速率，告警用户 |
+| Dao-Kit out-of-bounds read/write | Harness runtime boundary check | Block call, record audit log, notify user. First warning, freeze Dao-Kit permissions automatically on repeat |
+| Vox output violates hard constraint | Generate-evaluate dual loop score < 7 | Do not output, enter reflection revision process. Maximum 2 rounds, otherwise request user intervention |
+| Diplomatic data inflow without cleansing | Universal API adapter check | Block inflow, mark source service as "pending review," notify user |
+| Avatar loads unsigned Yuan | Avatar signature verification | Refuse execution. Record loading attempt as security event |
+| Sovereign Network message flooding | Harness frequency detection | Limit message rate from source avatar, alert user |
 
-## 7. 上下文映射的演进
+## 7. Context Map Evolution
 
-上下文映射不是一次性的设计，而是随系统演化持续更新的活文档。当以下情况发生时，需更新本文档：
+Context map is not a one-time design, but a living document continuously updated as the system evolves. Update this document when:
 
-- 新增限界上下文（如远期规划的“多主体通信上下文”）
-- 两个上下文之间的集成模式发生变化（如从上下游升级为共享内核）
-- 通信契约的接口版本发生不兼容变更
-- 引入新的 Harness 硬约束影响了多个上下文的遵奉者关系
+- New bounded context added (e.g., long-term planned "multi-agent communication context")
+- Integration pattern between two contexts changes (e.g., upgrade from upstream-downstream to shared kernel)
+- Communication contract interface version has incompatible changes
+- New Harness hard constraint introduced affecting conformist relationships across multiple contexts
 
-每次变更需通过 ADR 记录决策理由。
+Each change must be recorded with decision rationale through ADR.

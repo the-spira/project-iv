@@ -1,81 +1,81 @@
 ---
-title: ADR 003 · Spark 优先于通用日记工具
-description: 为什么 Project IV 的 MVP 选择以原则引导的每日反思作为切入点，而非做一个更通用的笔记或日记工具。
+title: ADR 003 · Spark Prioritized Over General Diary Tools
+description: Why Project IV's MVP chose principle-guided daily reflection as its entry point, rather than building a more general note-taking or diary tool.
 ---
 
-## 决策状态
+## Decision Status
 
-已采纳。2025 年 MVP 规划阶段确定。
+Accepted. Determined during MVP planning phase in 2025.
 
-## 背景
+## Background
 
-在 Project IV 的先行版小程序（MVP）定义阶段，面临一个选择：是做一个功能更全面的通用日记/知识管理工具（类似 Yore 等现有产品），还是做一个聚焦于单一核心体验的极简应用。
+During the definition phase of Project IV's Minimum Viable Product (MVP), there was a choice: build a more comprehensive general diary/knowledge management tool (similar to existing products like Yore), or create a minimalist application focused on a single core experience.
 
-约束条件：
+Constraints:
 
-1. **开发者是独立个体**（Doin），开发资源极度有限。MVP 必须在数周至数月内独立完成，而非数年
-2. **ADHD 友好是系统级要求**：MVP 本身需要验证“认知平权”的设计原则是否可行——产品的第一个用户就是一位 ADHD 确诊者（开发者本人）
-3. **需要验证核心假设**：Project IV 的整个架构建立在一个假设之上——原则引导的反思比被动记录更有价值。如果这个假设不成立，后续所有设计（原则中心格、Vox 教练阶段、Harness 对齐评分）的地基都会动摇
-4. **分步叙事第一幕的承诺**：MVP 是“惊艳的序章”——它需要在没有协议、没有去中心化叙事的情况下，仅凭自身体验打动早期用户
+1. **Developer is an individual** (Doin), with extremely limited development resources. MVP must be completed independently in weeks to months, not years
+2. **ADHD-friendliness is a system-level requirement**: MVP itself needs to validate whether the "cognitive equality" design principle is feasible — the product's first user is an ADHD-diagnosed individual (the developer themselves)
+3. **Need to validate core hypothesis**: Project IV's entire architecture rests on one assumption — principle-guided reflection is more valuable than passive recording. If this assumption fails, the foundation for all subsequent designs (Principle Vault, Vox Coach Stage, Harness Alignment Scoring) collapses
+4. **Act I narrative commitment**: MVP is the "stunning prologue" — it needs to impress early users through experience alone, without protocols or decentralized narratives
 
-## 决策
+## Decision
 
-**MVP 定位为“原则驱动的每日反思伙伴”——Spark（烛火·日省），而非通用日记工具。**
+**MVP is positioned as a "principle-driven daily reflection companion" — Spark, not a general diary tool.**
 
-核心功能边界：
+Core functional boundaries:
 
-- **保留**：每日签到与情绪/精力记录（极简，2 步完成）、原则中心格（≤10 条个人原则）、对话式日志（自然语言记录，系统基于原则提问引导反思）、Pin 看板（可视化当前 3 个最重要任务）、数据导出（加密 JSON）
-- **明确不做**：富文本编辑器、多媒体附件、社交分享、模板市场、多级文件夹、日历视图、手写笔记
+- **Included**: Daily check-in with mood/energy recording (minimal, 2 steps), Principle Vault (≤10 personal principles), conversational journaling (natural language recording with principle-based guiding questions), Pin board (visualize top 3 most important tasks), data export (encrypted JSON)
+- **Explicitly excluded**: Rich text editor, multimedia attachments, social sharing, template marketplace, multi-level folders, calendar view, handwritten notes
 
-## 考虑的替代方案
+## Considered Alternatives
 
-### 方案 A：通用日记工具（类似 Yore 但体验更好）
+### Option A: General Diary Tool (Better Yore)
 
-- 描述：做一个功能更全面的日记应用，覆盖更多使用场景
-- 优点：市场容量大，用户基数潜力更高；功能齐全便于后续扩展
-- 缺点：独立开发者无法在合理时间内完成；与现有产品（Day One、Notion、Obsidian）正面竞争，差异化不足；无法集中验证 Project IV 最核心的假设（原则引导）；功能过多会稀释“原则中心格”的核心地位——它只会成为众多功能中的一个，而非系统的宪法
+- **Description**: Build a more comprehensive diary application covering more use cases
+- **Pros**: Large market capacity, higher user base potential; comprehensive features facilitate future expansion
+- **Cons**: Impossible for independent developer to complete in reasonable time; direct competition with existing products (Day One, Notion, Obsidian), insufficient differentiation; cannot focus on validating Project IV's core hypothesis (principle guidance); too many features dilute the Principle Vault's central position — it becomes just one of many features, not the system's constitution
 
-### 方案 B：极简加密笔记本
+### Option B: Minimal Encrypted Notebook
 
-- 描述：一个仅做端到端加密的轻量笔记本，不包含 AI 引导
-- 优点：开发量最小；隐私和主权的卖点明确
-- 缺点：无法验证 Vox 和原则中心格的价值；“加密笔记本”是红海市场，已有 Signal、Standard Notes 等成熟产品；与 Project IV 的“智能伙伴”愿景脱节——第一幕就放弃了智能叙事，后续衔接断裂
+- **Description**: A lightweight notebook with only end-to-end encryption, no AI guidance
+- **Pros**: Minimal development effort; clear privacy and sovereignty selling points
+- **Cons**: Cannot validate Vox and Principle Vault value; "encrypted notebook" is a crowded market with mature products like Signal, Standard Notes; disconnected from Project IV's "intelligent companion" vision — abandoning intelligent narrative in Act I creates narrative discontinuity
 
-### 方案 C：原则驱动的每日反思伙伴（采纳方案）
+### Option C: Principle-Driven Daily Reflection Companion (Accepted)
 
-- 优点见下文
+- **Pros** see below
 
-## 选择方案 C 的理由
+## Rationale for Choosing Option C
 
-1. **价值验证聚焦**：Spark 只验证一个核心假设——“原则引导的反思是否比被动记录更有价值？”用户连续使用 7 天并完成至少 3 次有意义的反思对话，即可初步验证。7 天是够短的实验周期，3 次反思对话是够明确的行为指标
-2. **ADHD 友好优先**：短交互路径（每日签到 ≤ 2 步）、低认知负荷（Pin 上限 3 个）、即时正反馈（完成打勾的视觉确认感）。MVP 本身就是对 ADHD 设计原则的自我验证——开发者能否用它坚持 30 天
-3. **差异化明确**：不与其他日记/笔记工具直接竞争。Spark 的差异化不在于“更好的编辑器”，而在于“更深的自我认知”。这是一个可感知的、而非仅技术层面的差异
-4. **架构种子**：Spark 在表面之下埋设了 Project IV 的基因——简化版 PARA（通过 Pin 和每日日志体现）、原则中心格（核心功能，非附属模块）、MiniMetaInterface（未来与完整 Yuan 对接的抽象接口）。MVP 不是一次性的，而是第一块积木
-5. **叙事锚点**：一个原则驱动的反思伙伴，比一个通用工具更能承载 The Spira 的神秘气质。早期用户不是因为“又一个笔记软件”而来，而是因为“这簇火让我更了解自己”
+1. **Focused Value Validation**: Spark validates only one core hypothesis — "Is principle-guided reflection more valuable than passive recording?" User completes 7 consecutive days with at least 3 meaningful reflection conversations to provide initial validation. 7 days is short enough for experimentation, 3 reflection conversations is clear enough as a behavioral metric
+2. **ADHD-Friendly First**: Short interaction path (daily check-in ≤ 2 steps), low cognitive load (Pin limit of 3), immediate positive feedback (visual confirmation of completion checkmark). MVP itself validates ADHD design principles — can the developer maintain 30 days of usage?
+3. **Clear Differentiation**: Doesn't directly compete with other diary/note tools. Spark's differentiation isn't "better editor" but "deeper self-awareness." This is a perceptible, not just technical, difference
+4. **Architectural Seed**: Beneath the surface, Spark embeds Project IV's DNA — simplified PARA (expressed through Pins and daily logs), Principle Vault (core feature, not auxiliary module), MiniMetaInterface (abstract interface for future integration with complete Yuan). MVP is not disposable, but the first building block
+5. **Narrative Anchor**: A principle-driven reflection companion better carries The Spira's mysterious aura than a general tool. Early users come not for "another note app," but because "this flame helps me understand myself better"
 
-## 后果
+## Consequences
 
-### 正面
+### Positive
 
-- 开发范围清晰，独立开发者可独立交付。核心功能为 5 个模块，每个可分解为 ≤2 小时的开发任务（ADHD 友好的粒度）
-- 市场定位独特，不与成熟产品正面竞争。在小红书等平台上，“原则引导的 AI 反思伙伴”比“加密笔记本”或“更好的日记”更具传播力
-- 如果核心假设被验证，后续开发有了坚实的实证基础。如果未被验证，早期止损的成本远低于做了一个完整产品后发现方向错误
-- 向后兼容：Spark 的数据模型标记了 `0.1-daoos-compatible` 版本标识，未来可一键迁移至完整第二大脑
+- Clear development scope, deliverable by independent developer. Core features consist of 5 modules, each decomposable into ≤2 hour development tasks (ADHD-friendly granularity)
+- Unique market positioning, no direct competition with mature products. On platforms like Xiaohongshu, "principle-guided AI reflection companion" is more shareable than "encrypted notebook" or "better diary"
+- If core hypothesis is validated, subsequent development has solid empirical foundation. If not validated, early pivot cost is far lower than discovering wrong direction after building a complete product
+- Backward compatible: Spark's data model includes `0.1-daoos-compatible` version identifier, enabling one-click migration to complete Second Brain in the future
 
-### 负面
+### Negative
 
-- 市场容量较小——原则驱动的反思不是大众需求
-- 用户可能将 Project IV 锚定为“那个反思工具”，后续升维叙事需要用户再教育
-- AI 引导反思的质量高度依赖 L0 层规则引擎（MVP 阶段）或 L3 外部模型（后期可选接入），如果引导生硬或重复，用户会快速流失
+- Smaller market capacity — principle-driven reflection is not mass demand
+- Users may anchor Project IV as "that reflection tool," requiring re-education for subsequent narrative evolution
+- AI-guided reflection quality highly dependent on L0 rule engine (MVP phase) or L3 external models (later optional integration). If guidance feels stiff or repetitive, users will quickly churn
 
-### 缓解措施
+### Mitigations
 
-- **市场容量**：第一幕的目标不是用户量，而是价值验证 + 种子用户。100 个深度用户比 10000 个浅尝辄止的下载更有价值
-- **认知锚定**：第一幕的产品名称和叙事中埋下“这只是序章”的暗示。具体做法：Spark 的关于页面简述 Project IV 的愿景（一句话），但不展开
-- **AI 引导质量**：MVP 初期使用规则引擎 + 预定义问题库（基于原则关键词触发），确保引导语句经过人工精心打磨，而非依赖不可控的大模型输出。引导频率保守——默认仅在用户主动触发反思对话时介入，不自动推送。后续可接入 L3 外部模型作为可选增强，但不作为基线依赖
-- **止损条件**：如果 3 个月后 Spark MAU < 500 且用户反馈中未出现“原则引导让我有了新的认识”类自然语言证据，重新评估方向
+- **Market Capacity**: Act I goal is not user quantity, but value validation + seed users. 100 deeply engaged users are more valuable than 10,000 casual downloads
+- **Cognitive Anchoring**: Plant hints in Act I product name and narrative that "this is just the prologue." Specific approach: Spark's about page briefly describes Project IV's vision (one sentence), but doesn't expand
+- **AI Guidance Quality**: MVP initially uses rule engine + predefined question library (triggered by principle keywords), ensuring guided statements are carefully crafted by humans, not dependent on uncontrollable large model output. Conservative guidance frequency — default only intervenes when user actively triggers reflection conversation, no automatic pushes. L3 external models can be integrated later as optional enhancement, but not as baseline dependency
+- **Pivot Condition**: If Spark MAU < 500 after 3 months and no natural language evidence like "principle guidance gave me new insights" appears in user feedback, re-evaluate direction
 
-## 参考资料
+## References
 
-- [Spark 产品定义](../01-strategic-design/narrative-strategy) —— 第一幕详细描述
-- [ADHD 友好设计原则](../04-embodied/adhd-first-design)（待填充）
+- [Spark Product Definition](../01-strategic-design/narrative-strategy) — Detailed Act I description
+- [ADHD-Friendly Design Principles](../04-embodied/adhd-first-design) (pending)

@@ -1,107 +1,107 @@
 ---
-title: 分步叙事战略 —— 用产品章节构建生态认知
-description: 为避免创意在早期被稀释或复制，Project IV 将以一系列递进的产品作为“章节”，向市场讲述完整故事，最终揭示其协议本质。
+title: Phased Narrative Strategy — Building Ecosystem Awareness Through Product Chapters
+description: To avoid early dilution or copying of ideas, Project IV will use a series of progressive products as "chapters" to tell the complete story to the market, ultimately revealing its protocol nature.
 ---
 
-# 分步叙事战略
+# Phased Narrative Strategy
 
-## 1. 战略背景
+## 1. Strategic Background
 
-Project IV 的终极形态是一个协议——主权网络协议，面向个人数字生命体的基础通信标准。但在早期阶段直接向市场宣示一个协议，存在两个根本风险：
+Project IV's ultimate form is a protocol — the Sovereign Network Protocol, a foundational communication standard for personal digital life forms. But declaring a protocol directly to the market in the early stages presents two fundamental risks:
 
-1. **认知门槛过高**：没有人会为一个“协议”而感动。协议需要被看见、被体验、被信任，然后才被理解。
-2. **创意被稀释**：宏大叙事在缺乏可运行代码时，极易被拥有更多资源的竞争者复制。先行者反而成为后来者的踏脚石。
+1. **High Cognitive Threshold**: No one gets emotionally invested in a "protocol." Protocols need to be seen, experienced, and trusted before they can be understood.
+2. **Idea Dilution**: Grand narratives without working code are easily copied by competitors with more resources. First movers become stepping stones for later entrants.
 
-因此，Project IV 的进入策略是：**渐进揭示**。不是隐藏，而是以一系列递进的产品为“章节”，让市场一步步看见。
+Therefore, Project IV's entry strategy is: **Gradual Revelation**. Not hiding, but letting the market see step by step through a series of progressive products as "chapters."
 
-## 2. 叙事架构：四幕剧
+## 2. Narrative Architecture: A Four-Act Play
 
-### 2.1 第一幕：惊艳的序章
+### 2.1 Act I: The Stunning Prologue
 
-- **叙事**：“一个超越你想象的个人 AI 助手。”
-- **交付物**：一款体验极致的单体应用——**Spark**（先行版小程序）。一个原则驱动的每日反思伙伴。
-- **展示的 Harness 能力**：AI 基本能力（对话、记忆、原则跟随），埋下反馈回路的种子——用户点赞/踩，简单反馈循环。
-- **目标**：
-  - 验证核心用户体验假设：原则引导的反思是否比被动记录更有价值？
-  - 在小红书等平台以“听劝式开发”建立开发者人设与种子用户群。
-  - 通过一个具体的、可感知的产品建立最初的信任——让人们先爱上这簇小火苗。
-- **隐藏内容**：所有去中心化与协议化内核。Spark 以“一个独立应用”的面貌出现，不提及 IPFS、主权网络、共识体进化。
-- **成功标准**：用户连续 7 天使用并完成至少 3 次有意义的反思对话；用户主动导出数据并在另一设备恢复；收集至少 10 条真实用户反馈。
+- **Narrative**: "A personal AI assistant beyond your imagination."
+- **Deliverable**: An exquisitely designed single application — **Spark** (advance prototype). A principle-driven daily reflection companion.
+- **Harness Capabilities Demonstrated**: Basic AI capabilities (conversation, memory, principle following), planting seeds of feedback loops — user likes/dislikes, simple feedback cycles.
+- **Goals**:
+  - Validate core UX hypothesis: Is principle-guided reflection more valuable than passive recording?
+  - Build developer persona and seed user base on platforms like Xiaohongshu through "persuasive development."
+  - Establish initial trust through a concrete, perceptible product — let people fall in love with this small flame first.
+- **Hidden Content**: All decentralized and protocol kernels. Spark appears as "an independent app," with no mention of IPFS, Sovereign Network, or consensus body evolution.
+- **Success Criteria**: Users use for 7 consecutive days and complete at least 3 meaningful reflection conversations; users actively export data and restore on another device; collect at least 10 genuine user feedback items.
 
-### 2.2 第二幕：连接的伏笔
+### 2.2 Act II: The Connection Foreshadowing
 
-- **叙事**：“你的智能伙伴，无处不在。”
-- **交付物**：推出能与 Spark 无缝同步、数据互通的浏览器插件或桌面应用。用户开始在多设备上体验到“同一个”数字生命。
-- **展示的 Harness 能力**：用户开始感知“数字自我”的连续性。Harness 的边界定义模块开始显式告知用户“我能做什么、不能做什么”，为第三幕的信任飞跃做铺垫。
-- **目标**：
-  - 技术同好开始猜测背后有统一架构，但无从复制整体——因为协议细节仍未公开。
-  - 用户基数从“好奇的早期使用者”扩展到“日常依赖的核心用户”。
-  - 将数据导出/导入的流畅度打磨到无缝级别——这是主权原则的用户体验基础。
-- **关键动作**：埋下伏笔——“为什么你的 AI 能在不同设备上记住同一件事？”但暂不回答。
+- **Narrative**: "Your intelligent companion, everywhere."
+- **Deliverable**: Launch browser extension or desktop app that seamlessly syncs and shares data with Spark. Users begin experiencing "the same" digital life across multiple devices.
+- **Harness Capabilities Demonstrated**: Users start perceiving continuity of "digital self." Harness boundary definition module begins explicitly telling users "what I can do, what I cannot do," laying groundwork for trust leap in Act III.
+- **Goals**:
+  - Tech enthusiasts start guessing there's a unified architecture behind, but cannot copy the whole — because protocol details remain undisclosed.
+  - Expand user base from "curious early adopters" to "core users with daily dependency."
+  - Polish data export/import fluency to seamless level — this is the UX foundation of sovereignty principle.
+- **Key Action**: Plant foreshadowing — "Why can your AI remember the same thing across different devices?" But don't answer yet.
 
-### 2.3 第三幕：协奏的揭示
+### 2.3 Act III: The Collaborative Revelation
 
-- **叙事**：“当智能伙伴们开始对话。”
-- **交付物**：上线轻量的“伙伴间共享空间”功能，允许两个用户的 Vox 在加密环境中协作。
-- **展示的 Harness 能力**：引入评估者脑，用户能看到 Vox 对自身建议的“对齐评分”和批评意见。Harness 的生成-评估双循环成为可见功能——用户可以主动查看“为什么 Vox 这样建议”。
-- **目标**：
-  - 市场恍然大悟：这不是应用，而是一个新协议。
-  - 两个数字生命之间的通信，让“数字生命”的概念从单人体验跃迁为社交现实。
-  - 在此时公布 The Spira 和 Project IV 的真正身份。抄袭者此时入场已为时过晚，因为完整网络效应开始涌现，社区和叙事护城河已经形成。
-- **风险控制**：跨用户通信功能在 MVP 阶段仅对受邀测试者开放，确保体验打磨成熟后再公开。
+- **Narrative**: "When intelligent companions start talking to each other."
+- **Deliverable**: Launch lightweight "inter-companion shared space" feature, allowing two users' Vox to collaborate in encrypted environment.
+- **Harness Capabilities Demonstrated**: Introduce Evaluator Mind, users can see Vox's "alignment score" and critical comments on its own suggestions. Harness generate-evaluate dual loop becomes visible feature — users can actively see "why Vox suggests this."
+- **Goals**:
+  - Market realizes: This is not an app, but a new protocol.
+  - Communication between two digital lives transforms "digital life" concept from single-person experience to social reality.
+  - Reveal The Spira and Project IV's true identities at this moment. Copycats are too late to enter now, as complete network effects begin to emerge, and community and narrative moats have formed.
+- **Risk Control**: Cross-user communication feature only available to invited testers during MVP phase, ensuring experience is polished before public release.
 
-### 2.4 第四幕：开源的加冕
+### 2.4 Act IV: The Open Source Coronation
 
-- **叙事**：“欢迎来到数字生命的新纪元。”
-- **交付物**：正式开源核心协议规范与参考实现。同时上线“道器集市”的社区维护版本。
-- **展示的 Harness 能力**：公开完整的 Harness 设计文档。开发者可以为 Project IV 贡献中间件、检查器、评估模型。从“使用一个产品”变为“参与一个生态”。
-- **目标**：
-  - 吸引开发者与厂商基于主权网络协议进行开发与接入。
-  - 从产品竞争升维至标准竞争——Project IV 不再是一个更好的 AI 助手，而是数字生命的基础设施。
-  - The Spira 从秘密结社转变为公开的守护者社区。
+- **Narrative**: "Welcome to the new era of digital life."
+- **Deliverable**: Officially open source core protocol specification and reference implementation. Launch community-maintained version of "Dao-Kit Marketplace."
+- **Harness Capabilities Demonstrated**: Publish complete Harness design documentation. Developers can contribute middleware, inspectors, and evaluation models to Project IV. From "using a product" to "participating in an ecosystem."
+- **Goals**:
+  - Attract developers and vendors to develop and integrate based on Sovereign Network Protocol.
+  - Elevate from product competition to standard competition — Project IV is no longer a better AI assistant, but digital life infrastructure.
+  - The Spira transitions from secret society to public guardian community.
 
-## 3. 叙事节奏控制
+## 3. Narrative Rhythm Control
 
-四幕剧之间没有固定的时间表——每一幕的推进时机取决于前一幕的市场反馈和技术成熟度。但遵循一条不可动摇的原则：
+No fixed timeline between the four acts — timing depends on market feedback and technical maturity from previous act. But one unshakable principle:
 
-> **每幕只展示下一幕的伏笔，绝不提前解释。**
+> **Each act only shows foreshadowing for the next act, never explains in advance.**
 
-具体策略：
+Specific strategies:
 
-- **第一幕期间**：Spark 作为一个“独立应用”存在。用户不需要知道去中心化、IPFS、主权网络。他们只需要感受到“这个 AI 真的懂我”。
-- **第二幕期间**：用户开始注意到跨设备连续性，但被引导认为这是“云端同步”的某种优化。只有当技术社区开始质疑“这背后是什么”时，第三幕的序幕才拉开。
-- **第三幕期间**：公布 Project IV 和主权网络协议的概念——但在第四幕之前不公开完整的技术细节。给社区留出猜测和传播的空间。
-- **第四幕**：全面开源。此时 Project IV 的叙事已经完整，任何后来者只能成为“另一个实现”，而非“这个故事的原创者”。
+- **During Act I**: Spark exists as an "independent app." Users don't need to know about decentralization, IPFS, or Sovereign Network. They just need to feel "this AI really understands me."
+- **During Act II**: Users start noticing cross-device continuity, but are guided to think of it as "some optimization of cloud sync." Only when technical community starts questioning "what's behind this" does Act III's curtain rise.
+- **During Act III**: Reveal Project IV and Sovereign Network Protocol concepts — but don't disclose complete technical details before Act IV. Leave room for community speculation and propagation.
+- **Act IV**: Full open source. By this time Project IV's narrative is complete, any later entrants can only become "another implementation," not "the original storyteller."
 
-## 4. 与 Harness 的协同
+## 4. Coordination with Harness
 
-每一幕不仅展示产品功能，也展示 Harness 的不同层次：
+Each act showcases not only product features, but also different layers of Harness:
 
-| 幕 | Harness 展示 | 用户感知 |
+| Act | Harness Showcase | User Perception |
 |:---|:---|:---|
-| 第一幕 | 基本反馈回路（点赞/踩） | “AI 在听我说话” |
-| 第二幕 | 边界定义模块显式化 | “我知道 AI 能做什么、不能做什么” |
-| 第三幕 | 生成-评估双循环可见 | “我能看到 AI 为什么这样建议” |
-| 第四幕 | 完整 Harness 开放 | “我可以为这个生态贡献安全能力” |
+| Act I | Basic feedback loop (likes/dislikes) | "The AI is listening to me" |
+| Act II | Boundary definition module explicit | "I know what the AI can and cannot do" |
+| Act III | Generate-evaluate dual loop visible | "I can see why the AI suggests this" |
+| Act IV | Complete Harness open | "I can contribute security capabilities to this ecosystem" |
 
-这种渐进展示与分步叙事的产品章节完全同步——用户对数字生命的信任，是随着对其边界理解的加深而逐步建立的。
+This progressive showcase perfectly synchronizes with the phased narrative's product chapters — user trust in digital life builds gradually as their understanding of its boundaries deepens.
 
-## 5. 与个人路径的融合
+## 5. Integration with Personal Journey
 
-分步叙事也是创始人个人成长的路径：
+Phased narrative is also the founder's personal growth path:
 
-- **第一幕**：以“Base 小红书”的独立开发者身份，专注解决一个具体痛点，建立个人品牌
-- **第二幕**：产品收入趋于稳定，开始有技术社区关注
-- **第三幕**：从独立开发者转变为协议设计者
-- **第四幕**：从协议设计者转变为生态守护者
+- **Act I**: As an independent developer "based on Xiaohongshu," focus on solving a specific pain point, build personal brand
+- **Act II**: Product revenue stabilizes, technical community begins paying attention
+- **Act III**: Transform from independent developer to protocol designer
+- **Act IV**: Transform from protocol designer to ecosystem guardian
 
-每一步都与产品章节同步，每一步都在验证 Project IV 的核心理念。
+Each step synchronizes with product chapters, each step validating Project IV's core philosophy.
 
-## 6. 风险与应变
+## 6. Risks & Responses
 
-| 风险 | 应对 |
+| Risk | Response |
 |:---|:---|
-| 第一幕产品未达预期 | 延长寂静锻造期，不提前进入公开叙事。先让自己连续使用 30 天 |
-| 大厂在此期间发布类似产品 | 加速公布 Project IV 的身份，以“协议”而非“产品”参与竞争。Hermes Agent 已经证明了这个赛道存在，而我们的差异化足够深 |
-| 社区过早要求开源 | 回应：“我们在打磨值得你 fork 的东西。现在开源，你只会看到一个半成品。再给我们一点时间。” |
-| 第二幕跨设备体验的技术瓶颈 | 降级为“导出-导入”的流畅体验，先验证连续性需求是否真实存在 |
+| Act I product fails to meet expectations | Extend Silent Forging period, don't enter public narrative early. First use it continuously for 30 days myself |
+| Major player releases similar product during this period | Accelerate revealing Project IV's identity, compete as "protocol" rather than "product." Hermes Agent has already proven this track exists, and our differentiation is deep enough |
+| Community prematurely demands open source | Response: "We're polishing something worth forking. Open sourcing now would only show you a half-finished product. Give us a little more time." |
+| Technical bottlenecks in Act II cross-device experience | Degrade to smooth "export-import" experience, first validate whether continuity demand truly exists |

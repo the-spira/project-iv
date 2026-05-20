@@ -1,140 +1,140 @@
 ---
-title: ADHD 优先设计 —— 认知平权的交互铁律
-description: Project IV 对 ADHD 用户的适配设计原则、具体功能与交互规范。让数字生命真正服务于注意力特质人群。
+title: ADHD-First Design —— The Iron Laws of Cognitive Equality
+description: Project IV's accessibility design principles, specific features, and interaction specifications for ADHD users. Making digital life truly serve people with diverse attention traits.
 ---
 
-## 1. 定位
+## 1. Positioning
 
-ADHD 用户常常面临注意力漂移、任务启动困难、时间感知失真、信息过载易感等挑战。Project IV 的设计从一开始就将这些特质纳入核心考量，而非作为事后“无障碍补充”。
+ADHD users often face challenges such as attention drift, difficulty starting tasks, distorted time perception, and susceptibility to information overload. Project IV incorporates these traits into core considerations from the beginning, rather than treating them as afterthought "accessibility add-ons."
 
-这是对 **平权** 最高原则的贯彻——不仅是资源平权（不同设备可接入），更是**认知平权**（不同注意力特质的人都能获得数字生命的价值）。
+This is the implementation of the supreme principle of **equality** — not just resource equality (accessible from different devices), but **cognitive equality** (people with different attention traits can all benefit from digital life).
 
-本文档定义 ADHD 友好的设计铁律。所有面向用户的交互设计必须遵守。
+This document defines ADHD-friendly design iron laws. All user-facing interaction designs must comply.
 
-## 2. 核心设计原则
+## 2. Core Design Principles
 
-| 原则 | 说明 | 对 ADHD 的价值 |
+| Principle | Description | Value for ADHD |
 |:---|:---|:---|
-| **短闭环** | 每个交互应在 2 分钟内产生可感知的反馈 | 降低启动阻力，维持注意力；避免因看不到进展而放弃 |
-| **视觉锚点** | 关键信息（当前 Pin、未完成任务）常驻可见 | 减少工作记忆负担；不需要“记住自己做到哪了” |
-| **低决策负荷** | 系统主动推荐，而非让用户从零构建 | 避免“选择瘫痪”——ADHD 大脑在面对过多选项时倾向于什么都不选 |
-| **宽容纠错** | 误操作可轻松撤销，丢失状态可快速恢复 | 降低错误带来的挫败感；一次失误不会导致“那我不做了” |
-| **节奏提示** | 内置番茄钟、定时休息提醒、注意力状态感知 | 弥补时间感知缺陷；在 ADHD 用户“忘记时间”时温柔地拉回 |
+| **Short Feedback Loops** | Each interaction should produce perceptible feedback within 2 minutes | Reduces activation resistance, maintains attention; avoids giving up due to lack of visible progress |
+| **Visual Anchors** | Key information (current Pins, incomplete tasks) remains permanently visible | Reduces working memory load; eliminates need to "remember where I left off" |
+| **Low Decision Load** | System actively recommends, rather than requiring users to build from scratch | Avoids "choice paralysis" — ADHD brains tend to choose nothing when faced with too many options |
+| **Forgiving Error Handling** | Mistakes can be easily undone, lost state can be quickly recovered | Reduces frustration from errors; one mistake won't lead to "I give up" |
+| **Rhythm Cues** | Built-in Pomodoro timer, scheduled break reminders, attention state awareness | Compensates for time perception deficits; gently pulls ADHD users back when they "lose track of time" |
 
-## 3. 具体功能适配
+## 3. Specific Feature Adaptations
 
-### 3.1 每日日志的“默认视图”
+### 3.1 Daily Journal "Default View"
 
-打开每日日志时，**禁止呈现空白页面**。空白页面是 ADHD 用户的认知悬崖——它要求用户自行构建意图，而这是启动阻力最大的环节。
+**Blank pages are prohibited** when opening the daily journal. A blank page is a cognitive cliff for ADHD users — it requires them to construct intent themselves, which is the highest activation resistance.
 
-默认视图内容：
+Default view content:
 
-- **当日 Pin 看板**：固定在顶部，始终可见。最多 3 项，每项带有进度标记
-- **一条输入框**：“今天最重要的 1 件事是？”
-- **昨日未完成任务的温和提醒**（可一键关闭，非弹窗）
+- **Today's Pin Board**: Fixed at the top, always visible. Maximum 3 items, each with progress markers
+- **Single Input Field**: "What's the most important thing today?"
+- **Gentle reminder of yesterday's incomplete tasks** (one-click dismissible, non-modal)
 
-完成后自动打勾，产生即时的视觉完成感。已完成的任务不消失，而是移至“已完成”区域——让用户看见“我已经做了什么”。
+Automatically checks off upon completion, creating immediate visual sense of accomplishment. Completed tasks don't disappear, but move to a "Completed" section — letting users see "what I've done."
 
-### 3.2 原则中心格的“情景触发器”
+### 3.2 Principle Vault "Contextual Triggers"
 
-用户可为每条原则设置自动触发条件。系统通过感知模块在恰当的时刻主动提醒，减少用户自我提醒的认知负担。
+Users can set automatic trigger conditions for each principle. The system proactively reminds at appropriate moments through the perception module, reducing the cognitive burden of self-reminder.
 
-触发规则：
+Trigger rules:
 
-- 用户定义 `When [情境] → Remind [原则]`
-- 系统通过感知模块检测情境，触发时以温和的通知方式呈现（非打断式弹窗）
-- 用户可一键忽略，或打开原则详情进行反思对话
+- User defines `When [Context] → Remind [Principle]`
+- System detects context through perception module, presents reminder in gentle notification (non-intrusive popup)
+- User can dismiss with one click, or open principle details for reflection conversation
 
-示例配对：
+Example pairings:
 
-| 情境 | 提醒原则 |
+| Context | Reminder Principle |
 |:---|:---|
-| 深夜 11 点后仍在工作 | “健康第一” |
-| 感知到“卡住”状态（反复修改同一段落） | “完成优于完美” |
-| 频繁切换项目（注意力碎片化） | “要事第一——你今天的 Pin 是什么？” |
-| 连续 3 天未打开应用 | “记录本身就是一种觉察” |
+| Still working after 11 PM | "Health first" |
+| Detected "stuck" state (repeatedly editing same paragraph) | "Done is better than perfect" |
+| Frequent project switching (attention fragmentation) | "First things first — what's your Pin today?" |
+| App not opened for 3 consecutive days | "Recording itself is awareness" |
 
-### 3.3 任务分解助手
+### 3.3 Task Breakdown Assistant
 
-当用户输入一个大任务时，L0 引导层主动建议将其拆解为可执行的小步骤。
+When users input a large task, the L0 guidance layer proactively suggests breaking it into executable small steps.
 
-交互流程：
+Interaction flow:
 
-1. 用户输入：“写年度报告”
-2. Vox 回应：“这个任务可以拆成几个小步骤。我建议：① 整理今年数据（15分钟）② 写大纲（10分钟）③ 填充分论点（25分钟）×3。你觉得这样行吗？”
-3. 用户确认后，自动生成番茄钟计划，并 Pin 到当日视图
-4. 每完成一个小步骤，立刻给予正反馈：视觉标记（🍅） + 简短肯定
+1. User input: "Write annual report"
+2. Vox responds: "This task can be broken into several small steps. I suggest: ① Organize this year's data (15min) ② Write outline (10min) ③ Fill in main points (25min) ×3. Does this work for you?"
+3. After user confirmation, automatically generates Pomodoro plan and Pins to today's view
+4. Immediately provides positive feedback upon completing each small step: visual marker (🍅) + brief affirmation
 
-**约束**：
+**Constraints**:
 
-- 拆解粒度：每个子任务 ≤ 25 分钟
-- 拆解数量：每次 3-5 个子步骤（过多则重新合并）
-- 用户可手动调整子步骤的粒度和数量
+- Breakdown granularity: Each subtask ≤ 25 minutes
+- Breakdown quantity: 3-5 sub-steps at a time (merge if too many)
+- Users can manually adjust subtask granularity and quantity
 
-### 3.4 注意力状态感知与干预
+### 3.4 Attention State Awareness & Intervention
 
-感知模块持续监测用户的交互模式。当检测到“卡住”状态时，Vox 主动提供选项。
+The perception module continuously monitors user interaction patterns. When "stuck" state is detected, Vox proactively offers options.
 
-**检测信号**：
+**Detection signals**:
 
-- 长时间无操作（> 5 分钟，且化身仍在活跃状态）
-- 反复编辑同一段文字（> 3 次修改，内容变化小）
-- 频繁切换 Pin 任务（> 5 次/小时）
+- Long idle time (> 5 minutes, with avatar still active)
+- Repeated editing of same text (> 3 revisions with minimal content change)
+- Frequent Pin task switching (> 5 times/hour)
 
-**干预选项**：
+**Intervention options**:
 
-- “要休息 5 分钟吗？我可以帮你计时。”
-- “要不要换一个任务？你还有一个 Pin 没动过。”
-- “卡住了？我可以帮你梳理一下当前的问题。”
-- （如果所有选项都被拒绝）保持静默，不重复打断
+- "Want to take a 5-minute break? I can time it for you."
+- "Want to switch tasks? You have a Pin that hasn't been touched."
+- "Stuck? I can help you work through the current problem."
+- (If all options are declined) Remain silent, don't repeat interruptions
 
-**约束**：
+**Constraints**:
 
-- 每次“卡住”检测后至少间隔 30 分钟才再次干预，避免频繁打断
-- 用户在专注状态（持续稳定输入）时，绝不打扰
+- Minimum 30-minute interval between interventions after each "stuck" detection to avoid frequent interruptions
+- Never interrupt when user is in focused state (continuous steady input)
 
-### 3.5 简化版“多元思维议会”
+### 3.5 Simplified "Multi-Perspective Parliament"
 
-ADHD 用户默认只启用“分析师脑”和“情感派脑”（双脑模式），减少认知过载。
+ADHD users only enable "Analyst Brain" and "Emotive Brain" by default (dual-brain mode) to reduce cognitive overload.
 
-- **默认**：双脑模式，议长总结控制在 3 个要点以内
-- **可选**：用户一键展开完整四脑，但默认保持简洁
-- **视觉**：两个脑的意见左右并列呈现，差异部分高亮。不让用户记忆和对比——对比是界面该做的事
+- **Default**: Dual-brain mode, Speaker summary limited to 3 key points
+- **Optional**: Users can expand to full four-brain mode with one click, but simplicity is maintained by default
+- **Visual**: Two brains' opinions presented side-by-side, differences highlighted. Users don't need to memorize and compare — the interface does the comparison
 
-### 3.6 信息归档的“低阻力”设计
+### 3.6 "Low-Resistance" Information Archiving
 
-在每日日志底部，提供一个“✨ 一键归档”按钮：
+At the bottom of the daily journal, provide a "✨ One-Click Archive" button:
 
-- 将本周已完成项目自动移至归档
-- 生成周报摘要（由 Vox 基于一周的 Pin 完成情况自动撰写草稿，用户可编辑后确认）
-- 避免用户面对成百上千条未归档信息的焦虑感
+- Automatically moves this week's completed projects to archive
+- Generates weekly report summary (Vox automatically drafts based on weekly Pin completion, user can edit before confirmation)
+- Avoids anxiety from facing hundreds of unarchived items
 
-该按钮始终可见但不催促。如果用户连续 2 周未点击，Vox 会在每日仪式结束时温和提及一次：“你有 5 个已完成的项目等着归档——需要我帮你处理吗？”
+The button is always visible but non-intrusive. If user hasn't clicked for 2 consecutive weeks, Vox will gently mention it once at the end of the daily ritual: "You have 5 completed projects waiting to be archived — need me to handle them?"
 
-## 4. 与 Harness 层的协同
+## 4. Coordination with Harness Layer
 
-### 4.1 保护性硬约束
+### 4.1 Protective Hard Constraints
 
-Harness 的边界定义模块可为 ADHD 用户设置专属保护性约束：
+Harness's boundary definition module can set exclusive protective constraints for ADHD users:
 
-| 硬约束 | 规则 | 触发条件 |
+| Hard Constraint | Rule | Trigger Condition |
 |:---|:---|:---|
-| 深夜保护 | 深夜时段禁止新建复杂任务，仅允许记录灵感或设置明日 Pin | 用户可配置时段（默认 23:00-07:00） |
-| 防过载 | 当前 Pin 中未完成任务 > 3 时，禁止新建任务（而非隐藏警告） | 始终生效 |
-| 强制休息 | 连续工作 > 90 分钟，Vox 锁定输入界面 5 分钟 | 用户可配置开关和时长阈值 |
+| Night Protection | Prohibits creating complex tasks during late-night hours, only allows recording inspirations or setting tomorrow's Pins | User-configurable period (default 23:00-07:00) |
+| Anti-Overload | Prohibits creating new tasks when incomplete tasks in current Pins > 3 (instead of hiding warning) | Always active |
+| Forced Break | After continuous work > 90 minutes, Vox locks input interface for 5 minutes | User-configurable toggle and duration threshold |
 
-### 4.2 熵管理代理的 ADHD 友好调整
+### 4.2 ADHD-Friendly Adjustments to Entropy Management Agent
 
-- 清理建议在每日仪式结束后呈现，而非打断用户工作时弹出
-- 每次清理建议 ≤ 3 条（避免“有 47 条建议等你处理”的压迫感）
-- 提供“全部延后到本周日”选项，而非要求用户当场决策
+- Cleanup suggestions presented after daily ritual, not during work
+- Maximum 3 cleanup suggestions at a time (avoid overwhelming "47 suggestions waiting")
+- Provide "Delay all until this Sunday" option, rather than requiring immediate decisions
 
-## 5. 设计审查清单
+## 5. Design Review Checklist
 
-所有面向用户的 PR 和设计提案，必须通过以下审查：
+All user-facing PRs and design proposals must pass the following review:
 
-- [ ] 这个交互是否在 2 分钟内产生可感知的反馈？
-- [ ] 关键信息是否常驻可见，而非依赖用户记忆？
-- [ ] 是否提供了默认选项或推荐，而非空白起点？
-- [ ] 误操作是否可以一步撤销？
-- [ ] 是否有可能打断用户专注的自动行为？如果是，是否提供开关？
+- [ ] Does this interaction produce perceptible feedback within 2 minutes?
+- [ ] Is key information permanently visible, rather than relying on user memory?
+- [ ] Are default options or recommendations provided, rather than blank slate?
+- [ ] Can mistakes be undone in one step?
+- [ ] Are there automatic behaviors that might interrupt user focus? If yes, is there a toggle?

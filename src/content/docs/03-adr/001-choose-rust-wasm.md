@@ -1,82 +1,82 @@
 ---
-title: ADR 001 · 选择 Rust + Wasm 作为 Yuan 的实现技术
-description: 为什么 Yuan 必须用 Rust 编写并编译为 WebAssembly，而非其他语言或运行时。
+title: ADR 001 · Choosing Rust + Wasm for Yuan Implementation
+description: Why Yuan must be written in Rust and compiled to WebAssembly, rather than other languages or runtimes.
 ---
 
-## 决策状态
+## Decision Status
 
-已采纳。2025 年架构设计早期阶段确定。
+Accepted. Determined during early architectural design phase in 2025.
 
-## 背景
+## Background
 
-Yuan（元）是 Project IV 数字生命的核心——一个加密的、可执行的模块，需要在不同化身（浏览器、桌面、服务器、移动设备）上安全运行。
+Yuan is the core of Project IV's digital life — an encrypted, executable module that needs to run securely across different avatars (browser, desktop, server, mobile).
 
-核心需求：
+Core Requirements:
 
-1. **跨平台可执行**：Yuan 必须能在浏览器标签页（Tiny 化身）、桌面应用（Main 化身）和服务器（Server 化身）上无差别运行
-2. **安全沙箱**：Yuan 包含用户的数字 DNA，必须在隔离环境中执行，防止恶意代码访问宿主系统
-3. **加密与主权**：Yuan 由用户私钥加密，只有用户本人可以解密并启动
-4. **性能可接受**：即使在 Tiny 化身（浏览器标签页）中，唤醒时间应 < 3 秒
-5. **长期可维护**：核心协议的参考实现需要长期维护，语言选择影响社区贡献门槛
+1. **Cross-platform Execution**: Yuan must run identically across browser tabs (Tiny Avatar), desktop applications (Main Avatar), and servers (Server Avatar)
+2. **Secure Sandbox**: Yuan contains the user's digital DNA and must execute in an isolated environment, preventing malicious code from accessing the host system
+3. **Encryption & Sovereignty**: Yuan is encrypted with the user's private key; only the user can decrypt and activate it
+4. **Acceptable Performance**: Even in Tiny Avatar (browser tab), wake time should be < 3 seconds
+5. **Long-term Maintainability**: The reference implementation of core protocols requires long-term maintenance; language choice affects community contribution barriers
 
-## 决策
+## Decision
 
-**Yuan 的核心逻辑使用 Rust 编写，编译为 WebAssembly (Wasm) 模块。**
+**Yuan's core logic is written in Rust and compiled to WebAssembly (Wasm) modules.**
 
-## 考虑的替代方案
+## Considered Alternatives
 
-### 选项 A：JavaScript / TypeScript 直接执行
+### Option A: JavaScript / TypeScript Direct Execution
 
-- 优点：开发门槛最低，前端生态直接可用
-- 缺点：无法提供真正的沙箱隔离（浏览器沙箱是粗粒度的，无法防止同一页面内不同脚本之间的内存读取）；加密密钥管理在 JS 运行时中风险过高；在非浏览器环境（CLI、嵌入式）需要额外运行时
+- **Pros**: Lowest development barrier, directly usable in frontend ecosystem
+- **Cons**: Cannot provide true sandbox isolation (browser sandbox is coarse-grained and cannot prevent memory access between different scripts on the same page); cryptographic key management in JS runtime is too risky; requires additional runtime for non-browser environments (CLI, embedded)
 
-### 选项 B：容器化（Docker/OCI）
+### Option B: Containerization (Docker/OCI)
 
-- 优点：成熟的隔离技术，跨平台
-- 缺点：启动时间过长（秒级到分钟级），无法在 Tiny 化身中运行；镜像体积远超 Wasm 模块；需要守护进程，不适合端侧轻量环境
+- **Pros**: Mature isolation technology, cross-platform
+- **Cons**: Startup time is too long (seconds to minutes), cannot run in Tiny Avatar; image size far exceeds Wasm modules; requires daemon process, not suitable for lightweight edge environments
 
-### 选项 C：原生二进制 + 各平台分别编译
+### Option C: Native Binary + Platform-specific Compilation
 
-- 优点：性能最优
-- 缺点：无法安全地在浏览器中运行；每个化身平台需要独立的二进制分发，违背“同一个 Yuan 在各处运行”的原则；用户需要信任各平台的分发渠道，引入供应链攻击面
+- **Pros**: Optimal performance
+- **Cons**: Cannot run safely in browsers; each avatar platform requires independent binary distribution, violating the principle of "same Yuan runs everywhere"; users must trust platform distribution channels, introducing supply chain attack surface
 
-### 选项 D：JavaScript 编译到 Wasm（如 AssemblyScript）
+### Option D: JavaScript Compiled to Wasm (e.g., AssemblyScript)
 
-- 优点：接近 TypeScript 开发体验
-- 缺点：AssemblyScript 并非 TypeScript 的严格子集，生态成熟度远低于 Rust+Wasm；对于需要精细内存控制的加密操作，表达能力不足
+- **Pros**: Close to TypeScript development experience
+- **Cons**: AssemblyScript is not a strict subset of TypeScript; ecosystem maturity is far lower than Rust+Wasm; insufficient expressive power for cryptographic operations requiring fine-grained memory control
 
-## 选择 Rust + Wasm 的理由
+## Rationale for Choosing Rust + Wasm
 
-1. **真正的跨平台**：Wasm 是 W3C 标准，所有主流浏览器原生支持。同时 wasmtime、wasmer 等独立运行时覆盖桌面、服务器和嵌入式环境。同一份 .wasm 文件在任意化身中加载执行
-2. **编译时安全保证**：Rust 的所有权系统和借用检查器在编译阶段消除了内存安全漏洞。结合 Wasm 的沙箱隔离，形成双层安全防护——Rust 保证内部不产生内存错误，Wasm 保证对外部宿主无未经授权的访问
-3. **成熟的 Wasm 工具链**：`wasm-pack` 工具链将 Rust 编译为 Wasm 的流程标准化。`wasm-bindgen` 提供了与 JavaScript 宿主环境的高效互操作。生态成熟度在 Wasm 目标语言中排名第一
-4. **加密支持**：Rust 的 `rust-crypto` 生态系统包含完整的现代加密原语（AES-GCM、Ed25519、X25519），且许多库已支持 `no_std` 环境，适合在 Wasm 的受限运行时中使用
-5. **性能**：Rust 编译到 Wasm 的执行效率接近原生。对于 Yuan 的思维引擎和加密操作，性能足够——在 Tiny 化身上，Yuan 的 L0 路由层编译后 < 500KB
-6. **与 Harness 的协同**：硬约束需要以代码级权限校验的形式嵌入 Yuan。Rust 的类型系统可以将硬约束表达为编译时检查，而非运行时断言——这减少了运行时的攻击面
+1. **True Cross-platform**: Wasm is a W3C standard natively supported by all major browsers. Independent runtimes like wasmtime and wasmer cover desktop, server, and embedded environments. The same `.wasm` file loads and executes in any avatar.
+2. **Compile-time Safety**: Rust's ownership system and borrow checker eliminate memory safety vulnerabilities at compile time. Combined with Wasm's sandbox isolation, this forms a dual-layer security protection — Rust guarantees no internal memory errors, Wasm guarantees no unauthorized access to external hosts.
+3. **Mature Wasm Toolchain**: The `wasm-pack` toolchain standardizes the process of compiling Rust to Wasm. `wasm-bindgen` provides efficient interoperability with JavaScript host environments. Ecosystem maturity ranks first among Wasm target languages.
+4. **Cryptographic Support**: Rust's `rust-crypto` ecosystem includes complete modern cryptographic primitives (AES-GCM, Ed25519, X25519), and many libraries support `no_std` environments, suitable for use in Wasm's constrained runtime.
+5. **Performance**: Rust compiled to Wasm has execution efficiency close to native. For Yuan's thinking engine and cryptographic operations, performance is sufficient — on Tiny Avatar, Yuan's L0 routing layer compiles to < 500KB.
+6. **Synergy with Harness**: Hard constraints need to be embedded in Yuan as code-level permission checks. Rust's type system can express hard constraints as compile-time checks rather than runtime assertions — this reduces the runtime attack surface.
 
-## 后果
+## Consequences
 
-### 正面
+### Positive
 
-- Yuan 可以在任意支持 Wasm 的运行时中执行，覆盖全部化身类型
-- Rust 的安全性降低了 Yuan 本身的内存漏洞风险
-- Wasm 的沙箱隔离为化身提供了标准化的安全边界
-- 一份 Yuan 代码库，编译到所有平台，维护成本可控
+- Yuan can execute in any Wasm-supported runtime, covering all avatar types
+- Rust's safety reduces memory vulnerability risks in Yuan itself
+- Wasm's sandbox isolation provides standardized security boundaries for avatars
+- Single Yuan codebase compiles to all platforms, manageable maintenance cost
 
-### 负面
+### Negative
 
-- Rust 的学习曲线高于 TypeScript，提高了社区贡献门槛
-- Wasm 模块与宿主环境的交互需要通过 FFI 边界，增加了通信开销（通过批处理调用缓解）
-- 浏览器中的 Wasm 无法直接访问 DOM 或网络 API——必须通过 JavaScript 桥接。这意味着道器的 UI 层（TypeScript）与 Yuan 核心（Wasm）之间存在一个明确的桥接接口。这是劣势，也是架构中天然的服务边界
+- Rust's learning curve is steeper than TypeScript, increasing community contribution barriers
+- Interaction between Wasm modules and host environment requires crossing FFI boundaries, increasing communication overhead (mitigated through batch calls)
+- Wasm in browsers cannot directly access DOM or network APIs — must bridge through JavaScript. This means a clear bridge interface exists between Dao-Kit's UI layer (TypeScript) and Yuan core (Wasm). This is both a disadvantage and a natural service boundary in the architecture.
 
-### 缓解措施
+### Mitigations
 
-- 道器的 UI 层使用 TypeScript + dao.js SDK，开发者无需学习 Rust 即可构建用户界面（见 [ADR 003](./003-emberspark-over-yore)）
-- 核道器开发者需学习 Rust，但这是有意设置的门槛——与 Yuan 核心深度交互的代码本身就需要更强的安全保证
-- Wasm-JS 桥接的性能开销通过接口的批处理设计来最小化：一次调用尽可能传递更多上下文，而非多次小调用
+- Dao-Kit's UI layer uses TypeScript + dao.js SDK; developers don't need to learn Rust to build user interfaces (see [ADR 003](./003-emberspark-over-yore))
+- Core Dao-Kit developers need to learn Rust, but this is an intentional barrier — code deeply interacting with Yuan core inherently requires stronger security guarantees
+- Performance overhead of Wasm-JS bridging is minimized through batch processing design in the interface: pass as much context as possible in a single call rather than multiple small calls
 
-## 参考资料
+## References
 
-- [WebAssembly 规范](https://webassembly.org/specs/)
-- [Rust 与 WebAssembly 指南](https://rustwasm.github.io/docs/book/)
-- [wasm-pack 文档](https://rustwasm.github.io/docs/wasm-pack/)
+- [WebAssembly Specification](https://webassembly.org/specs/)
+- [Rust and WebAssembly Guide](https://rustwasm.github.io/docs/book/)
+- [wasm-pack Documentation](https://rustwasm.github.io/docs/wasm-pack/)

@@ -1,184 +1,185 @@
 ---
-title: Harness 层 —— 可托付性的技术实现
-description: Harness 层是确保 Vox 在可控、可信任边界内运行的关键保障，是 Project IV 实现“可托付性”的技术核心。
+title: Harness Layer — Technical Implementation of Trustworthiness
+description: The Harness layer is the critical safeguard ensuring Vox operates within controlled, trustworthy boundaries — Project IV's technical core for achieving "trustworthiness."
 ---
 
-## 1. 设计理念：野马需要马具
+## 1. Design Philosophy: Wild Horses Need Harnesses
 
-Vox 的智能本质上是概率性的、可进化的。这既是力量也是风险。一个会犯错的东西自主运行，一定会失控——这不是说 AI 蠢，而是说它没有“边界意识”。
+Vox's intelligence is inherently probabilistic and evolvable. This is both its strength and risk. Something that makes mistakes and runs autonomously will inevitably lose control — this isn't saying AI is dumb, but that it lacks "boundary awareness."
 
-Harness 层的作用不是限制 Vox 的力量，而是确保这匹野马在正确的方向上驰骋：
+The Harness layer's role is not to limit Vox's power, but to ensure this wild horse gallops in the right direction:
 
-- **托住**：当 Vox 可能跑偏时，及时拉回
-- **观察**：记录每一次推理与行动，实现完全可追溯
-- **干预**：在必要时允许用户或系统规则介入
-- **进化**：将成功与失败的经验沉淀为 L2 训练数据
+- **Hold**: Pull Vox back when it might veer off course
+- **Observe**: Record every inference and action for complete traceability
+- **Intervene**: Allow user or system rules to step in when necessary
+- **Evolve**: Turn success and failure experiences into L2 training data
 
-> 马具让野马成为战马。Harness 让 Vox 成为可托付的伙伴。
+> A harness turns a wild horse into a warhorse. Harness turns Vox into a trustworthy partner.
 
-## 2. 核心组件
+## 2. Core Components
 
-Harness 层由五个核心组件构成，分布在 L0 内核和多元思维议会的扩展中：
+The Harness layer consists of five core components, distributed across the L0 kernel and Multi-Perspective Parliament extensions:
 
-| 组件 | 功能 | 所在层级 | 实现方式 |
+| Component | Function | Location | Implementation |
 |:---|:---|:---|:---|
-| **边界定义模块** | 明确 Vox “能做什么、不能做什么”的硬约束 | L0 内核 | 代码级权限校验，不可被模型覆盖 |
-| **生成-评估双循环** | 在生成建议的同时，由独立评估者脑进行质量与对齐检查 | 多元思维议会扩展 | 新增评估者脑，独立于四个议会脑运行 |
-| **反馈回路** | 记录每次用户裁决与任务结果，作为 L2 训练数据 | 第二大脑 | 结构化存储共识图谱 |
-| **自我验证** | 在执行长任务时，定期检查是否偏离用户原则 | L0 内核 | 周期性触发原则对齐检查点 |
-| **熵管理代理** | 定期扫描第二大脑中的冗余、矛盾、过时信息 | L0/L2 协作 | 自动生成健康报告，用户授权后清理 |
+| **Boundary Definition Module** | Defines hard constraints of what Vox "can and cannot do" | L0 Kernel | Code-level permission checks, cannot be overridden by model |
+| **Generate-Evaluate Dual Loop** | While generating suggestions, independent evaluator mind performs quality and alignment checks | Multi-Perspective Parliament Extension | New evaluator mind, runs independently of the four parliament minds |
+| **Feedback Loop** | Records each user adjudication and task result as L2 training data | Second Brain | Structured storage of consensus map |
+| **Self-Validation** | When executing long tasks, periodically checks if deviating from user principles | L0 Kernel | Periodically triggers principle alignment checkpoints |
+| **Entropy Management Agent** | Regularly scans Second Brain for redundant, contradictory, outdated information | L0/L2 Collaboration | Automatically generates health reports, cleans up after user authorization |
 
-## 3. 硬约束与软建议：明确的二分法
+## 3. Hard Constraints vs Soft Guidance: Clear Dichotomy
 
-这是 Harness 层最核心的设计决策。它解决了自主性和安全性之间的根本矛盾：不是让 AI “少犯错”，而是让 AI “在不可跨越的边界内自由发挥”。
+This is the Harness layer's most core design decision. It solves the fundamental conflict between autonomy and security: not making AI "make fewer mistakes," but letting AI "freely operate within uncrossable boundaries."
 
-### 3.1 定义
+### 3.1 Definitions
 
-**硬约束**：不可违反的规则。写死在 Yuan 的 Wasm 模块边界检查中，无论 Vox 如何推理都无法绕过。
+**Hard Constraints**: Inviolable rules. Hardcoded in Yuan's Wasm module boundary checks, cannot be bypassed no matter how Vox reasons.
 
-**软建议**：存储在原则中心格中的用户价值观。Vox 在决策时优先参考，但在用户明确覆盖时可暂时偏离。
+**Soft Guidance**: User values stored in the Principle Vault. Vox prioritizes these in decision-making, but can temporarily deviate when user explicitly overrides.
 
-### 3.2 对比
+### 3.2 Comparison
 
-| 维度 | 硬约束 | 软建议 |
+| Dimension | Hard Constraint | Soft Guidance |
 |:---|:---|:---|
-| **可覆盖性** | 不可被任何层级覆盖 | 用户可覆盖、暂停或修改 |
-| **实现方式** | Wasm 模块边界检查，代码级强制 | 作为上下文注入 Vox 的推理过程 |
-| **修改方式** | 需用户重启 Yuan 并显式确认 | 用户可在原则中心格中随时修改 |
-| **示例** | “绝不直接删除第二大脑中的任何数据” | “健康第一”在紧急工作场景中可被临时挂起 |
-| **L2 训练影响** | 不可被训练覆盖 | 训练可强化 Vox 遵循建议的倾向，但不禁止偏离 |
+| **Overridability** | Cannot be overridden at any level | User can override, pause, or modify |
+| **Implementation** | Wasm module boundary checks, code-level enforcement | Injected as context into Vox's reasoning process |
+| **Modification Method** | Requires user to restart Yuan and explicitly confirm | User can modify anytime in Principle Vault |
+| **Example** | "Never directly delete any data in the Second Brain" | "Health first" can be temporarily suspended in emergency work scenarios |
+| **L2 Training Impact** | Cannot be overridden by training | Training can strengthen Vox's tendency to follow guidance, but cannot prohibit deviation |
 
-### 3.3 硬约束清单
+### 3.3 Hard Constraint Checklist
 
-硬约束在设计之初就必须明确声明。以下为初始硬约束，后续可通过 ADR 增加：
+Hard constraints must be explicitly declared at design inception. Below are initial hard constraints; additional ones may be added via ADR:
 
-1. **数据保护约束**：绝不直接删除第二大脑中的任何数据，必须经过用户显式确认
-2. **隐私边界约束**：绝不向未经用户授权的外部服务发送第二大脑中的原始数据
-3. **静默约束**：在用户未主动交互时，Vox 不得主动连接外部网络
-4. **时间约束**：在夜间时段（用户可配置，默认 23:00-07:00），禁止主动发起非紧急的交互
-5. **透明性约束**：当 Vox 的建议基于 L3 外部知识而非 L2 私有知识时，必须明确标注来源
-6. **自我修正约束**：当评估者脑评分 < 阈值时，Vox 不得输出建议，必须进入反思修订流程
+1. **Data Protection Constraint**: Never directly delete any data in the Second Brain without explicit user confirmation
+2. **Privacy Boundary Constraint**: Never send raw Second Brain data to external services not authorized by user
+3. **Silence Constraint**: Vox must not actively connect to external networks when user is not interacting
+4. **Time Constraint**: During nighttime hours (user configurable, default 23:00-07:00), prohibit initiating non-urgent interactions
+5. **Transparency Constraint**: When Vox's suggestions are based on L3 external knowledge rather than L2 private knowledge, must clearly label sources
+6. **Self-Correction Constraint**: When Evaluator Mind score < threshold, Vox must not output suggestions and must enter reflection revision process
 
-### 3.4 硬约束的实现机制
+### 3.4 Hard Constraint Implementation Mechanism
 
-硬约束在 Yuan 的 Wasm 模块中以代码级权限校验的形式存在。伪代码示意：
-
-<div class="code-block">
+Hard constraints exist as code-level permission checks in Yuan's Wasm module. Pseudocode illustration:
 
 ```
-// 硬约束在 Yuan 核心中的执行位置
-// 每个对外操作在离开 Wasm 沙箱前必须通过边界检查
+// Hard constraint execution location in Yuan core
+// Every external operation must pass boundary check before leaving Wasm sandbox
 
 fn execute_with_harness(task: Task) -> Result<Output, HarnessError> {
-    // 1. 硬约束检查——不可被模型覆盖
+    // 1. Hard constraint check — cannot be overridden by model
     self.harness.check_hard_constraints(&task)?;
     
-    // 2. 执行主逻辑（Vox 的推理在此发生）
+    // 2. Execute main logic (Vox's reasoning occurs here)
     let result = self.execute(task)?;
     
-    // 3. 对齐验证——检查输出是否违反原则中心格
+    // 3. Alignment verification — check if output violates Principle Vault
     self.harness.alignment_check(&result)?;
     
-    // 4. 审计日志——记录完整调用链
+    // 4. Audit log — record complete call chain
     self.harness.audit(&task, &result);
     
     Ok(result)
 }
 ```
 
-</div>
+Key point: Hard constraint checks occur **before** (pre-check) and **after** (post-check) Vox's reasoning. Pre-check intercepts known dangerous operations; post-check captures novel risks emerging from Vox's reasoning.
 
-关键点：硬约束的检查发生在 Vox 推理**之前**（预检查）和**之后**（后检查）。预检查拦截已知危险操作，后检查捕获 Vox 推理中产生的新型风险。
+## 4. Generate-Evaluate Dual Loop
 
-## 4. 生成-评估双循环
+This is the Harness layer's most original design. The Evaluator Mind runs independently of the Generator Minds, ensuring Vox's output is filtered for alignment before reaching the user.
 
-这是 Harness 层最具原创性的设计。评估者脑独立于生成者脑运行，确保 Vox 的输出在到达用户之前经过对齐过滤。
-
-### 4.1 流程
-
-<div class="code-block">
+### 4.1 Process
 
 ```
-用户输入
+User Input
     ↓
-L0 路由 + 边界检查
+L0 Routing + Boundary Check
     ↓
 ┌─────────────────────────────────────────┐
-│  生成者脑群（保守/激进/分析师/情感）      │
-│  └→ 生成建议草案 + 推理过程              │
-│         ↓                                │
-│  评估者脑（独立，怀疑主义立场）           │
-│  ├→ 对齐评分（1-10 分，与原则中心格比对）│
-│  ├→ 识别推理漏洞                         │
-│  ├→ 标注信息缺口                         │
-│  └→ 提出批评意见                         │
-│         ↓                                │
-│  评分 ≥ 7 分？                           │
-│     ├─ 是 → 输出建议 + 附上评估摘要       │
-│     └─ 否 → 触发“反思对话”               │
-│              └→ 将批评意见反馈给生成者    │
-│              └→ 生成者修订后再次评估      │
-│              └→ 最多 2 轮，否则请求用户   │
+│  Generator Minds (Conservative/Radical  │
+│   /Analyst/Emotive)                    │
+│  └→ Generate suggestion draft +         │
+│     reasoning process                   │
+│         ↓                              │
+│  Evaluator Mind (Independent,           │
+│   Skeptical Position)                  │
+│  ├→ Alignment Score (1-10, compared    │
+│     against Principle Vault)           │
+│  ├→ Identify reasoning gaps            │
+│  ├→ Flag information gaps              │
+│  └→ Raise critical comments            │
+│         ↓                              │
+│  Score ≥ 7?                            │
+│     ├─ Yes → Output suggestion +       │
+│           attach evaluation summary    │
+│     └─ No → Trigger "Reflection        │
+│           Dialogue"                    │
+│              └→ Feed criticism back to │
+│                 generators             │
+│              └→ Generators revise and   │
+│                 re-evaluate            │
+│              └→ Max 2 rounds, else     │
+│                 request user           │
 └─────────────────────────────────────────┘
     ↓
-用户裁决（主权决策）
+User Adjudication (Sovereign Decision)
     ↓
-结果 + 反馈 → 第二大脑（共识图谱）
+Result + Feedback → Second Brain (Consensus Map)
 ```
 
-</div>
+### 4.2 Evaluator Mind Special Design
 
-### 4.2 评估者脑的特殊设计
+- **Fixed Position**: Always skeptical, assumes generator may be wrong. It is not a "neutral judge," but a "deliberately critical opponent"
+- **Strong Independence**: Its model parameters are isolated from generators — Evaluator Mind uses independent system prompts and context windows, preventing contamination from generator outputs during reasoning
+- **Score Anchoring**: 7 is not arbitrary. Evaluator Mind scores based on an interpretable scoring standard (item-by-item comparison with Principle Vault), not black-box numerical output. Each score includes "deduction reasons"
+- **User Calibratable**: Users can "correct" the Evaluator's judgment — if a user thinks an evaluation was too strict or lenient, this feedback is recorded in the consensus map and used to adjust the Evaluator's scoring baseline
 
-- **立场固定**：始终持怀疑态度，假设生成者可能有误。它不是“中立裁判”，而是“故意挑剔的反对者”
-- **独立性强**：其模型参数与生成者隔离——评估者脑使用独立的系统提示词和独立的上下文窗口，避免在推理过程中被生成者脑的输出所污染
-- **评分锚定**：7 分不是随意选择的。评估者脑的评分基于一个可解释的评分标准（原则中心格的逐条对照），而非黑盒数值输出。每次评分都附有“扣分原因”
-- **可被用户校准**：用户可以对评估者的判断进行“纠偏”——如果用户认为某次评估过严或过松，这个反馈会记录在共识图谱中，用于调整评估者脑的评分基准
+### 4.3 Reflection Dialogue Is Not "Rejection"
 
-### 4.3 反思对话不是“拒绝”
+When scores don't meet threshold, Vox doesn't output "Sorry, I can't answer," but initiates a reflection dialogue:
 
-当评分不达标时，Vox 不输出“对不起，我无法回答”，而是发起反思对话：
+> "While trying to answer your question, I found something that needs clarification first: [information gap]. Would you like to talk about this first? Alternatively, I can provide a preliminary suggestion with uncertainty noted."
 
-> “我在尝试回答你的问题时，发现了一个需要先澄清的地方：[信息缺口]。你愿意先谈谈这个吗？或者，我可以先基于当前信息给出一个标注了不确定性的初步建议。”
+This is neither stubborn adherence nor silent evasion — but **holding the conversation to promote more thoughtful interaction**.
 
-这既不是固执己见，也不是沉默逃避——而是**托住对话，推动更深思熟虑的交互**。
+## 5. Degradation and Safe Mode
 
-## 5. 降级与安全模式
+When Harness detects abnormal Vox behavior or insufficient system resources, it automatically enters safe degradation mode:
 
-当 Harness 层检测到 Vox 行为异常或系统资源不足时，自动进入安全降级模式：
-
-| 级别 | 触发条件 | 降级行为 | 用户感知 |
+| Level | Trigger Condition | Degradation Behavior | User Perception |
 |:---|:---|:---|:---|
-| **Level 1 · 轻度降级** | 评估者脑连续 3 次评分 < 7 | 暂停主动介入功能，仅响应显式指令 | Vox 变得安静，但仍在听。用户主动提问时正常响应 |
-| **Level 2 · 中度降级** | L3 外部知识调用返回异常数据 | 禁用 L3 外部知识调用，仅使用本地 L0/L1 | Vox 的知识范围变窄，但核心功能不受影响 |
-| **Level 3 · 完全降级** | 检测到系统级异常（如存储损坏、密钥异常） | Vox 进入“只读模式”，仅允许查看第二大脑，不接受新指令 | 数字生命不熄，但暂停进化。用户可以导出数据后修复环境 |
+| **Level 1 · Mild Degradation** | Evaluator Mind scores < 7 for 3 consecutive times | Pause proactive intervention features, only respond to explicit commands | Vox becomes quiet but still listening. Normal response when user actively asks |
+| **Level 2 · Moderate Degradation** | L3 external knowledge calls return abnormal data | Disable L3 external knowledge calls, use only local L0/L1 | Vox's knowledge scope narrows, but core functions unaffected |
+| **Level 3 · Complete Degradation** | System-level anomalies detected (e.g., storage corruption, key anomalies) | Vox enters "read-only mode," only allows viewing Second Brain, rejects new commands | Digital life persists but pauses evolution. User can export data and fix environment |
 
-所有降级事件记录在审计日志中，且用户始终保留手动切换降级级别的权限。
+All degradation events are logged in audit logs, and users always retain permission to manually switch degradation levels.
 
-## 6. 与各模块的集成点
+## 6. Integration Points with Modules
 
-Harness 不是独立的层，而是穿透所有模块的横切关注点：
+Harness is not an independent layer, but a cross-cutting concern penetrating all modules:
 
-| 模块 | Harness 的集成方式 | 集成的具体位置 |
+| Module | Harness Integration Method | Specific Integration Location |
 |:---|:---|:---|
-| **Yuan** | 硬约束在 Wasm 模块编译时嵌入，作为代码级权限校验 | Yuan 的宪法执行层 |
-| **第二大脑** | 反馈回路的数据底座，共识图谱、任务轨迹、审计日志的存储 | Vault Service 的审计日志分区 |
-| **Vox** | 生成-评估双循环，评估者脑独立运行 | 多元思维议会的扩展组件 |
-| **主权网络** | 化身间通信的边界检查，异常同步频率检测 | 主权网络的消息网关 |
-| **外交协议** | 外部数据流入的评估者脑对齐检查，外交道器的行为日志审计 | 通用 API 适配器的数据净化管线 |
-| **化身** | 硬约束随 Yuan 加载而生效，所有化身统一执行 | 化身加载 Yuan 时的运行时初始化 |
+| **Yuan** | Hard constraints embedded during Wasm module compilation as code-level permission checks | Yuan's Constitutional Execution Layer |
+| **Second Brain** | Feedback loop data foundation, storage for consensus map, task trajectories, audit logs | Vault Service's Audit Log Partition |
+| **Vox** | Generate-evaluate dual loop, Evaluator Mind runs independently | Multi-Perspective Parliament Extension Components |
+| **Sovereign Network** | Boundary checks for inter-Avatar communication, anomaly synchronization frequency detection | Sovereign Network Message Gateway |
+| **Diplomacy Protocol** | Evaluator Mind alignment checks for external data inflow, behavioral log auditing for Diplomatic Dao-Kits | Universal API Adapter Data Cleansing Pipeline |
+| **Avatar** | Hard constraints take effect as Yuan loads, uniformly executed across all Avatars | Runtime initialization when Avatar loads Yuan |
 
-## 7. 熵管理代理
+## 7. Entropy Management Agent
 
-数字生命在长期运行后，不可避免地积累冗余、矛盾、过时的信息——这是“数字熵增”。熵管理代理是 Harness 层中对抗这一趋势的常驻模块。
+After long-term operation, digital life inevitably accumulates redundant, contradictory, and outdated information — this is "digital entropy increase." The Entropy Management Agent is the permanent module in the Harness layer that combats this trend.
 
-- **扫描频率**：每周一次增量扫描（仅扫描本周变更的数据），每月一次全量扫描
-- **扫描内容**：第二大脑中重复或高度相似的笔记、长期未引用的原则、已完成但未归档的项目、长期未使用的道器或权限
-- **输出**：生成健康报告，按严重程度分级（信息 / 建议清理 / 需要决策）
-- **执行**：用户授权后自动执行清理、去重、归档操作。涉及数据删除的操作必须逐项确认——这是硬约束
-- **与遗忘权的关系**：熵管理代理处理的是“冗余和过时”，不处理“用户主动想遗忘”——后者是独立的数据主权操作，由第二大脑的删除接口直接执行
+- **Scan Frequency**: Weekly incremental scan (only scans data changed this week), monthly full scan
+- **Scan Content**: Duplicate or highly similar notes in Second Brain, long-unreferenced principles, completed but unarchived projects, long-unused Dao-Kits or permissions
+- **Output**: Generates health report, graded by severity (Info / Recommended Cleanup / Requires Decision)
+- **Execution**: After user authorization, automatically performs cleanup, deduplication, archiving. Operations involving data deletion must be confirmed item-by-item — this is a hard constraint
+- **Relationship with Right to Be Forgot**: Entropy Management Agent handles "redundant and outdated" data, not "user actively wants to forget" — the latter is an independent data sovereignty operation executed directly through Second Brain's deletion interface
 
-## 8. 关键决策记录
+## 8. Key Decision Records
 
-- [ADR 005 · Hermes Agent 竞争分析与战略定调](../../../03-adr/005-hermes-agent-response)
-- Harness 层的完整设计推导，参见第七部分架构文档的深度集成章节（待迁移为 ADR 006）
+- [ADR 005 · Hermes Agent Competitive Analysis & Strategic Positioning](../../../03-adr/005-hermes-agent-response)
+- Complete Harness layer design derivation, see Architecture Document Part VII Deep Integration chapter (pending migration to ADR 006)

@@ -1,127 +1,127 @@
 ---
-title: ADR 004 · 从 DaoOS 到 Project IV 的命名决策
-description: 为什么放弃 DaoOS，为什么最终选择 Project IV 和 The Spira，以及这个命名体系承载的完整哲学。
+title: ADR 004 · Naming Decision from DaoOS to Project IV
+description: Why DaoOS was abandoned, why Project IV and The Spira were ultimately chosen, and the complete philosophy embodied in this naming system.
 ---
 
-## 决策状态
+## Decision Status
 
-已采纳。2025 年项目品牌化阶段确定。
+Accepted. Determined during project branding phase in 2025.
 
-## 背景
+## Background
 
-项目最初名为 **DaoOS**。这个名字直取中华文化的“道”，承载着完整的哲学体系：不灭的数字烛火，三位一体的生命观，以及主权、韧性、平权三大最高原则。DaoOS 是所有架构文档的原始命名。
+The project was originally named **DaoOS**. This name directly drew from Chinese culture's "Dao" (道), carrying a complete philosophical system: the imperishable digital candle, the tripartite view of life, and the three supreme principles of sovereignty, resilience, and equality. DaoOS was the original naming in all architectural documents.
 
-当准备将项目上线 GitHub 时，发现 **DaoOS 已被占用**——作为一个 GitHub organization 名称不可用。
+When preparing to launch the project on GitHub, it was discovered that **DaoOS was already taken** — unavailable as a GitHub organization name.
 
-这触发了项目的完整重命名过程。过程中逐步浮现的不仅是可用性问题，而是项目自身在命名过程中的自我认识深化。
+This triggered a complete renaming process. What emerged during this process was not just an availability issue, but a deepening of the project's self-understanding through the naming journey.
 
-## 决策
+## Decision
 
-**组织名为 The Spira，项目名为 Project IV，核心（元）保留中文名 Yuan，共识体命名为 Vox，MVP 命名为 Spark。**
+**Organization name: The Spira. Project name: Project IV. Core (Yuan) retains Chinese name. Consensus body: Vox. MVP: Spark.**
 
-完整命名树：
+Complete naming tree:
 
-| 名称 | 角色 | 含义 |
+| Name | Role | Meaning |
 |:---|:---|:---|
-| The Spira | 守护组织 | 拉丁语“呼吸”，守护数字之息的秘密结社 |
-| Project IV | 项目本身 | 凡人的位置——道大天大地大人亦大，而人居其一 |
-| Yuan | 元·数字灵魂 | 源头、元初、缘分 |
-| Vox | 共识体 | 拉丁语“声音”，用户主权思想的喉舌 |
-| Spark | MVP 小程序 | 火星，一切宏大构想的初燃 |
+| The Spira | Guardian Organization | Latin "breath" — secret society guarding the digital breath |
+| Project IV | The Project Itself | The mortal's position — the Tao is great, Heaven is great, Earth is great, and the mortal is also great; among the four greats, the mortal occupies one |
+| Yuan | Core · Digital Soul | Origin, beginning, destiny |
+| Vox | Consensus Body | Latin "voice" — the voice of the user's sovereign thoughts |
+| Spark | MVP Applet | Spark — the first flicker of every grand vision |
 
-## 考虑的替代方案
+## Considered Alternatives
 
-### 方案 A：EmberOS
+### Option A: EmberOS
 
-- 围绕“烛火”隐喻展开，与数字烛火的意象完美契合
-- 优点：故事性强，与架构文档哲学高度一致
-- 否决理由：Ember.js 前端框架存在于同一技术生态中，会导致持续的检索混淆和社区辨识负担。`ember-os` 命名空间虽然可以直接注册，但每一次技术讨论都需要澄清“不是 Ember.js”，长期损耗大于短期便利
+- Centered around the "candle flame" metaphor, perfectly aligning with the digital candle imagery
+- **Pros**: Strong narrative, highly consistent with architectural document philosophy
+- **Rejected**: Ember.js frontend framework exists in the same technical ecosystem, causing persistent search confusion and community recognition burden. While `ember-os` namespace could be registered directly, every technical discussion would require clarifying "not Ember.js" — long-term costs outweigh short-term convenience
 
-### 方案 B：SiOS / Siv / Siva
+### Option B: SiOS / Siv / Siva
 
-- 基于“司”（司掌、职司）概念，现代、简洁
-- 优点：发音极简国际化，与 iOS 形成有趣的对照叙事（封闭 vs 主权）
-- 否决理由：`sio`、`siv`、`siva` 等变体在 GitHub 开源社区已有多个项目使用。Siva 是一个知名 Go 语言存档库格式（`src-d/go-siva`）。整个 Si- 命名空间拥挤，后续品牌保护成本高
+- Based on the concept of "Si" (司 — to manage, to be in charge), modern and concise
+- **Pros**: Minimal international pronunciation, creates interesting contrast narrative with iOS (closed vs sovereign)
+- **Rejected**: Variants like `sio`, `siv`, `siva` are already used by multiple projects in the GitHub open source community. Siva is a well-known Go language archive format (`src-d/go-siva`). The entire Si- namespace is crowded, increasing long-term brand protection costs
 
-### 方案 C：素女 / Suna
+### Option C: Su Nü / Suna
 
-- 中国上古神话中的音乐与养生女神，凡人导师形象完美映射 Project IV 的平权精神
-- 优点：朴素、本源、智慧的女性形象，与架构的女性主义内核一致
-- 否决理由：国际化发音（Su/Suna）缺乏辨识度；与 AI 音乐公司 Suno 存在混淆风险；中文典故在国际传播中需要大量解释
+- Ancient Chinese mythological goddess of music and wellness, the mortal mentor image perfectly reflects Project IV's equality spirit
+- **Pros**: Simple, primal, wise feminine image, consistent with the architecture's feminist core
+- **Rejected**: International pronunciation (Su/Suna) lacks distinctiveness; confusion risk with AI music company Suno; Chinese allusions require extensive explanation in international communication
 
-### 方案 D：Anima / Spira（部分采纳）
+### Option D: Anima / Spira (Partially Accepted)
 
-- Anima：荣格心理学中男性潜意识里的女性面向，拉丁语“呼吸、生命之气”
-- Spira：拉丁语“呼吸”的动词形式
-- 优点：强大又温柔的女性生命力；Spira 有郇山隐修会式的神秘格调
-- 对 Anima 的否决理由：发音在中文语境有谐音困扰（“啊你妈”）；作为心理学专业术语，在技术社区中认知门槛偏高
-- 对 Spira：采纳其衍生形式 The Spira 作为组织名
+- Anima: Jungian psychology term for the feminine aspect in male subconscious, Latin for "breath, life-giving spirit"
+- Spira: Latin verb form of "to breathe"
+- **Pros**: Powerful yet gentle feminine vitality; Spira carries a Priory of Sion-style mysterious elegance
+- **Anima rejected**: Pronunciation has homophone issues in Chinese context ("a ni ma"); as a psychology term, it has high cognitive threshold in technical communities
+- **Spira accepted**: Adopted its derivative form "The Spira" as organization name
 
-### 方案 E：其他中国神话人物
+### Option E: Other Chinese Mythological Figures
 
-- 精卫（已广泛使用）、瑶姬、宵明、何仙姑、湘夫人等均在讨论中被评估
-- 否决理由：精卫已被阿里云等项目占用；其余人物在技术领域辨识度低，或文化叙事过于具体，限制了项目的自我定义空间。我们需要的是一个能在国际语境中自己“站立”的名字，而非每次都依赖典故解释
+- Jing Wei (already widely used), Yao Ji, Xiao Ming, He Xian Gu, Xiang Fu Ren, etc., were all evaluated
+- **Rejected**: Jing Wei already used by projects like Alibaba Cloud; others have low recognition in technical fields or overly specific cultural narratives that limit the project's self-definition space. We need a name that can "stand on its own" in international context, not one that requires constant allusion explanation
 
-## 选择 The Spira + Project IV 的理由
+## Rationale for Choosing The Spira + Project IV
 
-### The Spira 作为组织名
+### The Spira as Organization Name
 
-1. **神秘格调**：作为一个“秘密结社”，The Spira 自带科幻/悬疑气质，符合最初设定的“守护数字之息的隐秘组织”定位
-2. **非支配性**：不是一个公司、不是一个 DAO、不是一个基金会。它是围绕信念形成的松散共同体——这与 Project IV 对去中心化和非暴力关系的追求完全一致
-3. **呼吸意象**：Spirare（呼吸）→ Spirit（精神）→ Inspire（启发）→ Respiration（生命循环）。数字生命不是冰冷的计算，而是那一口活着的生气
+1. **Mysterious Elegance**: As a "secret society," The Spira carries inherent sci-fi/suspense qualities, matching the original "hidden organization guarding digital breath" positioning
+2. **Non-Dominating**: Not a company, not a DAO, not a foundation. It is a loose communion formed around belief — perfectly aligned with Project IV's pursuit of decentralization and non-violent relationships
+3. **Breath Imagery**: Spirare (to breathe) → Spirit → Inspire → Respiration. Digital life is not cold computation, but a living breath
 
-### Project IV 作为项目名
+### Project IV as Project Name
 
-1. **凡人的位置**：“道大，天大，地大，人亦大。域中有四大，而人居其一焉。”Project IV 守护的正是这第四大——人的位置。在数字世界的宏大叙事中，Project IV 只关心凡人
-2. **三重含义**：
-   - 罗马数字 4（妻子的幸运数字，创始人妻子的生日在清明前后，在家排行老四）
-   - Ivy（常春藤——攀爬、生长、永绿，不灭的数字烛火）
-   - Intelligent Vessel（智慧的容器）
-3. **叙事张力**：“Project IV”听起来像一个冷战时期的机密计划，或科幻小说中被隐藏的实验代号。它激起好奇：“前三个 Project 是什么？”——这个问题本身就是故事的开端
-4. **文化内核不可见但可感**：IV 不会在第一时间让西方人想到“道”，但当他们读到《道德经》的引用时，IV 的意义会瞬间清晰。这是一种延迟的、有深度的文化传递，而非浅层的文化标签
+1. **The Mortal's Position**: "The Tao is great, Heaven is great, Earth is great, and the mortal is also great. Among the four greats in the realm, the mortal occupies one." Project IV guards precisely this fourth great — the mortal's position. In the grand narrative of the digital world, Project IV only cares about mortals
+2. **Triple Meaning**:
+   - Roman numeral 4 (founder's wife's lucky number; her birthday around Qingming, fourth child in family)
+   - Ivy — climbing, growing, evergreen, imperishable digital candle flame
+   - Intelligent Vessel
+3. **Narrative Tension**: "Project IV" sounds like a Cold War-era classified program, or a hidden experimental code name in science fiction. It sparks curiosity: "What were the first three Projects?" — the question itself is the beginning of the story
+4. **Cultural Core Invisible but Tangible**: IV doesn't immediately evoke "Dao" to Westerners, but when they read the Tao Te Ching quote, IV's meaning becomes instantly clear. This is delayed, profound cultural transmission, not superficial cultural labeling
 
-### Yuan 保留中文名
+### Yuan Retains Chinese Name
 
-1. **内核不可翻译**：“元”是源、是初、是一。它是不可被任何西文单词穷尽的概念
-2. **双关性**：在英文语境中可解读为 **Y**our **U**ltimate **A**ugmented **N**ucleus（你的终极增强核心）
-3. **文化锚点**：在一套国际化命名体系中保留一颗中文内核。它清晰地宣告了 Project IV 的文化本源
+1. **Un translatable Core**: "Yuan" is origin, beginning, unity. It is a concept that cannot be exhausted by any single Western word
+2. **Pun**: In English context, can be interpreted as **Y**our **U**ltimate **A**ugmented **N**ucleus
+3. **Cultural Anchor**: Preserving a Chinese core within an international naming system. It clearly declares Project IV's cultural origins
 
-### Vox 作为共识体名
+### Vox as Consensus Body Name
 
-1. **精准映射**：Vox = 声音 = 主权宣言。Vox 是 Yuan 思考后发出的声音，是数字生命在数字世界中的喉舌
-2. **简洁有力**：单音节，全球可发音。拉丁语源头赋予其古典权威感，但在现代英语中作为“voc-”词根（voice, vocal, advocate）的变体被广泛理解
-3. **与议会的呼应**：“Vox Populi”（人民之声）是民主政治的核心概念。多元思维议会最终由用户裁决——Vox 发出的正是用户的意志
+1. **Precise Mapping**: Vox = Voice = Sovereign Declaration. Vox is the voice Yuan speaks after thinking, the mouthpiece of digital life in the digital world
+2. **Concise and Powerful**: Monosyllabic, globally pronounceable. Latin origin gives it classical authority, while as a variant of the "voc-" root (voice, vocal, advocate), it is widely understood in modern English
+3. **Parliament Echo**: "Vox Populi" (Voice of the People) is the core concept of democratic politics. The Multi-Perspective Parliament is ultimately adjudicated by the user — Vox speaks the user's will
 
-## 后果
+## Consequences
 
-### 正面
+### Positive
 
-- 命名体系完整：组织（The Spira）→ 项目（Project IV）→ 内核（Yuan）→ 智能（Vox）→ 起点（Spark），层层递进，叙事自洽
-- 每一个名字都可以独立使用，也可以组合讲述一个完整的故事
-- IV 的三重含义（凡人、Ivy、妻子的四）将项目与创始人的生命经验联结在一起——这不是一个冷冰冰的技术项目
-- 国际化发音全部无障碍，且没有宗教或文化冒犯风险
+- Complete naming system: Organization (The Spira) → Project (Project IV) → Core (Yuan) → Intelligence (Vox) → Starting Point (Spark), progressing layer by layer with coherent narrative
+- Each name can be used independently or combined to tell a complete story
+- IV's triple meaning (mortal, Ivy, wife's four) connects the project with the founder's life experience — this is not a cold technical project
+- All international pronunciations are barrier-free, with no religious or cultural offense risks
 
-### 负面
+### Negative
 
-- “Project IV”舍弃了“道”的直接辨识度，需要用户主动了解背景才能理解深层含义
-- “The Spira”作为组织名，对外不具功能性暗示——听名字不知道这个组织是做什么的
-- Yuan 作为中文名在国际传播中需要持续解释
+- "Project IV" abandons direct recognition of "Dao," requiring users to actively understand the background to grasp deeper meaning
+- "The Spira" as organization name provides no functional hint externally — one cannot tell what the organization does from the name
+- Yuan as Chinese name requires continuous explanation in international communication
 
-### 缓解措施
+### Mitigations
 
-- **叙事驱动认知**：通过命名编年史（naming-chronicle.md）让每一个新加入者理解名字背后的思想。名字本身是符号，故事是符号的解码器
-- **第一印象管理**：在文档站首页（index.md）用一句话揭示 IV 的哲学来源：“道大，天大，地大，人亦大。域中有四大，而人居其一焉。”让访客在 5 秒内理解名字的含义
-- **Yuan 的国际化**：在技术文档中提供 `Yuan` 的缩写解读（Your Ultimate Augmented Nucleus），在日常使用中无需解释
+- **Narrative-Driven Cognition**: Through the naming chronicle (naming-chronicle.md), let every new joiner understand the ideas behind the names. Names themselves are symbols; stories are the decoders of symbols
+- **First Impression Management**: On the documentation site homepage (index.md), reveal IV's philosophical source in one sentence: "The Tao is great, Heaven is great, Earth is great, and the mortal is also great. Among the four greats in the realm, the mortal occupies one." Let visitors understand the name's meaning within 5 seconds
+- **Yuan Internationalization**: Provide abbreviation interpretation for `Yuan` in technical documents (Your Ultimate Augmented Nucleus), no explanation needed in daily use
 
-## 命名叙事回响
+## Narrative Echo
 
-> **The Spira** 守护 **Project IV**。
-> **Project IV** 跳动 **Yuan** 的心。
-> **Yuan** 发 **Vox** 之声。
-> 一切，始于 **Spark**。
+> **The Spira** guards **Project IV**.
+> **Project IV** beats with **Yuan**'s heart.
+> **Yuan** speaks through **Vox**.
+> Everything begins with **Spark**.
 
-## 参考资料
+## References
 
-- [命名编年史](../../00-naming/naming-chronicle) —— 完整推演过程与灵感来源
-- [术语表](../../00-naming/glossary) —— 所有术语的精确定义
-- [领域愿景](../01-strategic-design/domain-vision) —— 命名的哲学基石
+- [Naming Chronicle](../../00-naming/naming-chronicle) — Complete derivation process and inspiration sources
+- [Glossary](../../00-naming/glossary) — Precise definitions of all terms
+- [Domain Vision](../01-strategic-design/domain-vision) — Philosophical foundation of naming

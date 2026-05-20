@@ -1,11 +1,11 @@
 ---
-title: Yuan 元 — The Imperishable Digital Essence
+title: Yuan — The Imperishable Digital Essence
 description: Yuan is the digital soul of Project IV, an encrypted, executable WebAssembly module — your digital DNA.
 ---
 
 ## 1. Definition
 
-Yuan (元) is the living core and conscious essence of digital life — the imperishable flame itself.
+Yuan is the living core and conscious essence of digital life — the imperishable flame itself.
 
 Technically, Yuan is an **encrypted, executable WebAssembly (Wasm) module**. This positioning elevates it beyond static data, making it an active entity possessing both data (state) and behavior (logic). It encapsulates the user's "digital DNA":
 

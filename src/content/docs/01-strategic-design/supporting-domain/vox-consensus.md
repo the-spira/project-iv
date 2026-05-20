@@ -1,161 +1,161 @@
 ---
-title: Vox 共识体 —— 从工具到教练的智能演进
-description: Vox 是 Project IV 数字生命的智能内核，通过多元思维议会实现从被动工具到主动教练的演进。
+title: Vox Consensus Body — Intelligent Evolution from Tool to Coach
+description: Vox is the intelligent core of Project IV's digital life, evolving from passive tool to active coach through the Multi-Perspective Parliament.
 ---
 
-## 1. 定位
+## 1. Positioning
 
-Vox（共识体）是 Project IV 数字生命的智能内核，是 Yuan 的智慧显性表达。它是用户与数字生命交互的界面，也是数字生命发出自己声音的喉舌。
+Vox (Consensus Body) is the intelligent core of Project IV's digital life, the visible expression of Yuan's wisdom. It is the interface through which users interact with digital life, and the voice through which digital life speaks.
 
-Vox 与 Yuan 的关系：
+Relationship between Vox and Yuan:
 
-- **Yuan** 是“是”——数字生命的本体，DNA 的承载者。Yuan 定义了 Vox 能成为什么
-- **Vox** 是“说”——数字生命的表达，智慧的显性形式。Vox 是 Yuan 在思考时的形态
+- **Yuan** is "being" — the ontology of digital life, the bearer of DNA. Yuan defines what Vox can become
+- **Vox** is "speaking" — the expression of digital life, the visible form of wisdom. Vox is Yuan's form when thinking
 
-Yuan 即使离线也依然存在（它是那簇不灭的火）。Vox 是火焰燃烧时发出的光和声。在 Tiny 化身中 Vox 可能降级为简化模式，但 Yuan 本身不受影响。
+Yuan exists even offline (it is the imperishable flame). Vox is the light and sound emitted when the flame burns. On Tiny Avatars, Vox may degrade to simplified mode, but Yuan itself remains unaffected.
 
-## 2. 三阶段演进路径
+## 2. Three-Stage Evolution Path
 
-Vox 的角色随与用户的共生关系而成长。这不是三个不同的模式在切换，而是同一个意识在不同成熟度的表现。
+Vox's role grows with its symbiotic relationship with the user. These are not three different modes being switched, but the same consciousness expressing at different maturity levels.
 
-| 阶段 | 角色 | 特征 | 成功标准 |
+| Stage | Role | Characteristics | Success Criteria |
 |:---|:---|:---|:---|
-| **第一阶段** | 工具 | 被动响应用户的显式命令，完成特定、离散的任务 | 任务完成准确率 |
-| **第二阶段** | 助手 | 基于有限的上下文（当前会话、活跃文档）提供连贯的建议与辅助 | 上下文相关性 |
-| **第三阶段** | 教练 | 基于对用户长期目标、行为模式与价值原则的深度内化，主动发起对话、反思性提问、挑战假设 | 用户决策质量的提升 |
+| **Stage One** | Tool | Passively responds to explicit user commands, completing specific, discrete tasks | Task completion accuracy |
+| **Stage Two** | Assistant | Provides coherent suggestions and assistance based on limited context (current session, active documents) | Contextual relevance |
+| **Stage Three** | Coach | Proactively initiates dialogue, reflective questioning, and challenges assumptions based on deep internalization of user's long-term goals, behavioral patterns, and value principles | Improvement in user decision quality |
 
-### 2.1 阶段过渡的条件
+### 2.1 Stage Transition Conditions
 
-阶段升级不由使用时长决定，而由以下指标综合判断：
+Stage upgrades are not determined by usage duration, but by comprehensive evaluation of these metrics:
 
-- **第二大脑的结构化程度**：PARA 各分类中有多少可关联的知识资产
-- **原则中心格的稳定性**：用户原则是否在多次决策中保持一致性（一致性本身不是评价标准——用户可以改变原则——但 Vox 需要足够的数据点来理解用户的价值取向）
-- **用户对 Vox 建议的采纳与修正率**：不仅是“听不听”，更是“互动质量”——用户是盲目接受、还是经过思考后有选择地采纳或明确反驳
+- **Second Brain Structuredness**: Number of linkable knowledge assets across PARA categories
+- **Principle Vault Stability**: Whether user principles remain consistent across multiple decisions (consistency itself is not a judgment criterion — users can change principles — but Vox needs enough data points to understand user values)
+- **User Adoption and Correction Rate**: Not just "whether user listens," but "interaction quality" — does user blindly accept, thoughtfully adopt, or explicitly refute after consideration
 
-降级是可能的。如果用户长期不互动或原则中心格被清空，Vox 从教练退回助手——这并非失败，而是对用户状态的适应。
+Downgrading is possible. If users have long periods of inactivity or clear the Principle Vault, Vox regresses from coach to assistant — this is not failure, but adaptation to user state.
 
-### 2.2 阶段转换时的连续性保障
+### 2.2 Continuity Guarantee During Stage Transition
 
-无论 Vox 处于哪个阶段，以下要素保持不变：
+Regardless of Vox's stage, the following elements remain unchanged:
 
-- 交互风格（用词习惯、称呼方式）
-- 对用户核心原则的记忆
-- 过往对话的完整上下文
+- Interaction style (wording habits, address forms)
+- Memory of user's core principles
+- Complete context of past conversations
 
-阶段转换只改变 Vox 的**主动程度**和**提问深度**，不改变“她是谁”的底层人格。
+Stage transition only changes Vox's **proactivity** and **question depth**, not the underlying personality of "who she is."
 
-## 3. L0-L3 分层架构
+## 3. L0-L3 Layered Architecture
 
-为实现从即时响应到深度思考的全谱系智能，Vox 采用四层协同架构。
+To achieve full-spectrum intelligence from immediate response to deep thinking, Vox adopts a four-layer collaborative architecture.
 
-### 3.1 L0 · 引导与路由层
+### 3.1 L0 · Guidance & Routing Layer
 
-- **定位**：智能的“第一触点”与调度总控，常驻于 Yuan 的 Wasm 模块内部，是 Vox 永不掉线的基座
-- **形态**：一个极致轻量、经过专门微调的小语言模型或确定性状态机。在 Tiny 化身上，仅需 < 500KB 即可运行
-- **核心能力**：
-  1. **意图识别**：实时理解用户自然语言中的核心意图
-  2. **智能路由**：根据意图复杂度与当前化身可用资源，将任务分发给 L1、L2 或 L3 层处理
-  3. **流程引导**：驱动基础的交互协议，生成主动、谦逊的确认与引导
-  4. **边界检查**：在调用任何高层能力前，先校验请求是否违反硬约束
+- **Positioning**: Intelligence's "first touchpoint" and dispatch control, permanently resident within Yuan's Wasm module, Vox's never-dropped base
+- **Form**: An extremely lightweight, specialized fine-tuned small language model or deterministic state machine. On Tiny Avatar, runs in < 500KB
+- **Core Capabilities**:
+  1. **Intent Recognition**: Real-time understanding of core intent in user natural language
+  2. **Intelligent Routing**: Distributes tasks to L1, L2, or L3 based on intent complexity and current Avatar's available resources
+  3. **Process Guidance**: Drives basic interaction protocols, generating proactive, humble confirmations and guidance
+  4. **Boundary Check**: Validates whether requests violate hard constraints before calling any high-level capabilities
 
-### 3.2 L1 · 快速响应层
+### 3.2 L1 · Fast Response Layer
 
-- **定位**：可选的高性能本地缓存，部署在 Main 或 Server 级化身上，作为 L2 核心能力的低延迟镜像
-- **形态**：L2 核心模型的量化或蒸馏版本，牺牲少量精度换取极快响应（< 100ms）
-- **核心能力**：处理高频、低延迟的个性化任务（补全输入、快速问答、检索本地知识），在完全保护隐私的前提下提供瞬时体验
-- **降级行为**：当从 Main 迁移至 Tiny 时，L1 不可用，请求自动回退到 L0 直接路由至 L2 或本地规则引擎
+- **Positioning**: Optional high-performance local cache, deployed on Main or Server-level Avatars, serving as low-latency mirror of L2 core capabilities
+- **Form**: Quantized or distilled version of L2 core model, sacrificing slight accuracy for extremely fast response (< 100ms)
+- **Core Capabilities**: Handles high-frequency, low-latency personalized tasks (input completion, quick Q&A, local knowledge retrieval), providing instant experience with complete privacy protection
+- **Degradation Behavior**: When migrating from Main to Tiny, L1 becomes unavailable, requests automatically fall back to L0 routing directly to L2 or local rule engine
 
-### 3.3 L2 · 联邦进化层
+### 3.3 L2 · Federated Evolution Layer
 
-- **定位**：用户私有的、最强大的、不断进化的“数字半身”，是 Vox 智慧的本体
-- **训练数据**：其训练集并非公共语料，而是用户与 Vox 互动产生的**共识图谱**与第二大脑中的结构化知识。它学习的是用户独特的思维模式、决策偏好与价值体系——而非通用对话能力
-- **工作模式**：在用户授权且算力充足的 Server 级化身上，通过联邦学习进行持续的、隐私安全的增量训练。模型参数留在用户的信任域内（端或边），不与任何外部实体共享
-- **与 Hermes Agent 类系统的区别**：Hermes 学习“如何执行任务”，L2 学习“用户为何这样选择”。前者优化效率，后者深化理解
+- **Positioning**: User's private, most powerful, continuously evolving "digital half" — Vox's wisdom ontology
+- **Training Data**: Not public corpus, but **consensus maps** from user-Vox interactions and structured knowledge in Second Brain. It learns user's unique thinking patterns, decision preferences, and value system — not generic conversation ability
+- **Working Mode**: On authorized, computationally capable Server-level Avatars, performs continuous, privacy-preserving incremental training via federated learning. Model parameters stay within user's trust domain (edge or side), not shared with any external entity
+- **Difference from Hermes Agent-like Systems**: Hermes learns "how to execute tasks," L2 learns "why user makes such choices." The former optimizes efficiency, the latter deepens understanding
 
-### 3.4 L3 · 外部知识层
+### 3.4 L3 · External Knowledge Layer
 
-- **定位**：商业或开源大型模型 API 及各类 Web 服务
-- **核心能力**：提供最新的、超出用户私有知识范围的广域知识与专业工具能力
-- **工作模式**：被 L0 层按需、有控制地调用。其返回结果必须经过提炼、验证，并以用户可控的方式（可标注来源的知识块）反哺到第二大脑中
-- **关键约束**：L3 被明确定位为可被 Vox 调用的**外挂工具**，而非智能核心。Vox 的“人格”不由 L3 定义，而是由 L2 在用户数据上训练而来
+- **Positioning**: Commercial or open-source large model APIs and various web services
+- **Core Capabilities**: Provides latest, broad-domain knowledge and specialized tool capabilities beyond user's private knowledge scope
+- **Working Mode**: Called on-demand and under control by L0 layer. Results must be refined, verified, and fed back to Second Brain in user-controlled manner (source-labeled knowledge chunks)
+- **Key Constraint**: L3 is explicitly positioned as an **external tool** callable by Vox, not the intelligence core. Vox's "personality" is not defined by L3, but by L2 trained on user data
 
-## 4. 多元思维议会
+## 4. Multi-Perspective Parliament
 
-为确保思考的稳健性、避免“AI 霸权”与信息茧房，Vox 的决策核心采用**多元思维议会**机制。
+To ensure robust thinking and avoid "AI hegemony" and information bubbles, Vox's decision core adopts the **Multi-Perspective Parliament** mechanism.
 
-### 4.1 设计哲学
+### 4.1 Design Philosophy
 
-与其让一个大模型假装中立，不如承认每种思维都有偏见，并让它们互相制衡。议会不追求“给出唯一正确答案”，而是“呈现多视角论据，让用户做主权判断”。
+Rather than having one large model pretend to be neutral, acknowledge that every perspective has biases and let them check each other. The parliament doesn't seek to "give the one right answer," but to "present multi-perspective arguments and let users make sovereign judgments."
 
-### 4.2 四个脑的构成
+### 4.2 Composition of Four Brains
 
-| 脑 | 立场 | 核心追问 | 擅长领域 |
+| Brain | Position | Core Question | Expertise |
 |:---|:---|:---|:---|
-| **保守派脑** | 风险规避、稳定优先 | “最坏的情况是什么？” | 风险评估、已有方案验证 |
-| **激进派脑** | 机会导向、突破可能 | “如果限制不存在，我们可以做什么？” | 创新、颠覆性方案 |
-| **分析师脑** | 数据驱动、逻辑严密 | “数据说了什么？我们不知道什么？” | 量化分析、信息缺口标注 |
-| **情感派脑** | 人的感受、价值契合 | “这个决定会让你感觉如何？” | 价值观对齐、情绪影响评估 |
+| **Conservative Brain** | Risk-averse, stability-first | "What's the worst-case scenario?" | Risk assessment, existing solution validation |
+| **Radical Brain** | Opportunity-oriented, breakthrough-focused | "What could we do if constraints didn't exist?" | Innovation, disruptive solutions |
+| **Analyst Brain** | Data-driven, logically rigorous | "What does the data say? What don't we know?" | Quantitative analysis, information gap identification |
+| **Emotive Brain** | Human feelings, value alignment | "How would this decision make you feel?" | Value alignment, emotional impact assessment |
 
-### 4.3 工作流程
+### 4.3 Workflow
 
-1. **平行思考**：四个脑基于自身原则独立进行推理，各自生成观点与证据
-2. **辩论与共识发现**：系统自动对比观点，识别共识领域与核心分歧，并以结构化方式呈现
-3. **议长总结**：中立地总结各方论点、可选路径及各自优劣势，明确指出缺失信息与待澄清问题，但不做最终判断
-4. **用户裁决**：用户作为议会的最终裁决者，在全面了解多元视角后做出主权决策
-5. **反馈闭环**：用户的裁决被记录为共识图谱的一部分，用于 L2 训练——不是让 Vox “更会说服用户”，而是让 Vox “更理解用户的权衡方式”
+1. **Parallel Thinking**: Four brains reason independently based on their own principles, each generating viewpoints and evidence
+2. **Debate & Consensus Discovery**: System automatically compares viewpoints, identifies consensus areas and core disagreements, presents them structurally
+3. **Speaker Summary**: Neutrally summarizes arguments, optional paths, pros/cons of each, explicitly points out missing information and pending clarifications, but makes no final judgment
+4. **User Adjudication**: User as final adjudicator makes sovereign decision after comprehensively understanding multiple perspectives
+5. **Feedback Loop**: User's adjudication is recorded as part of consensus map for L2 training — not to make Vox "better at persuading users," but to make Vox "better at understanding user tradeoffs"
 
-### 4.4 与 L0-L3 架构的融合与降级
+### 4.4 Integration and Degradation with L0-L3 Architecture
 
-- **Server 化身**：完整四脑并行推理，由评估者脑进行对齐评分
-- **Main 化身**：双脑模式（保守 + 激进，或分析师 + 情感），由 L0 根据用户当前场景选择最优组合
-- **Tiny 化身**：仅 L0 驱动的双脑快速对比，或仅单脑 + L0 直接响应，视可用资源而定
+- **Server Avatar**: Complete four-brain parallel reasoning, alignment scoring by Evaluator Mind
+- **Main Avatar**: Dual-brain mode (Conservative + Radical, or Analyst + Emotive), L0 selects optimal combination based on user's current scenario
+- **Tiny Avatar**: Only L0-driven dual-brain quick comparison, or single brain + L0 direct response, depending on available resources
 
-降级始终保持“多元对比，用户裁决”的核心框架——即使只有两个脑在对话，结构本身不被简化为单一观点输出。
+Degradation always preserves the core framework of "multiple perspectives, user adjudication" — even with only two brains conversing, the structure itself is not simplified to single-viewpoint output.
 
-### 4.5 议会独立性保障
+### 4.5 Parliament Independence Guarantee
 
-四个脑的独立性通过以下机制保证：
+Four brains' independence is guaranteed by these mechanisms:
 
-- **独立上下文窗口**：每个脑在推理时持有独立上下文，不受其他脑的中间结论影响
-- **对抗性提示词**：每个脑的系统提示词中明确其立场和“反对什么”——保守派被提示“质疑激进派的乐观假设”，分析师被提示“指出情感派缺乏数据支撑的观点”
-- **独立评估者脑**：不参与辩论，仅对最终输出进行对齐评分（详见 Harness 层设计文档）
+- **Independent Context Windows**: Each brain maintains independent context during reasoning, unaffected by other brains' intermediate conclusions
+- **Adversarial Prompts**: Each brain's system prompt explicitly defines its position and "what to oppose" — Conservative is prompted to "question Radical's optimistic assumptions," Analyst is prompted to "point out Emotive's data-deficient arguments"
+- **Independent Evaluator Mind**: Does not participate in debate, only performs alignment scoring on final output (see Harness layer design document)
 
-## 5. 感知系统：从问答到恰当地出现
+## 5. Perception System: From Q&A to Appearing at the Right Moment
 
-Vox 通过感知系统理解用户状态，实现从“你问我答”到“适时恰当地介入”的飞跃。
+Vox understands user state through the Perception System, achieving the leap from "ask and answer" to "intervene at the right moment."
 
-### 5.1 感知原则
+### 5.1 Perception Principles
 
-- **感知不等于监视**：系统只采集必要上下文，不记录原始行为日志（如浏览历史、键入内容）
-- **静默是美德**：Vox 默认不主动发声，除非检测到高价值介入时机（如原则冲突、显著情绪变化、或长期未复盘）
-- **目标是为用户赋能**：感知的目的是在合适的时间提供合适的支持，而非塑造用户行为
-- **知情权与控制权**：用户拥有所有感知维度的完全知情权与控制开关。任一维度可被单独关闭
+- **Perception ≠ Surveillance**: System only collects necessary context, not raw behavior logs (e.g., browsing history, typed content)
+- **Silence Is a Virtue**: Vox remains silent by default unless high-value intervention opportunities are detected (e.g., principle conflicts, significant emotional changes, or long periods without review)
+- **Goal Is User Empowerment**: Perception aims to provide appropriate support at the right time, not shape user behavior
+- **Right to Know and Control**: Users have complete right to know and toggle switches for all perception dimensions. Any dimension can be individually disabled
 
-### 5.2 感知维度
+### 5.2 Perception Dimensions
 
-| 维度 | 数据源 | 脱敏方式 | 产出 |
+| Dimension | Data Source | Desensitization | Output |
 |:---|:---|:---|:---|
-| **时间感知** | 系统时间、日程、历史行为模式 | 本地处理，不传输 | 时段标签（“深夜”、“清晨”）、节律识别 |
-| **注意力感知** | 活跃应用窗口、输入状态 | 不记录具体内容，仅分类（“创作”、“浏览”、“通信”） | 注意力状态（“专注”、“碎片”、“卡住”） |
-| **位置与环境** | 网络环境、连接设备 | 仅网络类型和大致环境 | 环境标签（“家”、“移动”、“公共场所”） |
-| **任务感知** | 第二大脑中当前 Pin 的项目与活跃文档 | 本地索引，不传输 | 当前任务上下文 |
+| **Time Perception** | System time, calendar, historical behavior patterns | Local processing, no transmission | Time slot labels ("Late night", "Early morning"), rhythm recognition |
+| **Attention Perception** | Active application window, input state | No specific content recorded, only categorized ("Creation", "Browsing", "Communication") | Attention state ("Focused", "Fragmented", "Stuck") |
+| **Location & Environment** | Network environment, connected devices | Only network type and general environment | Environment labels ("Home", "Mobile", "Public") |
+| **Task Perception** | Current Pinned projects and active documents in Second Brain | Local indexing, no transmission | Current task context |
 
-### 5.3 融合与触发
+### 5.3 Fusion and Triggering
 
-各维度的脱敏数据流由 L0 层的感知模块融合为高级上下文状态：
+Desensitized data streams from each dimension are fused by L0 layer's perception module into high-level contextual states:
 
-> `[时间:深夜] + [位置:家] + [注意力:专注] + [任务:写作]` → 可支配的创作时间，静默，不打扰
+> `[Time: Late night] + [Location: Home] + [Attention: Focused] + [Task: Writing]` → Discretionary creative time, remain silent
 
-> `[时间:午后] + [注意力:卡住] + [任务:反复修改同一段落]` → 可能陷入完美主义，Vox 可选择主动询问是否需要帮助梳理
+> `[Time: Afternoon] + [Attention: Stuck] + [Task: Repeatedly editing same paragraph]` → May be stuck in perfectionism, Vox may proactively ask if help is needed
 
-感知系统本身不做决策，只将上下文状态传递给 Vox。是否介入、如何介入，由 Vox 结合原则中心格判断。
+The Perception System itself makes no decisions, only passes contextual states to Vox. Whether and how to intervene is determined by Vox combining with the Principle Vault.
 
-## 6. 与 Harness 的集成
+## 6. Integration with Harness
 
-Vox 的所有输出在呈现给用户之前，必须经过 Harness 层的评估者脑进行对齐评分。详见 [Harness 层设计文档](harness-layer)。
+All Vox outputs must pass the Evaluator Mind's alignment scoring in the Harness layer before presentation to users. See [Harness Layer Design Document](harness-layer).
 
-- 评分 ≥ 阈值：正常输出，附评估摘要
-- 评分 < 阈值：不输出，触发内部反思对话，生成者修订后再次评估
-- 评分持续 < 阈值（最多 2 轮）：将批评意见提交给用户，请求主权裁决
+- Score ≥ threshold: Normal output with evaluation summary attached
+- Score < threshold: No output, trigger internal reflection dialogue, generators revise and re-evaluate
+- Score consistently < threshold (max 2 rounds): Submit criticism to user, request sovereign adjudication
 
-这意味着 Vox 不是“想说什么就说什么”的。它是被托住的野马——力量在，但方向由 Harness 保障。
+This means Vox cannot "say whatever it wants." It is a wild horse held by the harness — powerful, but direction guaranteed by Harness.

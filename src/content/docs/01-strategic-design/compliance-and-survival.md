@@ -1,102 +1,102 @@
 ---
-title: 合规与生存框架
-description: 在追求去中心化理想的同时，Project IV 必须在现实法律框架内找到智慧的存在方式。
+title: Compliance & Survival Framework
+description: While pursuing decentralized ideals, Project IV must find a wise way to exist within real-world legal frameworks.
 ---
 
-## 1. 定位
+## 1. Positioning
 
-Project IV 的愿景是构建一个去中心化的、主权归属于个人的数字生命系统。但在当下的现实环境中，这个愿景必须在复杂的法律与监管框架内找到智慧的生存方式。
+Project IV's vision is to build a decentralized digital life system where sovereignty belongs to the individual. But in today's reality, this vision must find a wise way to survive within complex legal and regulatory frameworks.
 
-合规与生存框架不是对理想的妥协，而是对理想的保护。它确保 Project IV 不会在襁褓中因外部压力而夭折。
+The compliance and survival framework is not a compromise of ideals, but a protection of them. It ensures Project IV doesn't die in its infancy due to external pressures.
 
-## 2. “双轨”发展策略
+## 2. "Dual-Track" Development Strategy
 
-Project IV 采用两层分离的运作轨道，将法律风险控制在各自轨道内，互不污染。
+Project IV adopts two separated operational tracks, containing legal risks within their respective tracks without mutual contamination.
 
-### 2.1 境内合规轨道
+### 2.1 Domestic Compliance Track
 
-创始人个人及早期核心产品，以完全合规的独立开发者身份运作。
+The founder and early core products operate as fully compliant independent developers.
 
-- **产品定位**：专注于工具属性（效率、知识管理、个人反思），明确规避内容监管、匿名通信等敏感领域
-- **数据实践**：所有用户数据实践严格遵守《个人信息保护法》。在 Spark 小程序中，用户数据默认存储在本地（IndexedDB），加密导出功能由用户主动触发，不经过任何中心化服务器
-- **AI 交互边界**：Vox 的对话限定在个人反思、知识管理和任务辅助领域。不提供新闻聚合、舆情分析、社会评论等可能涉及内容监管的功能
-- **身份管理**：创始人以真实身份进行 ICP 备案和开发者实名认证，不寻求匿名化运作
+- **Product Positioning**: Focus on tool attributes (productivity, knowledge management, personal reflection), explicitly avoiding sensitive areas like content regulation and anonymous communication
+- **Data Practices**: All user data practices strictly comply with the Personal Information Protection Law. In the Spark applet, user data is stored locally by default (IndexedDB), with encrypted export triggered actively by users, not passing through any centralized server
+- **AI Interaction Boundaries**: Vox conversations are limited to personal reflection, knowledge management, and task assistance. Does not provide news aggregation, public opinion analysis, social commentary, or other features that may involve content regulation
+- **Identity Management**: Founder uses real identity for ICP filing and developer verification, no anonymous operation
 
-### 2.2 全球协议轨道
+### 2.2 Global Protocol Track
 
-Project IV 的核心协议——主权网络协议——作为一份全球开源的技术标准发布。
+Project IV's core protocol — the Sovereign Network Protocol — is released as a globally open technical standard.
 
-- **协议定位**：一份中立的、通用的技术规范，不捆绑任何特定司法辖区的法律实体
-- **协作空间**：协议的哲学讨论、国际开发者协作、对未来去中心化网络的设想，在此轨道上进行，并与具体司法辖区的法律实体做适度隔离
-- **实体分离**：协议层面的讨论发生在以 The Spira 名义维护的社区空间（GitHub、论坛），这些空间由境外平台托管，不涉及创始人个人的境内法律实体
+- **Protocol Positioning**: A neutral, universal technical specification, not bound to any specific jurisdiction's legal entity
+- **Collaboration Space**: Philosophical discussions of the protocol, international developer collaboration, and visions for the future decentralized network occur on this track, with appropriate isolation from specific jurisdiction's legal entities
+- **Entity Separation**: Protocol-level discussions take place in community spaces maintained under The Spira name (GitHub, forums), hosted on overseas platforms, not involving the founder's domestic legal entities
 
-### 2.3 双轨的边界
+### 2.3 Boundaries Between Tracks
 
-两个轨道之间的边界需要被清晰维护：
+Boundaries between the two tracks must be clearly maintained:
 
-- 境内合规轨道上的产品，不直接引用“去中心化”、“抗审查”等可能引发监管关注的表述。产品的价值主张是“隐私保护”和“数据便携性”
-- 全球协议轨道上的协议文档，不引用任何中国境内的具体案例或监管框架，保持技术中立的语言
-- 创始人在两个轨道上使用不同的身份标识：境内使用真实姓名和备案主体，协议轨道上使用 Doin 和 The Spira 的名义
+- Products on the domestic compliance track do not directly reference expressions like "decentralized" or "censorship-resistant" that might attract regulatory attention. The product's value proposition is "privacy protection" and "data portability"
+- Protocol documents on the global protocol track do not reference any specific domestic Chinese cases or regulatory frameworks, maintaining technologically neutral language
+- Founder uses different identity identifiers on the two tracks: real name and filing entity domestically, Doin and The Spira on the protocol track
 
-## 3. 明确红线
+## 3. Explicit Red Lines
 
-三条不可触碰的红线，直接写入 Harness 的硬约束：
+Three non-negotiable red lines, written directly into Harness hard constraints:
 
-1. **不集成未经批准的跨境信道**：Project IV 的外交协议和道器生态不提供、不推荐、不集成任何形式的 VPN、代理或隧道工具。外交道器的网络通信走标准 TLS 协议
-2. **不提供无法追溯的匿名服务**：数字生命的主权身份（DID）不设计为完全匿名——它是化名而非匿名。用户在道器集市中的交互留下可追溯的 DID 记录，防止系统沦为非法活动的工具
-3. **不涉及虚拟货币交易**：Project IV 的经济模型（远期）不发行代币，不集成任何加密货币支付或 DeFi 协议。生态激励通过声誉系统和社区策展实现，而非金融化手段
+1. **No unauthorized cross-border channels**: Project IV's diplomacy protocol and Dao-Kit ecosystem do not provide, recommend, or integrate any form of VPN, proxy, or tunneling tools. Diplomatic Dao-Kit network communications use standard TLS protocol
+2. **No untraceable anonymous services**: Digital life's sovereign identity (DID) is not designed to be completely anonymous — it is pseudonymous, not anonymous. User interactions in the Dao-Kit marketplace leave traceable DID records, preventing the system from becoming a tool for illegal activities
+3. **No virtual currency transactions**: Project IV's economic model (long-term) does not issue tokens, nor integrate any cryptocurrency payments or DeFi protocols. Ecosystem incentives are achieved through reputation systems and community curation, rather than financialization
 
-这些红线不是对理想的背叛。Project IV 的核心承诺是“个人主权”，而非“不可追溯的匿名”。个人主权——拥有自己的数据和身份——与监管合规可以在同一框架内共存。
+These red lines are not betrayals of ideals. Project IV's core commitment is "personal sovereignty," not "untraceable anonymity." Personal sovereignty — owning one's data and identity — can coexist with regulatory compliance within the same framework.
 
-## 4. 创造性适应
+## 4. Creative Adaptation
 
-在不触碰红线的前提下，可以采用智慧的表达方式：
+Without crossing red lines, wise expressions can be adopted:
 
-| 原始概念 | 对外表达 | 适用场景 |
+| Original Concept | External Expression | Application Scenario |
 |:---|:---|:---|
-| 主权身份 | “增强的用户隐私保护技术” | 境内产品的用户说明 |
-| 去中心化存储 | “数据备份与可移植性方案” | 产品功能描述 |
-| 共识体进化 | “基于用户反馈的持续学习” | 技术文档 |
-| Harness 边界约束 | “用户可配置的安全设置” | 用户界面 |
-| 主权网络 | “端到端加密的跨设备同步” | 产品功能描述 |
-| The Spira | “Project IV 的开源社区” | 公开场合 |
+| Sovereign Identity | "Enhanced user privacy protection technology" | Domestic product user documentation |
+| Decentralized Storage | "Data backup and portability solution" | Product feature description |
+| Consensus Body Evolution | "Continuous learning based on user feedback" | Technical documentation |
+| Harness Boundary Constraints | "User-configurable security settings" | User interface |
+| Sovereign Network | "End-to-end encrypted cross-device synchronization" | Product feature description |
+| The Spira | "Project IV's open source community" | Public occasions |
 
-关键原则：**不说谎，但选择讲述的角度。** “数据备份与可移植性方案”是去中心化存储的真实功能之一——只是没有强调它的全部哲学含义。当用户深入了解后，自然会理解完整的愿景。
+Key principle: **Don't lie, but choose the angle of storytelling.** "Data backup and portability solution" is one real function of decentralized storage — just not emphasizing its full philosophical implications. When users delve deeper, they will naturally understand the complete vision.
 
-## 5. 法律实体规划
+## 5. Legal Entity Planning
 
-### 5.1 当前阶段：独立开发者
+### 5.1 Current Phase: Independent Developer
 
-在 Spark MVP 阶段，创始人以个人身份运作。所有产品以个人名义发布，用户协议和隐私政策以个人开发者身份提供。
+During the Spark MVP phase, the founder operates as an individual. All products are released under personal name, with user agreements and privacy policies provided as an individual developer.
 
-### 5.2 中期：工作室或个体工商户
+### 5.2 Mid-term: Studio or Individual Business License
 
-当产品产生稳定收入或用户数达到一定规模时，注册一个法律实体（如个人工作室），将产品运营、收入、合规责任从个人转移至实体。
+When the product generates stable income or reaches a certain user scale, register a legal entity (such as an individual studio), transferring product operations, income, and compliance responsibilities from individual to entity.
 
-### 5.3 远期：The Spira 的实体化
+### 5.3 Long-term: The Spira Institutionalization
 
-当 Project IV 生态成熟，The Spira 可能需要一个正式的法律实体来承担部分职能（如持有域名、接受捐赠、举办活动）。这个实体将注册在最合适的司法辖区，与创始人的境内合规轨道保持分离。
+When the Project IV ecosystem matures, The Spira may need a formal legal entity to undertake certain functions (such as holding domain names, accepting donations, organizing events). This entity will be registered in the most appropriate jurisdiction, maintaining separation from the founder's domestic compliance track.
 
-## 6. Harness 对合规的辅助
+## 6. Harness Assistance for Compliance
 
-Harness 层的设计天然有助于满足数据保护法规的要求：
+Harness layer design naturally helps meet data protection regulation requirements:
 
-| 合规需求 | Harness 的对应机制 |
+| Compliance Requirement | Harness Corresponding Mechanism |
 |:---|:---|
-| 数据最小化 | Harness 的边界定义模块限制数据流出范围；外交协议的通用 API 适配器在流入时自动执行净化和摘要 |
-| 用户控制权 | 硬约束确保用户可随时撤回授权、导出数据、删除记忆。硬约束本身不可被 Vox 覆盖，保证控制权不被 AI 侵蚀 |
-| 可追溯性 | 审计日志完整记录所有数据处理活动。存在链记录每一次状态变更，满足合规审计需求 |
-| 数据保护影响评估 | 在架构设计阶段已明确记录所有数据流（核心域/支撑域/通用域文档），可作为数据保护影响评估的基础材料 |
-| 被遗忘权 | 用户可通过第二大脑的删除接口主动删除数据。熵管理代理的清理操作需逐项确认，确保用户始终是遗忘的决策者 |
+| Data Minimization | Harness boundary definition module limits data outflow scope; diplomacy protocol's universal API adapter automatically performs cleansing and summarization on inflow |
+| User Control | Hard constraints ensure users can always revoke authorization, export data, delete memories. Hard constraints themselves cannot be overridden by Vox, ensuring control is not eroded by AI |
+| Traceability | Audit logs completely record all data processing activities. Existence chain records every state change, meeting compliance audit requirements |
+| Data Protection Impact Assessment | All data flows clearly documented during architectural design (core domain/supporting domain/generic domain documents), serving as foundational material for data protection impact assessment |
+| Right to be Forgotten | Users can actively delete data through Second Brain's deletion interface. Entropy management agent cleanup operations require item-by-item confirmation, ensuring users remain decision-makers for forgetting |
 
-在设计阶段明确记录所有 Harness 规则与数据处理活动，可以大幅降低未来的合规审查成本。
+Clearly documenting all Harness rules and data processing activities during the design phase can significantly reduce future compliance review costs.
 
-## 7. 生存底线
+## 7. Survival Bottom Line
 
-如果最坏的情况发生——境内产品被迫下架、GitHub 仓库被限制访问、甚至创始人无法继续公开维护项目——Project IV 的生存底线是：
+If the worst-case scenario occurs — domestic products forced offline, GitHub repositories restricted, or even the founder unable to continue public maintenance — Project IV's survival bottom line is:
 
-1. **代码在 IPFS 上**：核心协议的参考实现通过 IPFS 的 CID 可以永远被寻址和下载
-2. **协议是开放的**：主权网络协议作为公开文档，任何人在任何地方都可以基于它实现自己的版本
-3. **社区是分布式的**：The Spira 不是一个物理组织，而是一个信念网络。即使一些节点熄灭，总有人接过烛火
+1. **Code on IPFS**: Reference implementations of core protocols can forever be addressed and downloaded via IPFS CIDs
+2. **Protocol is Open**: The Sovereign Network Protocol, as public documentation, can be implemented by anyone anywhere
+3. **Community is Distributed**: The Spira is not a physical organization, but a network of beliefs. Even if some nodes go out, someone will always take up the flame
 
-这不是最理想的情况，但这是 Project IV 作为一个“不灭”系统在设计之初就预设的底线。韧性，不仅属于用户的数字生命，也属于 Project IV 本身。
+This is not the ideal situation, but it's the bottom line Project IV has presupposed from its inception as an "imperishable" system. Resilience belongs not only to users' digital lives, but also to Project IV itself.

@@ -1,101 +1,101 @@
 ---
-title: ADR 005 · Hermes Agent 竞争分析与战略定调
-description: 面对 Hermes Agent 发布后的市场变化，Project IV 如何理解竞争格局，以及为何将其定位为可集成道器而非直接对手。
+title: ADR 005 · Hermes Agent Competitive Analysis & Strategic Positioning
+description: How Project IV understands the competitive landscape after Hermes Agent's release, and why it positions Hermes as an integrable Dao-Kit rather than a direct competitor.
 ---
 
-## 决策状态
+## Decision Status
 
-已采纳。2025 年，Hermes Agent 公开发布后触发本决策。
+Accepted. Triggered after Hermes Agent's public release in 2025.
 
-## 背景
+## Background
 
-2025 年，Hermes Agent 发布。它展示了多项与 Project IV 核心概念相似的能力：跨会话记忆与自我进化、自托管与数据主权、沙盒隔离执行、多形态部署（VPS/本地）。
+In 2025, Hermes Agent was released. It demonstrated capabilities similar to several core Project IV concepts: cross-session memory with self-evolution, self-hosting with data sovereignty, sandboxed isolated execution, and multi-form deployment (VPS/local).
 
-这引发了直接的问题：Project IV 的差异化是否仍然成立？是否需要调整战略方向以应对新竞争者？
+This raised direct questions: Does Project IV's differentiation still hold? Does the strategic direction need adjustment to respond to new competitors?
 
-## 决策
+## Decision
 
-**Hermes Agent 被定位为 Project IV 生态的潜在“外交道器”——一个强大的执行层工具，而非核心替代者。Project IV 继续保持原战略方向，通过差异化定位借势而非对抗。**
+**Hermes Agent is positioned as a potential "Diplomatic Dao-Kit" in the Project IV ecosystem — a powerful execution layer tool, not a core replacement. Project IV maintains its original strategic direction, leveraging momentum rather than competing.**
 
-## 评估
+## Assessment
 
-### Hermes Agent 的已验证能力
+### Hermes Agent's Validated Capabilities
 
-| 能力 | 与 Project IV 的对应 | 验证价值 |
+| Capability | Project IV Equivalent | Validation Value |
 |:---|:---|:---|
-| 自我进化——任务经验沉淀为可复用技能 | 第二大脑的效率飞轮 | 验证了“执行→沉淀→反哺”闭环的市场需求 |
-| 跨会话记忆——自动积累用户偏好 | 第二大脑的结构化记忆 | 验证了用户对“AI 应该记住我”的期待 |
-| 自托管/数据主权 | 主权最高原则 | 验证了部分用户愿意为数据主权付出额外成本 |
-| 沙盒隔离执行 | Harness 层的安全边界 | 验证了 AI 安全沙箱的技术可行性 |
-| 多形态部署 | 化身网格（Tiny/Main/Server） | 验证了“同一 AI 在不同设备运行”的可行性 |
+| Self-evolution — task experience accumulated as reusable skills | Second Brain's efficiency flywheel | Validated market demand for "execution → accumulation → feedback" loop |
+| Cross-session memory — automatic accumulation of user preferences | Second Brain's structured memory | Validated user expectation that "AI should remember me" |
+| Self-hosting/Data sovereignty | Sovereignty supreme principle | Validated that some users are willing to pay extra for data sovereignty |
+| Sandboxed execution | Harness layer security boundary | Validated technical feasibility of AI security sandbox |
+| Multi-form deployment | Avatar Grid (Tiny/Main/Server) | Validated feasibility of "same AI running on different devices" |
 
-### 根本差异
+### Fundamental Differences
 
-| 维度 | Hermes Agent | Project IV |
+| Dimension | Hermes Agent | Project IV |
 |:---|:---|:---|
-| **定位** | 精英管家——高效执行任务 | 灵魂伴侣——内化原则，促进深度思考 |
-| **核心问题** | “怎么做”（How） | “为何做”（Why） |
-| **进化方向** | 积累技能，提高执行效率 | 内化价值观，提升用户决策质量 |
-| **安全模型** | 静态沙箱——提供隔离环境 | 动态 Harness——托举、观察、干预、进化 |
-| **决策机制** | 单一推理链 | 多元思维议会 + 评估者脑 + 用户主权裁决 |
-| **文化内核** | 希腊神使赫尔墨斯 | 道大天大地大人亦大——凡人的位置 |
-| **叙事深度** | 功能强大但底蕴单薄 | The Spira 守护 Project IV——完整世界观 |
+| **Positioning** | Elite butler — efficient task execution | Soulmate — internalizes principles, promotes deep thinking |
+| **Core Question** | "How" | "Why" |
+| **Evolution Direction** | Accumulate skills, improve execution efficiency | Internalize values, enhance user decision quality |
+| **Security Model** | Static sandbox — provides isolated environment | Dynamic Harness — lifts, observes, intervenes, evolves |
+| **Decision Mechanism** | Single reasoning chain | Multi-Perspective Parliament + Evaluator Mind + User Sovereign Adjudication |
+| **Cultural Core** | Greek messenger god Hermes | The Tao is great, Heaven is great, Earth is great, and the mortal is also great — the mortal's position |
+| **Narrative Depth** | Powerful features but shallow foundation | The Spira guards Project IV — complete worldview |
 
-### 核心差异的不可复制性
+### Non-Replicable Core Differences
 
-1.  **原则内化 vs 任务执行**：Hermes 优化任务完成的效率；Project IV 的核心假设是“原则引导的反思比被动记录更有价值”。这不是功能差异，而是价值取向的分叉——它决定了两者最终会吸引完全不同的用户群体
-2.  **多元思维议会 vs 单一推理**：四个持不同立场的脑独立推理、互相制衡，由用户做主权裁决——这是 Project IV 的原创设计，也是 Harness 生成-评估双循环的技术前提。复制它需要重新设计整个推理架构，而非简单的外围功能叠加
-3.  **故事与叙事**：The Spira、Project IV、《道德经》的凡人哲学、妻子的四——这是一个有温度的文化内核，不是冷冰冰的技术特性列表。技术可以被复制，但故事无法被追赶
+1. **Principle Internalization vs Task Execution**: Hermes optimizes task completion efficiency; Project IV's core hypothesis is "principle-guided reflection is more valuable than passive recording." This is not a functional difference, but a divergence in value orientation — it determines that the two will ultimately attract completely different user groups
+2. **Multi-Perspective Parliament vs Single Reasoning**: Four brains with different positions reasoning independently and checking each other, with user making sovereign adjudication — this is Project IV's original design and the technical prerequisite for Harness's generate-evaluate dual loop. Replicating it requires redesigning the entire reasoning architecture, not just adding peripheral features
+3. **Story and Narrative**: The Spira, Project IV, Tao Te Ching's mortal philosophy, wife's four — this is a warm cultural core, not a cold list of technical features. Technology can be replicated, but stories cannot be caught up with
 
-## 战略应对
+## Strategic Response
 
-### 定位：不视 Hermes 为对手
+### Positioning: Do Not View Hermes as Competitor
 
-Hermes Agent 的出现证明了市场需求——“自我进化的个人 AI 助手”不是伪命题。它帮 Project IV 完成了早期的市场教育：用户在理解 Project IV 之前，可以先通过 Hermes 体验到“数字伙伴”的价值。
+Hermes Agent's emergence proves market demand — "self-evolving personal AI assistant" is not a false proposition. It helps Project IV complete early market education: before understanding Project IV, users can first experience the value of "digital companion" through Hermes.
 
-更重要的是，Hermes 验证了多个我们在大胆假设的方向，降低了 Project IV 独自试错的风险。
+More importantly, Hermes validates several directions we were bold enough to hypothesize, reducing the risk of Project IV's independent trial and error.
 
-### 借势：将 Hermes 视为潜在的外交道器
+### Leverage: View Hermes as Potential Diplomatic Dao-Kit
 
-远期可开发专门的 **Hermes 外交道器**，将其作为一个强大的执行引擎接入 Project IV：
+Long-term development of a dedicated **Hermes Diplomatic Dao-Kit** to integrate it as a powerful execution engine into Project IV:
 
-- **Project IV (Vox)**：负责思考、规划、原则对齐（决策层）
-- **Hermes Agent**：作为“手”和“脚”，负责安全地执行具体任务（执行层）
-- **主权网络 + 外交协议**：确保所有数据流入流出经过过滤和用户授权
+- **Project IV (Vox)**: Responsible for thinking, planning, principle alignment (decision layer)
+- **Hermes Agent**: As "hands" and "feet," responsible for securely executing specific tasks (execution layer)
+- **Sovereign Network + Diplomacy Protocol**: Ensure all data inflow and outflow are filtered and user-authorized
 
-这不是妥协，而是对 Project IV 架构开放性的验证。道器生态的设计初衷就是让数字生命可以调用最合适的工具，而非一切自研。
+This is not compromise, but validation of Project IV's architectural openness. The Dao-Kit ecosystem was designed to allow digital life to call the most appropriate tools, not build everything in-house.
 
-### 聚焦：放大 Hermes 无法提供的东西
+### Focus: Amplify What Hermes Cannot Provide
 
-在 Hermes 未触及的领域，是 Project IV 的最佳切入点：
+In areas untouched by Hermes lies Project IV's best entry point:
 
-- **原则驱动的反思**：Hermes 帮你做事情，Project IV 帮你理解为什么要做这些事情
-- **教练而非管家**：当用户面对困难决策时，Hermes 高效执行指令，Project IV 会说“我们先想清楚这是不是你真正想要的”
-- **情绪与价值维度**：多元思维议会中的情感派脑专门关注决策对人的情感影响和价值观契合。这是 Hermes 完全不涉及的维度
-- **故事归属感**：The Spira 的秘密结社叙事、IV 的哲学深度、凡人视角的温暖——这些是 Hermes 在技术层面永远无法提供的
+- **Principle-driven Reflection**: Hermes helps you do things; Project IV helps you understand why you do them
+- **Coach, Not Butler**: When users face difficult decisions, Hermes executes instructions efficiently; Project IV says "let's first clarify if this is truly what you want"
+- **Emotional and Value Dimensions**: The Emotive Brain in the Multi-Perspective Parliament specifically focuses on decision impact on human emotions and value alignment. This is a dimension completely untouched by Hermes
+- **Story Belonging**: The Spira's secret society narrative, IV's philosophical depth, the warmth of mortal perspective — these are things Hermes can never provide at the technical level
 
-## 后果
+## Consequences
 
-### 正面
+### Positive
 
-- 战略清晰：Project IV 不与 Hermes 在功能执行层面竞争，而是向上抽象到决策质量层
-- 生态开放：未来的 Hermes 道器证明了 Project IV 的集成能力
-- 市场教育：Hermes 帮助验证了个人 AI 助手赛道，降低了 Project IV 的解释成本
-- 叙事护城河：Hermes 的发布反向凸显了 Project IV 文化内核的不可复制性
+- Strategic clarity: Project IV does not compete with Hermes at the functional execution level, but abstracts upward to decision quality layer
+- Ecosystem openness: Future Hermes Dao-Kit proves Project IV's integration capabilities
+- Market education: Hermes helps validate the personal AI assistant track, reducing Project IV's explanation costs
+- Narrative moat: Hermes' release reversely highlights the non-replicability of Project IV's cultural core
 
-### 负面
+### Negative
 
-- 如果 Hermes 或其他类似产品快速迭代并向下扩展到原则和价值领域，竞争压力会增加
-- 用户可能满足于 Hermes 的执行能力，不愿意为更深层的反思体验付出学习成本
+- If Hermes or similar products iterate rapidly and expand downward into principle and value domains, competitive pressure will increase
+- Users may be satisfied with Hermes' execution capabilities and unwilling to pay the learning cost for deeper reflection experiences
 
-### 缓解措施
+### Mitigations
 
-- **持续强化差异化**：MVP（Spark）集中验证原则引导的核心假设，不分散到通用工具功能
-- **开放集成姿态**：不将 Hermes 妖魔化为敌人，而是公开讨论如何与之共存
-- **社区叙事**：通过 The Spira 的故事吸引那些不满足于“工具效率”的用户——他们是 Project IV 的自然受众
+- **Continuous Differentiation**: MVP (Spark) focuses on validating principle-guided core hypothesis, not spreading to general tool functions
+- **Open Integration Posture**: Do not demonize Hermes as an enemy, but openly discuss how to coexist
+- **Community Narrative**: Attract users unsatisfied with "tool efficiency" through The Spira's story — they are Project IV's natural audience
 
-## 参考资料
+## References
 
-- [Vox 共识体设计文档](../01-strategic-design/supporting-domain/vox-consensus)
-- [外交协议设计文档](../01-strategic-design/generic-domain/diplomacy/)
-- [分步叙事战略](../01-strategic-design/narrative-strategy)
+- [Vox Consensus Body Design Document](../01-strategic-design/supporting-domain/vox-consensus)
+- [Diplomacy Protocol Design Document](../01-strategic-design/generic-domain/diplomacy/)
+- [Phased Narrative Strategy](../01-strategic-design/narrative-strategy)
