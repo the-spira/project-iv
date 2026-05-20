@@ -83,3 +83,10 @@ To maintain absolute mechanical robustness and high code quality, we employ a de
 *Project IV beats the heart of Yuan.*  
 *Yuan speaks the voice of Vox.*  
 *Everything begins with Spark.*
+
+---
+
+## 📄 License
+
+This documentation project is licensed under the terms of the [Creative Commons Attribution-ShareAlike 4.0 International License](./LICENSE) (CC BY-SA 4.0).
+
