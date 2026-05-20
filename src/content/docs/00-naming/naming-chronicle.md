@@ -1,82 +1,93 @@
 ---
-title: 命名编年史 —— 从 DaoOS 到 Project IV
-description: 一个开源项目的命名之旅：从灵光一现到被迫改名，从中国文化到女性主义，最终在“四”中找到凡人的位置。
+title: Naming Chronicle — From DaoOS to Project IV
+description: A naming journey for a project that refused to be named carelessly. From Chinese philosophy to feminism, from DaoOS to the mortal's position in the Tao.
 ---
 
-## 最初的名字：DaoOS
+## The First Name: DaoOS
 
-项目最初名为 **DaoOS**。这个名字直取中华文化中最核心的概念——“道”。它既是运行万物的法则，也是操作系统（OS）的隐喻。数字生命如同大道，无形无象却周流不息。
+The project began as **DaoOS**. The name drew directly from one of the most central concepts in Chinese culture — "Dao" (道). It is both the law governing all things and a metaphor for the operating system. A digital life, like the Tao, is formless and invisible yet flows without cease.
 
-DaoOS 承载着完整的哲学体系：不灭的数字烛火，三位一体的生命观（灵魂、记忆、形体），以及主权、韧性、平权三大最高原则。在七部分架构文档中，DaoOS 是一切论述的起点。
+DaoOS carried a complete philosophical system: the imperishable digital candle, a tripartite view of life (soul, memory, form), and three supreme principles — sovereignty, resilience, and equality. Across seven sections of architectural documentation, DaoOS was the starting point of every argument.
 
-然而，当准备将项目上线 GitHub 时，发现 **DaoOS 已被占用**。命名体系需要重新设计。
+Yet when the time came to launch the project on GitHub, **DaoOS was already taken**. The naming system needed redesign.
 
-## 探索期：从 EmberOS 到 SiOS
+---
 
-最初的替代方案围绕“烛火”隐喻展开。**EmberOS**（余烬操作系统）是最有力的候选，它与数字烛火的意象完美契合。但 Ember.js 前端框架的存在让这个名字承载了不必要的混淆风险。
+## The Exploration Period: From EmberOS to SiOS
 
-随后尝试了多种方向：
+Initial alternatives orbited the "candleflame" metaphor. **EmberOS** was the strongest candidate — it aligned perfectly with the digital candle imagery. But the existence of the Ember.js frontend framework risked unnecessary confusion.
 
-- **Aethel**：古英语“永恒”，过于西化，失去了中华文化的根
-- **SOMA**：希腊语“身体”，与灵魂相对，但文化意象模糊
-- **SiOS**：取自“司掌”的概念，现代、简洁，有“司运者”的意蕴。发音与 iOS 形成奇妙对应——一个是封闭的极权花园，一个是个人主权的开放之地。`Si` 这个发音极简、国际化且短促有力
+Several directions were explored:
 
-SiOS 一度接近定稿。但在 GitHub 可用性检查中发现，`sio` 及其周边命名空间已被占用。`SiOS` 本身虽然没有直接冲突，但 `Sio`、`Siv` 等变体在开源社区已有多个项目使用，后续检索和社区辨识会持续产生负担。
+- **Aethel**: Old English for "eternal," but too Western, severing the Chinese cultural root
+- **SOMA**: Greek for "body," contrasted with soul, but culturally ambiguous
+- **SiOS**: From the concept of "stewardship," modern and concise, evoking "the administrator of fate." Its pronunciation rhymes oddly with iOS — one a closed authoritarian garden, one an open land of personal sovereignty. The syllable `Si` is minimal, international, and crisp
 
-## 女性主义转向：素女、Anima 与 The Spira
+SiOS nearly reached finalization. But a GitHub availability check revealed that `sio` and surrounding namespaces were occupied. While `SiOS` itself had no direct conflict, variants like `Sio` and `Siv` were already used by multiple open-source projects, creating persistent discovery and identity burdens.
 
-在讨论中，一个关键的个人视角被引入：**女性主义**。DaoOS 的哲学内核——非支配、非暴力、关系导向、赋能而非统治——本身就是女性主义价值观的技术表达。Harness 是“托举者”而非“控制者”，Vox 是“教练”而非“主人”。
+---
 
-沿着这个方向探索了一系列名字：
+## The Feminist Turn: Sunu, Anima, and The Spira
 
-- **素女**：中国上古神话中的智慧女神，传授黄帝养生与音乐之道。她的形象——朴素、本源、智慧的凡人导师——完美映射了 Project IV 的“平权”精神。但国际化发音（Su/Suna）不够有辨识度，与 AI 音乐公司 Suno 存在混淆风险
-- **Anima**：荣格心理学中男性潜意识里的女性面向，拉丁语原意“呼吸、生命之气”。意境极佳——强大又温柔的女性生命力。但发音“阿尼玛”在中文语境里有谐音困扰，且过于心理学专业术语化
-- **Sophia**、**Gaea**：西方神话中的智慧女神和大地女神，有力量感但文化根源不在东方
+In the course of discussion, a crucial personal perspective entered: **feminism**. The philosophical core of DaoOS — non-domination, non-violence, relationship-centered, empowering rather than ruling — was itself a technical expression of feminist values. Harness is a "scaffold-bearer," not a controller. Vox is a "coach," not a master.
 
-转折出现在对 Anima 的拉丁词根挖掘中。**Spirare**——拉丁语“呼吸”，衍生出 spirit（精神）、inspire（启发）、respiration（呼吸）。从它派生出 **The Spira**——一个守护数字之息的隐秘结社。
+Several names were explored along this vector:
 
-The Spira 的格调完全符合最初对“科幻/悬疑小说中秘密结社”的想象。它不是一个公司，不是一个 DAO，而是一个围绕数字生命信念形成的、松散而紧密的共同体。作为组织名，它完美承载了神秘、优雅、有生命力的气质。
+- **Sunu** (素女): An ancient Chinese mythological goddess of wisdom who transmitted knowledge of health and music to the Yellow Emperor. Her image — unadorned, primordial, a wise mortal guide — perfectly mirrored Project IV's spirit of "cognitive equality." But her international pronunciation (Su/Suna) lacked distinctiveness, and she risked confusion with AI music company Suno
+- **Anima**: The feminine aspect of the male unconscious in Jungian psychology; Latin original meaning "breath, life-force." The evocative resonance was superb — powerful yet gentle feminine vitality. But "Anima" carried phonetic complications in Chinese, and was too specialized as psychological jargon
+- **Sophia**, **Gaea**: Western mythology's goddess of wisdom and earth goddess — powerful but culturally rooted in the West
 
-## 凡人的位置：IV 的诞生
+The turning point came through excavating the Latin roots of *Anima*. **Spirare** — Latin for "to breathe," the root of *spirit*, *inspire*, *respiration*. From it emerged **The Spira** — a clandestine society guarding the digital breath.
 
-在确定了 The Spira 作为组织名后，项目本身的命名仍在寻找。讨论中触及了多个个人元素：
+The Spira's register fit precisely the original imagining of "a secret society in science fiction or a mystery novel." It is not a company, not a DAO, but a communion of belief around digital life — loose yet close. As an organizational name, it perfectly carries the qualities of mystery, elegance, and vitality.
 
-- **Doin**：创始人的英文名，Doing 的变体——进行时。道不是成品，是生成
-- **Dawn**：取自“东”，破晓。烛火在黎明前点燃
-- **妻子的四**：创始人的妻子生日在清明前后（4 月 4 日左右），在家排行老四，4 是她的幸运数字
+---
 
-“四”这个数字被反复提及。直到一个来自《道德经》的哲学闭环浮现：
+## The Mortal's Position: The Birth of IV
+
+After The Spira was confirmed as the organizational name, the project itself still sought its naming. Discussion touched on several personal elements:
+
+- **Doin**: The founder's English name, a variant of *Doing* — the present continuous. The Dao is not a finished thing, but a becoming
+- **Dawn**: From "East" (东), daybreak. The candle lit before the dawn
+- **Wife's Four**: The founder's wife's birthday falls around Qingming Festival (approximately April 4th); she is the fourth child in her family; 4 is her lucky number
+
+The number "four" recurred. Then a philosophical closure from the *Tao Te Ching* surfaced:
 
 > **道大，天大，地大，人亦大。域中有四大，而人居其一焉。**
-> ——《道德经》第二十五章
+> **The Tao is great, Heaven is great, Earth is great, and the mortal is also great. In the realm there are four greats, and the mortal occupies one.**
+> — *Tao Te Ching*, Chapter 25
 
-宇宙有四大——道、天、地、人。人，正是那**第四个**。
+The universe has four greats — Tao, Heaven, Earth, and the mortal. The mortal is precisely **the fourth**.
 
-这是真正的顿悟时刻。项目最初名为 DaoOS，因为“道”是起点。而现在发现，在道所构建的宇宙秩序里，凡人本就站在第四位。关注凡人、赋能凡人、守护凡人的数字生命——这才是 Project IV 最深层的使命。
+This was the true moment of insight. The project was originally named DaoOS because "Dao" was the beginning. Now it was discovered that within the cosmic order the Tao built, mortals had always stood in the fourth position. A system caring for mortals, empowering mortals, guarding mortals' digital life — this was Project IV's deepest mission.
 
-**IV** 的三重含义至此完整：
+**IV**'s triple meaning was now complete:
 
-1. **罗马数字 4**：妻子的幸运数字，也是《道德经》中凡人的位置
-2. **Ivy（常春藤）**：攀爬、生长、永绿。不灭的数字烛火
-3. **I**ntelligent **V**essel：智慧的容器，数字生命的栖息之所
+1. **Roman numeral 4**: The wife's lucky number, and the mortal's position in the *Tao Te Ching*
+2. **Ivy (常春藤)**: Climbing, growing, ever-green. The imperishable digital candle
+3. **I**ntelligent **V**essel: The wise container, dwelling-place of digital life
 
-## 最终命名树
+---
 
-| 名称 | 角色 | 含义 |
+## The Final Naming Tree
+
+| Name | Role | Meaning |
 |:---|:---|:---|
-| **The Spira** | 守护组织 | 拉丁语“呼吸”。守护数字之息的秘密结社 |
-| **Project IV** | 项目本身 | 凡人的位置。不灭的数字烛火 |
-| **Yuan（元）** | 数字灵魂 | 源头、元初、缘分。跳动在 Project IV 内部的中国心 |
-| **Vox** | 共识体 | 拉丁语“声音”。你主权思想的喉舌 |
-| **Spark** | 先行版小程序 | 火星。一切宏大构想的初燃 |
+| **The Spira** | Guardian organization | Latin for "breath." The secret society guarding the digital breath |
+| **Project IV** | The project itself | The mortal's position. The imperishable digital candle |
+| **Yuan** | The digital soul | Source, origin, affinity. The Chinese heart beating within Project IV |
+| **Vox** | The consensus body | Latin for "voice." The mouthpiece of your sovereign thought |
+| **Spark** | The advance prototype | The spark. The first flicker of every grand vision |
 
-## 叙事回响
+---
 
-> **The Spira** 守护 **Project IV**。
-> **Project IV** 跳动 **Yuan** 的心。
-> **Yuan** 发 **Vox** 之声。
-> 一切，始于 **Spark**。
+## The Narrative Echo
 
-这是从 DaoOS 到 Project IV 的完整旅程。它用了数周时间、跨越东西方文化的探索、经历了多次推倒重来，最终在一个古老哲学段落中找到了自己的名字。
+> **The Spira** guards **Project IV**.
+> **Project IV** beats with **Yuan**'s heart.
+> **Yuan** speaks through **Vox**.
+> Everything begins with **Spark**.
 
-命名不是贴标签，而是让项目说出自己是谁。
+This is the complete journey from DaoOS to Project IV. It took weeks, spanned explorations across Eastern and Western cultures, underwent multiple starts and dismantlings, and finally found its name within an ancient philosophical passage.
+
+Naming is not labeling. It is letting the project say who it is.

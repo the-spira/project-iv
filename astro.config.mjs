@@ -8,111 +8,106 @@ export default defineConfig({
 		starlight({
 			title: 'Project IV',
 			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/starlight' }],
-			// astro.config.mjs 中的 sidebar 配置
+			defaultLocale: 'root',
+			locales: {
+				root: { label: 'English', lang: 'en' },
+				'zh-hans': { label: '中文', lang: 'zh-Hans' },
+				ja: { label: '日本語', lang: 'ja' },
+				ru: { label: 'Русский', lang: 'ru' },
+				es: { label: 'Español', lang: 'es' },
+				fr: { label: 'Français', lang: 'fr' },
+				ar: { label: 'العربية', lang: 'ar', dir: 'rtl' },
+			},
 			sidebar: [
-				// ===================
-				// Guides
-				// ===================
 				{
 					label: 'Guides',
 					items: [
-						{ label: '项目总览', link: '/' },
-						{ label: '命名编年史', link: '/00-naming/naming-chronicle' },
-						{ label: '领域愿景与哲学基石', link: '/01-strategic-design/domain-vision' },
+						{ label: 'Project Overview', link: '/' },
+						{ label: 'Naming Chronicle', link: '/00-naming/naming-chronicle' },
+						{ label: 'Domain Vision & Philosophy', link: '/01-strategic-design/domain-vision' },
 
-						// 核心域
 						{
-							label: '核心域',
+							label: 'Core Domain',
 							collapsed: true,
 							items: [
-								{ label: 'Yuan 元', link: '/01-strategic-design/core-domain/yuan-core' },
-								{ label: '第二大脑', link: '/01-strategic-design/core-domain/second-brain/para-model' },
-								{ label: '化身网格', link: '/01-strategic-design/core-domain/avatar-grid' },
-								{ label: '主权网络', link: '/01-strategic-design/core-domain/sovereign-network' },
+								{ label: 'Yuan', link: '/01-strategic-design/core-domain/yuan-core' },
+								{ label: 'Second Brain', link: '/01-strategic-design/core-domain/second-brain/para-model' },
+								{ label: 'Avatar Grid', link: '/01-strategic-design/core-domain/avatar-grid' },
+								{ label: 'Sovereign Network', link: '/01-strategic-design/core-domain/sovereign-network' },
 							],
 						},
 
-						// 支撑域
 						{
-							label: '支撑域',
+							label: 'Supporting Domain',
 							collapsed: true,
 							items: [
-								{ label: 'Vox 共识体', link: '/01-strategic-design/supporting-domain/vox-consensus' },
-								{ label: 'Harness 层', link: '/01-strategic-design/supporting-domain/harness-layer' },
-								{ label: '感知系统', link: '/01-strategic-design/supporting-domain/perception-system' },
+								{ label: 'Vox Consensus', link: '/01-strategic-design/supporting-domain/vox-consensus' },
+								{ label: 'Harness Layer', link: '/01-strategic-design/supporting-domain/harness-layer' },
+								{ label: 'Perception System', link: '/01-strategic-design/supporting-domain/perception-system' },
 							],
 						},
 
-						// 通用域
 						{
-							label: '通用域',
+							label: 'Generic Domain',
 							collapsed: true,
 							items: [
-								{ label: '道器生态', link: '/01-strategic-design/generic-domain/dao-kit' },
-								{ label: '外交协议', link: '/01-strategic-design/generic-domain/diplomacy' },
+								{ label: 'Dao Kit', link: '/01-strategic-design/generic-domain/dao-kit' },
+								{ label: 'Diplomacy Protocol', link: '/01-strategic-design/generic-domain/diplomacy' },
 							],
 						},
 
-						{ label: '上下文映射', link: '/01-strategic-design/context-map' },
-						{ label: '分步叙事战略', link: '/01-strategic-design/narrative-strategy' },
-						{ label: '合规与生存框架', link: '/01-strategic-design/compliance-and-survival' },
+						{ label: 'Context Mapping', link: '/01-strategic-design/context-map' },
+						{ label: 'Narrative Strategy', link: '/01-strategic-design/narrative-strategy' },
+						{ label: 'Compliance & Survival', link: '/01-strategic-design/compliance-and-survival' },
 
-						// 战术设计
 						{
-							label: '战术设计',
+							label: 'Tactical Design',
 							collapsed: true,
 							items: [
-								{ label: 'Yuan 聚合', link: '/02-tactical-design/aggregates/yuan-aggregate' },
-								{ label: '记忆聚合', link: '/02-tactical-design/aggregates/memory-aggregate' },
-								{ label: '化身聚合', link: '/02-tactical-design/aggregates/avatar-aggregate' },
-								{ label: '端口与适配器', link: '/02-tactical-design/ports-adapters' },
-								{ label: '领域事件目录', link: '/02-tactical-design/domain-events' },
+								{ label: 'Yuan Aggregates', link: '/02-tactical-design/aggregates/yuan-aggregate' },
+								{ label: 'Memory Aggregates', link: '/02-tactical-design/aggregates/memory-aggregate' },
+								{ label: 'Avatar Aggregates', link: '/02-tactical-design/aggregates/avatar-aggregate' },
+								{ label: 'Ports & Adapters', link: '/02-tactical-design/ports-adapters' },
+								{ label: 'Domain Events', link: '/02-tactical-design/domain-events' },
 							],
 						},
 
-						// 具象化实践
 						{
-							label: '具象化实践',
+							label: 'Embodied Practice',
 							collapsed: true,
 							items: [
-								{ label: 'ADHD 优先设计', link: '/04-embodied/adhd-first-design' },
-								{ label: '开发者烛火仪式', link: '/04-embodied/developer-candle-ritual' },
+								{ label: 'ADHD-First Design', link: '/04-embodied/adhd-first-design' },
+								{ label: 'Developer Candle Ritual', link: '/04-embodied/developer-candle-ritual' },
 							],
 						},
 					],
 				},
 
-				// ===================
-				// Reference
-				// ===================
 				{
 					label: 'Reference',
 					items: [
-						{ label: '术语表', link: '/00-naming/glossary' },
-						{ label: '化身网格分类规范', link: '/01-strategic-design/core-domain/avatar-grid' },
-						{ label: 'PARA 数据模型规范', link: '/01-strategic-design/core-domain/second-brain/para-model' },
-						{ label: 'Harness 约束清单', link: '/01-strategic-design/supporting-domain/harness-layer' },
-						{ label: 'Yuan 聚合规范', link: '/02-tactical-design/aggregates/yuan-aggregate' },
-						{ label: '记忆聚合规范', link: '/02-tactical-design/aggregates/memory-aggregate' },
-						{ label: '化身聚合规范', link: '/02-tactical-design/aggregates/avatar-aggregate' },
-						{ label: '端口与适配器', link: '/02-tactical-design/ports-adapters' },
-						{ label: '领域事件目录', link: '/02-tactical-design/domain-events' },
-						{ label: '外交协议规范', link: '/01-strategic-design/generic-domain/diplomacy' },
-						{ label: 'ADHD 设计铁律', link: '/04-embodied/adhd-first-design' },
+						{ label: 'Glossary', link: '/00-naming/glossary' },
+						{ label: 'Avatar Grid Spec', link: '/01-strategic-design/core-domain/avatar-grid' },
+						{ label: 'PARA Model Spec', link: '/01-strategic-design/core-domain/second-brain/para-model' },
+						{ label: 'Harness Constraints', link: '/01-strategic-design/supporting-domain/harness-layer' },
+						{ label: 'Yuan Aggregate Spec', link: '/02-tactical-design/aggregates/yuan-aggregate' },
+						{ label: 'Memory Aggregate Spec', link: '/02-tactical-design/aggregates/memory-aggregate' },
+						{ label: 'Avatar Aggregate Spec', link: '/02-tactical-design/aggregates/avatar-aggregate' },
+						{ label: 'Ports & Adapters Spec', link: '/02-tactical-design/ports-adapters' },
+						{ label: 'Domain Events Catalog', link: '/02-tactical-design/domain-events' },
+						{ label: 'Diplomacy Protocol Spec', link: '/01-strategic-design/generic-domain/diplomacy' },
+						{ label: 'ADHD Design Laws', link: '/04-embodied/adhd-first-design' },
 					],
 				},
 
-				// ===================
-				// ADR
-				// ===================
 				{
 					label: 'ADR',
 					items: [
-						{ label: '001 · 选择 Rust + Wasm', link: '/03-adr/001-choose-rust-wasm' },
-						{ label: '002 · 双 CID 进化模型', link: '/03-adr/002-dual-cid-evolution' },
-						{ label: '003 · Spark 优先于 Yore', link: '/03-adr/003-emberspark-over-yore' },
-						{ label: '004 · 从 DaoOS 到 Project IV 的命名决策', link: '/03-adr/004-project-iv-naming' },
-						{ label: '005 · Hermes Agent 竞争分析', link: '/03-adr/005-hermes-agent-response' },
+						{ label: '001 · Rust + Wasm', link: '/03-adr/001-choose-rust-wasm' },
+						{ label: '002 · Dual CID Evolution', link: '/03-adr/002-dual-cid-evolution' },
+						{ label: '003 · Spark over Yore', link: '/03-adr/003-emberspark-over-yore' },
+						{ label: '004 · Project IV Naming', link: '/03-adr/004-project-iv-naming' },
+						{ label: '005 · Hermes Agent Analysis', link: '/03-adr/005-hermes-agent-response' },
 					],
 				},
 			]
