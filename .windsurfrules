@@ -1,0 +1,37 @@
+# Project IV - Windsurf AI 规则指南 (.windsurfrules)
+
+本文件作为 Cursor / Windsurf 等 IDE AI 助手的系统级约束规则。AI 必须在每次交互与任务执行中无条件遵守以下核心原则。
+
+---
+## Language Preference
+- All AI dialogues, inline edits, and generated plans MUST be in Simplified Chinese (简体中文).
+
+## Git Commit Message Standards
+- When generating or suggesting git commit messages (especially in the Source Control AI generation panel), you MUST strictly write the subject line in Chinese.
+- **Format**: `<type>(<scope>): <subject>`
+  - Types: `feat`, `fix`, `docs`, `style`, `refactor`, `test`, `chore`, `build`
+  - Subject: MUST be written in Simplified Chinese (简体中文), concise, present tense.
+- **Example**:
+  `feat(auth): 新增用户登录验证功能`
+  `fix(db): 修复时间戳更新时的时区问题`
+
+## 🚨 最高优先级规则：Git Commit 简体中文优先规范
+* **最高优先级**：在编写 Git commit messages 时，务必按照**简体中文优先（专业术语不翻译）**的原则进行撰写。
+* **消息结构**：`<type>: <简体中文描述>`（例：`docs: 更新 .windsurfrules 规范`，`feat: 新增登录校验逻辑`）。
+* **保留英文术语**：对于 `feat`, `fix`, `refactor`, `docs`, `style`, `test` 等 commit 类型，以及 `state`, `context`, `props`, `API` 等开发术语及专有名词不应强行翻译，以保持专业度与语义精准。
+
+---
+
+## 📥 接入检查与文档联动 (AGENTS.md & GEMINI.md)
+* 所有的技术标准、工作流、多角色分工以及常用命令均记录在 `docs/GEMINI.md` 与 `docs/AGENTS.md` 中。
+* AI 助手在执行任务前，**必须优先读取**：
+  1. [docs/GEMINI.md](./docs/GEMINI.md)
+  2. [docs/AGENTS.md](./docs/AGENTS.md)
+* 任何代码变更和工作日志沉淀（如 `walkthrough.md`、`task.md`）均需严格遵守上述两份文件的定义。
+
+---
+
+## 💻 卓越的编程工艺与技术标准
+* **严格的 Typing**：编写极其强壮、具备自解释性且现代化的 code。始终妥善处理边缘情况（edge cases）与 errors。
+* **零 Placeholder 占位符**：绝不在 production 文件中使用占位符文本、stub 函数或 mock 设计。
+* **高端美学（Premium Aesthetics）**：打造精美、现代 of UI，融入 glassmorphism、responsive grids、高质感的 dark modes、平滑的 micro-animations 以及基于 HSL 的和谐色调。避免使用浏览器的默认 system 字体，优先使用 Google Fonts（如 Inter/Outfit）。
