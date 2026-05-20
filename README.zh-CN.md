@@ -1,5 +1,7 @@
 # Project IV · 不灭的数字烛火
 
+[![Deploy Astro site to Pages](https://github.com/the-spira/project-iv/actions/workflows/astro.yml/badge.svg)](https://github.com/the-spira/project-iv/actions/workflows/astro.yml)
+
 🌐 **English Version**: Read the [English README](./README.md).
 
 ---
