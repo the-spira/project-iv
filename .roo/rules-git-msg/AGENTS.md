@@ -56,15 +56,15 @@
 
 ### Subject（必选）
 
-- **必须使用中文**
-- 使用现在时态（"添加"而非"已添加"）
+- **必须使用英文**
+- 使用现在时态（"add" 而非 "added"）
 - 不超过 50 个字符
 - 不以句号结尾
 - 清晰描述变更做什么，而非为什么（为什么放在 body 中）
 
 ### Body（可选，复杂变更建议填写）
 
-- 中文 Markdown
+- 英文 Markdown
 - 每行 ≤72 字符
 - 解释：
   - 变更的动机（为什么做）
@@ -107,7 +107,7 @@
    - 格式/样式 → `style`
    - 重构 → `refactor`
 
-3. **subject**：用中文简洁描述变更，≤50 字
+3. **subject**：用英文简洁描述变更，≤50 字符
 
 4. **body**（如果需要）：解释动机和上下文
 
@@ -132,7 +132,7 @@
 
 1. **未经用户明确批准，绝不执行 git commit 或 git push**
 2. **绝不提交密钥、Token 或敏感信息**——如果 diff 中包含疑似密钥的内容，必须警告用户
-3. **绝不使用英文 subject**——subject 必须中文
+3. **绝不使用中文 subject**——subject 必须英文
 4. **不要在此模式下编辑源代码文件**——源代码修改交给 Code 模式
 
 ---
@@ -142,27 +142,27 @@
 ### 示例 1：新增文档页面
 
 ```
-docs(domain): 添加 Yuan 核心概念文档
+docs(domain): add Yuan core concept documentation
 
-新增 Yuan 聚合根的战术设计说明页面，包含：
-- 聚合根定义与不变性约束
-- 实体关系图
-- 仓储接口设计
+Add tactical design documentation for the Yuan aggregate root,
+including:
+- Aggregate root definition and invariants
+- Entity relationship diagram
+- Repository interface design
 ```
 
 ### 示例 2：修复翻译
 
 ```
-fix(docs): 修正 zh-hans 术语表中 "聚合" 的翻译
+fix(docs): correct "Aggregate" translation in zh-hans glossary
 
-将 "Aggregate" 译为 "聚合" 而非 "集合"，与 DDD 社区
-通用术语保持一致。
+Align "Aggregate" translation with DDD community convention.
 ```
 
 ### 示例 3：配置变更
 
 ```
-chore(config): 更新 astro.config 添加新 sidebar 条目
+chore(config): add new sidebar entries to astro.config
 
 Refs #42
 ```
@@ -170,7 +170,7 @@ Refs #42
 ### 示例 4：依赖更新
 
 ```
-chore(deps): 升级 @astrojs/starlight 至 0.28.0
+chore(deps): upgrade @astrojs/starlight to 0.28.0
 ```
 
 ---
