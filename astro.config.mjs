@@ -78,6 +78,7 @@ export default defineConfig({
 							items: [
 								{ label: 'ADHD-First Design', link: '/04-embodied/adhd-first-design' },
 								{ label: 'Developer Candle Ritual', link: '/04-embodied/developer-candle-ritual' },
+								{ label: 'Yuan OS Philosophy', link: '/04-embodied/yuan-os-philosophy' },
 							],
 						},
 					],
@@ -108,8 +109,9 @@ export default defineConfig({
 						{ label: '003 · Spark over Yore', link: '/03-adr/003-emberspark-over-yore' },
 						{ label: '004 · Project IV Naming', link: '/03-adr/004-project-iv-naming' },
 						{ label: '005 · Hermes Agent Analysis', link: '/03-adr/005-hermes-agent-response' },
-						{ label: '006 · BYOK Token Cost', link: '/03-adr/006-byok-token-cost' },
-					],
+					{ label: '006 · BYOK Token Cost', link: '/03-adr/006-byok-token-cost' },
+					{ label: '007 · Defer Custom Yuan OS', link: '/03-adr/007-defer-custom-yuan-os' },
+				],
 				},
 			]
 		}),
