@@ -78,11 +78,42 @@ The system maintains protocol-level openness through standard Wasm ABI. Any lang
 
 Each DaoKit must contain a structured manifest file. It is not a wall of text like a "privacy policy" that no one reads, but a machine-parseable, user-understandable permission declaration:
 
-- **Metadata**: Name, version, description, author DID
+- **Metadata**: Name, version, description, license, language, author DID
 - **Component CID**: IPFS address of DaoKit code
-- **Permission Declaration**: Clear, itemized list of data scopes to access (e.g., "read 'Projects' category", "write daily logs") and capabilities to invoke (e.g., "L3 external knowledge calls", "sovereign network communication")
+- **Permission Declaration**: Clear, itemized list of data scopes (URI 化命名空间，如 `spira:permission:*`) 和 capabilities（如 `spira:capability:*`），增强机器可解析性和互操作性
 - **Harness Compatibility**: Declare whether the DaoKit includes middleware mode and has passed Harness security scanning
 - **Dependency Declaration**: If the DaoKit depends on other DaoKits, list them in the manifest
+
+以下是一个遵循 OKF（Open Knowledge Format）规范补充后的完整 Manifest 示例：
+
+```json
+{
+  "name": "Diary DaoKit",
+  "version": "1.0.0",
+  "description": "A personal diary application",
+  "license": "MIT",
+  "language": "zh-CN",
+  "author_did": "did:spira:author123...",
+  "component_cid": "bafybeig...",
+  "permissions": [
+    { "scope": "spira:permission:read-projects", "category": "Projects" },
+    { "scope": "spira:permission:write-daily-logs", "resource": "daily_logs" },
+    { "capability": "spira:capability:external-knowledge:l3" },
+    { "capability": "spira:capability:sovereign-network:comm" }
+  ],
+  "harness_compatible": true,
+  "middleware_mode": false,
+  "dependencies": [
+    "did:spira:dao-kit:privacy-filter:1.0.0"
+  ]
+}
+```
+
+新增字段说明：
+
+- **`license`**：声明 DaoKit 的许可证（如 MIT、Apache-2.0、GPL-3.0 等），便于合规扫描和自动检测
+- **`language`**：UI/文档的语言标签（如 `zh-CN`、`en`、`ja`），支持多语言 DaoKit 的发现与过滤
+- **权限 scope URI 化**：`scope` 和 `capability` 从自定义字符串改为 URI 化命名空间 —— `spira:permission:*` 标识数据访问范围，`spira:capability:*` 标识能力调用。这一变更使权限声明具备全局唯一性，增强机器可解析性和跨生态互操作性
 
 ### 4.2 Discover = Authorize
 

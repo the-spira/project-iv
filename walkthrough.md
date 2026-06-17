@@ -94,3 +94,36 @@
 
 ### 已知遗留事项
 - ...
+
+---
+
+## 2026-06-16 · Zoo · 第二次交接
+
+### 本次会话做了什么
+
+- 同步了 OKF（Open Knowledge Format）规范相关的 Schema 增强到简体中文翻译：
+  - **Meta Manifest**（`zh-hans/yuan-aggregate.md`）：`schema_version` 升级至 `"1.0.0"`，新增 `title/description/license/language` 字段，`checksum` 改为结构化对象
+  - **Dao-Kit Manifest**（`zh-hans/dao-kit/index.md`）：新增 `license/language` 字段，权限 scope 改为 URI 化命名空间（`spira:permission:*` / `spira:capability:*`）
+- 更新了工作流文件（本文件 + `conversation-log.md`）
+
+### 仓库状态变更
+```
+修改：
+  docs/src/content/docs/zh-hans/02-tactical-design/aggregates/yuan-aggregate.md
+  docs/src/content/docs/zh-hans/01-strategic-design/generic-domain/dao-kit/index.md
+  docs/walkthrough.md
+  docs/conversation-log.md
+```
+
+### 当前 git 状态
+工作区有未提交改动（上述 4 个文件）。
+
+### 给下一个 AI 的提醒
+- 本次改动涉及英文源文件（`yuan-aggregate.md` 和 `dao-kit/index.md`）与中文翻译的一致性同步。如果未来再次修改英文源，记得同步更新 zh-hans 翻译。
+- OKF（Open Knowledge Format）相关的 Schema 增强是结构性的——`license`、`language`、URI 化权限 scope 将成为后续所有 Manifest 的标配。
+
+### 自动化测试 / 验证
+无。未改动构建配置或代码。
+
+### 已知遗留事项
+- 本次未提交改动。是否需要 commit 由 Doin 决定。

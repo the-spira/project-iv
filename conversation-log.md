@@ -114,3 +114,24 @@
 - 接受"做减法"建议（ADR 007）——这通常需要心理能量，Doin 给的反应是正面的（直接说"d"全部做完）。
 - 对工具/框架选择不挑食，但**对"为什么"敏感**——每个决定背后都要讲清楚道理，不然他会重新评估。
 - 跨时区或者跨日的工作模式下，需要每次会话开头回顾上次的"我们到哪了"——所以 conversation-log + open-questions 真的有用。
+
+---
+
+## 2026-06-16 · 第四次对话 · "OKF 分析与 Schema 更新"
+
+**对话触发**：用户要求将 Meta Manifest 和 Dao-Kit Manifest 的 Schema 增强同步到简体中文翻译版本。
+
+### 关键判断 / 已定论
+
+1. **OKF（Open Knowledge Format）规范的引入**：参考 Google 的 OKF announcement，将 Manifest 的元数据字段（`title/description/license/language`）和结构化 `checksum` 引入 Yuan 的 Meta Manifest，增强可发现性和标准化对齐。
+
+2. **权限 scope URI 化**：Dao-Kit Manifest 的 `scope` 和 `capability` 从自定义字符串改为 URI 化命名空间（`spira:permission:*` / `spira:capability:*`），确保全局唯一性和跨生态互操作性。
+
+3. **`schema_version` 标准化**：从 `"1.0"` 升级到 `"1.0.0"`，遵循严格的 semver 规范。
+
+### 产出物
+
+- `src/content/docs/zh-hans/02-tactical-design/aggregates/yuan-aggregate.md`（修改 · Meta Manifest 同步）
+- `src/content/docs/zh-hans/01-strategic-design/generic-domain/dao-kit/index.md`（修改 · Dao-Kit Manifest 同步）
+- `docs/walkthrough.md`（修改 · 追加本次交接记录）
+- `docs/conversation-log.md`（本节）

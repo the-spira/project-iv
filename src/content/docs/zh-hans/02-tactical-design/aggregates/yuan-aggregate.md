@@ -33,17 +33,22 @@ Yuan 聚合是 Project IV 的核心聚合，代表用户的数字灵魂。它在
 
 ## 2. 元清单结构
 
-元清单是 Yuan 的“身份证”，由 IPNS 指向。它是一个不超过 1KB 的 JSON 结构体。
+元清单是 Yuan 的"身份证"，由 IPNS 指向。它是一个不超过 1KB 的 JSON 结构体。除了核心领域字段（逻辑/状态 CID 和版本约束）外，现在还包括面向人类可读的元数据，以增强可发现性和 UI 集成。
 
-<div class="code-block">
-
-```
+```json
 {
-  "schema_version": "1.0",
+  "schema_version": "1.0.0",
+  "title": "Weili 的数字灵魂",
+  "description": "由 Yuan 驱动的个人 AI 伴侣",
+  "license": "CC0-1.0",
+  "language": "zh-CN",
   "logic": {
     "cid": "bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi",
     "version": "1.2.0",
-    "checksum": "sha256:..."
+    "checksum": {
+      "algorithm": "sha256",
+      "value": "abc123def456..."
+    }
   },
   "state": {
     "cid": "bafkreidgvpkjawlxz6sffxzwgooowe5yt7i6wsyg236mfoks77nywkptdq",
@@ -55,11 +60,14 @@ Yuan 聚合是 Project IV 的核心聚合，代表用户的数字灵魂。它在
 }
 ```
 
-</div>
-
 **字段约束**：
 
+- `schema_version` 遵循语义版本号（major.minor.patch）
+- `title` / `description`：面向人类友好的标识符，用于 UI 显示和调试
+- `license`：Yuan 实例的显式许可证声明（用户数据所有权）
+- `language`：用户偏好的语言标签（如 `zh-CN`、`en`）
 - `logic.version` 遵循语义版本号（major.minor.patch）
+- `logic.checksum` 是一个结构化对象，包含明确的 `algorithm` 和 `value` 字段，替代之前的扁平字符串格式
 - `state.compatible_logic_version` 必须 ≤ `logic.version`。若 state 的兼容版本高于当前 logic，化身拒绝加载并通知用户
 - `signature` 使用用户 IdentityKey 签名，防止元清单被中间人篡改。化身在加载前必须验签
 

@@ -33,15 +33,22 @@ The Yuan aggregate is the core aggregate of Project IV, representing the user's 
 
 ## 2. Meta Manifest Structure
 
-The meta manifest is Yuan's "ID card," pointed to by IPNS. It is a JSON structure no larger than 1KB.
+The meta manifest is Yuan's "ID card," pointed to by IPNS. It is a JSON structure no larger than 1KB. Beyond the core domain fields (logic/state CIDs and version constraints), it now also includes human-friendly metadata to improve discoverability and UI integration.
 
-```
+```json
 {
-  "schema_version": "1.0",
+  "schema_version": "1.0.0",
+  "title": "Weili's Digital Soul",
+  "description": "Personal AI companion powered by Yuan",
+  "license": "CC0-1.0",
+  "language": "zh-CN",
   "logic": {
     "cid": "bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi",
     "version": "1.2.0",
-    "checksum": "sha256:..."
+    "checksum": {
+      "algorithm": "sha256",
+      "value": "abc123def456..."
+    }
   },
   "state": {
     "cid": "bafkreidgvpkjawlxz6sffxzwgooowe5yt7i6wsyg236mfoks77nywkptdq",
@@ -55,7 +62,12 @@ The meta manifest is Yuan's "ID card," pointed to by IPNS. It is a JSON structur
 
 **Field Constraints**:
 
+- `schema_version` follows semver (major.minor.patch)
+- `title` / `description`: human-friendly identifiers for UI display and debugging
+- `license`: explicit license declaration for the Yuan instance (user data ownership)
+- `language`: user's preferred language tag (e.g., `zh-CN`, `en`)
 - `logic.version` follows semantic versioning (major.minor.patch)
+- `logic.checksum` is a structured object with explicit `algorithm` and `value` fields, replacing the earlier flat string format
 - `state.compatible_logic_version` must ≤ `logic.version`. If state's compatible version is higher than current logic, avatar refuses to load and notifies user
 - `signature` signed with user IdentityKey to prevent man-in-the-middle tampering. Avatar must verify signature before loading
 
